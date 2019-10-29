@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <title>HPA4CF</title>
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css">
+  <!-- Bootstrap core CSS -->
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+  <!-- Material Design Bootstrap -->
+  <link href="css/mdb.min.css" rel="stylesheet">
+  <!-- Your custom styles (optional) -->
+  <link href="css/style.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet">
+  <script>
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', 'UA-73960040-1', 'auto');
+    ga('send', 'pageview');
+  </script>
+</head>
+
+<body>
+
+  <!--Main Navigation-->
+  <header>
+
+    <!-- Navbar -->
+    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
+      <div class="container">
+
+        <!-- Brand -->
+        <div class="navbar-brand waves-effect">
+          <img src="img/logos/eu.svg" class="img-fluid" style="margin-right:10px" alt="" width="80">
+          <img src="img/logos/msca.jpg" class="img-fluid" style="margin-right:10px" alt="" width="53">
+          <strong class="blue-text">HPA4CF</strong>
+        </div>
+
+        <!-- Collapse -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Links -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+          <!-- Left -->
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link waves-effect" href="#">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="https://cordis.europa.eu/project/rcn/209640/factsheet/en" target="_blank">CORDIS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="https://filippobistaffa.github.io" target="_blank">About Me</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link waves-effect" href="http://www.iiia.csic.es" target="_blank">About IIIA</a>
+            </li>
+          </ul>
+
+          <!-- Right -->
+          <!--
+          <ul class="navbar-nav nav-flex-icons">
+            <li class="nav-item">
+              <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
+                <i class="fab fa-facebook-f"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
+                <i class="fab fa-twitter"></i>
+              </a>
+            </li>
+            <li class="nav-item">
+              <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded waves-effect"
+                target="_blank">
+                <i class="fab fa-github mr-2"></i>MDB GitHub
+              </a>
+            </li>
+          </ul>
+          -->
+
+        </div>
+
+      </div>
+    </nav>
+    <!-- Navbar -->
+
+  </header>
+  <!--Main Navigation-->
+
+  <!--Main layout-->
+  <main class="mt-5 pt-5">
+    <div class="container">
+
+      <!--Section: Jumbotron-->
+      <section class="card card-image wow fadeIn" id="intro" style="background-image: url(img/card.png); background-size: cover; background-position: center">
+
+        <!-- Content -->
+        <div class="card-body text-center text-white py-5 px-5 my-5">
+
+          <h1 class="mb-4" style="-webkit-text-stroke-width:2px;-webkit-text-stroke-color:black">
+            <strong>Highly-Parallel Algorithms for Collective Intelligence</strong>
+          </h1>
+          <!--
+          <p>
+            <strong>Best & free guide of responsive web design</strong>
+          </p>
+          <p class="mb-4">
+            <strong>The most comprehensive tutorial for the Bootstrap 4. Loved by over 500 000 users. Video and written
+              versions available. Create your own, stunning website.</strong>
+          </p>
+          <a target="_blank" href="https://mdbootstrap.com/education/bootstrap/" class="btn btn-outline-white btn-lg">Start
+            free tutorial
+            <i class="fas fa-graduation-cap ml-2"></i>
+          </a>
+          -->
+
+        </div>
+        <!-- Content -->
+      </section>
+      <!--Section: Jumbotron-->
+
+      <!--Section: Cards-->
+      <section class="pt-5">
+
+        <!-- Heading & Description -->
+        <div class="wow fadeIn mb-4">
+          <!--Section heading-->
+          <!--<h2 class="h1 text-center mb-5">Objective</h2>-->
+          <!--Section description-->
+
+          <p class="mb-5">
+In recent years, more and more scenarios pose challenges that require Collective Intelligence solutions based on networks (e.g., knowledge networks, social networks, sensor networks), <a href="https://ec.europa.eu/digital-single-market/en/collective-awareness" target="_blank">enabling novel ways of social production, promoting innovation and encouraging the exchange of ideas</a>. New forms of collaborative consumption, collaborative making, collaborative production, all rely on a common and fundamental task, i.e., the formation of collectives. Hence, the computation of policies for Collective Intelligence scenarios plays a crucial role in many real-world applications domains, where groups need to be formed in order to complete tasks and achieve costs reductions, both for individuals and for the entire collective. During my MSCA project I tackled two prominent Collective Intelligence scenarios, namely <strong>shared mobility</strong> and <strong>cooperative learning</strong>, developing novel AI optimisation algorithms that can deal with the associated computational challenges, quantify the potential benefits, and, ultimately, help policy makers to take better collective decisions.
+          </p>
+
+          <h3 class="mb-3 font-weight-bold dark-grey-text">
+            <strong>Computing Sustainable Policies for Online Ridesharing</strong>
+          </h3>
+
+          <p>
+With the growing popularity of the shared economy, ridesharing services are called to transform urban mobility. Indeed, shared mobility is expected to have major environmental and economic impacts by reducing pollution (e.g., CO₂ emissions and noise pollution), traffic congestion, and energy consumption [<a href="https://doi.org/10.1016/j.pecs.2016.12.004" target="_blank">FZC17</a>]. Furthermore, ridesharing is said to become even much more attractive in a future world of self-driving cars, and spur a transition from solo driving to mass transit. Along these lines, the growing efforts in research and technology, together with novel incentive policies for shared mobility and efficient market designs will play a crucial role for the exploitation of the full potential of ridesharing, and for the revolution of the current practice in personal transportation. Despite its major potential benefits, ridesharing is nowadays still far from being widely used (<a href="https://factfinder.census.gov/bkmk/table/1.0/en/ACS/16_5YR/S0801/0100000US" target="_blank">according to the US Census Bureau</a>, only around 9.3% of commuters in the US carpooled to work, compared to 76.4% who drove alone). Because of the growing concerns about climate change, congestion, and oil dependency, further research is needed to understand the benefits of ridesharing, while also considering time and privacy requirements of users. One of the reasons of this insufficient engagement by the public is the lack of effective incentive policies by regulatory authorities, who do not possess the necessary computational tools capable of quantifying the costs and the benefits of a given ridesharing adoption policy.
+          </p>
+
+          <p>
+During my project I addressed these issues by (i) developing a novel algorithm that makes large-scale, real-time ridesharing technologically feasible; and (ii) exhaustively quantifying the impact of different ridesharing policies in terms of environmental benefits (i.e., reduction of CO₂ emissions, noise pollution, and traffic congestion) and quality of service (QoS) for the users.
+          </p>
+
+          <p>
+Our analysis on a <a href="https://www1.nyc.gov/site/tlc/about/tlc-trip-record-data.page" target="_blank">publicly available real-world dataset</a> shows that major societal benefits are expected from deploying sustainable ridesharing policies, depending on the trade-off between environmental benefits and QoS. Thus, when environmental benefits are prioritised, our approach can yield a 70.78% reduction in CO₂ emissions (corresponding to up to 107.18 Tons per day) and a 80.08% reduction in traffic congestion, while achieving full occupancy on shared rides. On the other hand, when QoS is fully privileged (i.e., minimising delays experienced by the users), we can still achieve environmental benefits (7.85% reduction in CO₂ emissions, and 15.08% in the number of trips), showing that our approach can still lead to benefits even without impacting on the QoS. Notice that our approach also stands as valuable computational tool for policy makers concerned with shared mobility. Our approach provides the means to estimate the expected societal benefits of ridesharing from existing travelling data records. Thus, policy makers can leverage on our approach in order to come up with action plans aimed at achieving target societal impacts within some time frame, which is the common practice in policy making (e.g., refer to the <a href="https://energyplan.ny.gov/-/media/nysenergyplan/2015-overview.pdf" target="_blank">New York State Energy Plan</a>). Moreover, our study may also help policy makers conduct what-if analysis. For instance, considering that both environmental benefits and QoS are equally important, achieving a reduction of 16.60 Tons of CO₂ (10.97% reduction) per day would require reaching a 20% ridesharing adoption rate, namely doubling <a href="https://factfinder.census.gov/bkmk/table/1.0/en/ACS/16_5YR/S0801/0100000US" target="_blank">the current ridesharing adoption figures in the US</a>. Far more ambitious, and less feasible, appears to achieve a reduction of 78.86 Tons of CO₂ (52.08% reduction) per day, since these benefits require an 80% adoption rate.
+          </p>
+
+          <p>
+Our work opens up several interesting research lines, mainly regarding the design of incentive plans and pricing mechanisms that foster the adoption of ridesharing, increase the adoption rate, and the extension of our approach to incorporate the users’ preferences as a further optimisation criterion (in addition to environmental benefits and QoS).
+          </p>
+
+        </div>
+        <!-- Heading & Description -->
+
+        <!--Grid row-->
+        <div class="row mt-3 wow fadeIn mb-3">
+
+          <!--Grid column-->
+          <div class="col-lg-5 col-xl-4 mb-4">
+            <!--Featured image-->
+            <div class="view overlay rounded z-depth-1">
+              <img src="img/aij.png" class="img-fluid"
+                alt="">
+              <a href="https://www.sciencedirect.com/science/article/pii/S0004370217300243" target="_blank">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
+            <h3 class="mb-3 font-weight-bold dark-grey-text">
+              <strong>A Cooperative Game-Theoretic Approach to the Social Ridesharing Problem</strong>
+            </h3>
+            <p class="grey-text">Journal article published in <i>Artificial Intelligence</i> 246, May 2017, Pages 86-117 (<a href="http://dx.doi.org/10.1016/j.artint.2017.02.004">DOI</a>)</p>
+            <a href="http://hdl.handle.net/10261/182296" target="_blank"
+              class="btn btn-primary btn-md">Go to article
+              <i class="fas fa-file-pdf ml-2"></i>
+            </a>
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <!--Grid row-->
+        <div class="row mt-3 wow fadeIn mb-3">
+
+          <!--Grid column-->
+          <div class="col-lg-5 col-xl-4 mb-4">
+            <!--Featured image-->
+            <div class="view overlay rounded z-depth-1">
+              <img src="img/simrs.png" class="img-fluid"
+                alt="">
+              <a href="https://ridesharing.iiia.csic.es" target="_blank">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
+            <h3 class="mb-3 font-weight-bold dark-grey-text">
+              <strong>Ridesharing Simulator</strong>
+            </h3>
+            <p class="grey-text">A computational tool to quantify the benefits of ridesharing for policy makers and travellers</p>
+            <a href="https://ridesharing.iiia.csic.es" target="_blank"
+              class="btn btn-primary btn-md">Start simulator
+              <i class="fas fa-play ml-2"></i>
+            </a>
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <!--Grid row-->
+        <div class="row wow fadeIn mb-4">
+
+          <!--Grid column-->
+          <div class="col-lg-5 col-xl-4 mb-4">
+            <!--Featured image-->
+            <div class="view overlay rounded z-depth-1-half">
+              <div class="view overlay">
+                <div class="embed-responsive embed-responsive-16by9">
+                  <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/WYmxIVVlf3M" allowfullscreen></iframe>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
+            <h3 class="mb-3 font-weight-bold dark-grey-text">
+              <strong>AAMAS 2018 Demonstration</strong>
+            </h3>
+            <p class="grey-text">Video presented at <a href="http://ifaamas.org/Proceedings/aamas2018/pdfs/p1797.pdf" target="_blank">AAMAS 2018 Demonstration Track</a></p>
+            <a href="https://youtu.be/WYmxIVVlf3M" target="_blank" class="btn btn-primary btn-md">Watch video
+              <i class="fas fa-play ml-2"></i>
+            </a>
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <!-- Heading & Description -->
+        <div class="wow fadeIn mb-4">
+
+          <h3 class="mb-3 font-weight-bold dark-grey-text">
+            <strong>Synergistic Team Formation for Cooperative Learning</strong>
+          </h3>
+
+          <p>
+Similarly, modern educational institutions can implement cooperative and active learning policies that engage
+students in teams to participate in all learning activities in the classroom. Nonetheless, not all teams facilitate
+learning. For cooperative learning to be effective, students have to be grouped by carefully taking into account
+their competencies, personality traits, and gender. Several studies in the literature show a positive correlation
+between certain personality traits and team composition, and that, in order to increase team performance,
+team members should be heterogeneous in their individual characteristics [<a href="https://books.google.it/books/about/Post_Jungian_Personality_Theory_for_Indi.html?id=-hAjngEACAAJ&redir_esc=y" target="_blank">Wil13</a>; <a href="https://pureportal.coventry.ac.uk/en/publications/work-psychology-understanding-human-behaviour-in-the-workplace-6t" target="_blank">AR10</a>]. Even though much
+research in the industrial, organisational, and educational psychology fields investigated what the predictors
+of team success are, to the best of our knowledge, there are no computational tools that allow to form groups
+so as to exploit the synergies among members and to ensure that competences are adequately combined to
+complete a given task.
+          </p>
+
+          <p>
+To address this shortcomings, we developed an AI optimisation algorithm that takes into account personality,
+competence, and gender profiles of the students, and groups them into teams guaranteeing that the
+synergies among members are maximal. Our experimental evaluation with actual students showed that teams
+formed according to our approach scored marks that were, on average, 25.3% higher than the ones formed by
+experts, hence effectively improving the performance of the students. Along these lines, our research paves
+the way for the implementation of cooperative learning policies that help educators and promote diversity
+and engagement among students.
+          </p>
+        </div>
+
+        <!--Grid row-->
+        <div class="row mt-3 wow fadeIn mb-3">
+
+          <!--Grid column-->
+          <div class="col-lg-5 col-xl-4 mb-4">
+            <!--Featured image-->
+            <div class="view overlay rounded z-depth-1">
+              <img src="img/kbs.png" class="img-fluid" alt="">
+              <a href="https://www.sciencedirect.com/science/article/abs/pii/S0950705119302746" target="_blank">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
+            <h3 class="mb-3 font-weight-bold dark-grey-text">
+              <strong>Synergistic Team Composition: A Computational Approach to Foster Diversity in Teams</strong>
+            </h3>
+            <p class="grey-text">Journal article published in <i>Knowledge-Based Systems</i> 182, October 2019, Page 104799 (<a href="https://doi.org/10.1016/j.knosys.2019.06.007">DOI</a>)</p>
+            <a href="https://arxiv.org/abs/1909.11994" target="_blank"
+              class="btn btn-primary btn-md">Go to article
+              <i class="fas fa-file-pdf ml-2"></i>
+            </a>
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+        <!--Grid row-->
+        <div class="row mt-3 wow fadeIn mb-3">
+
+          <!--Grid column-->
+          <div class="col-lg-5 col-xl-4 mb-4">
+            <!--Featured image-->
+            <div class="view overlay rounded z-depth-1">
+              <img src="img/eduteams.png" class="img-fluid"
+                alt="">
+              <a href="http://eduteams.iiia.csic.es" target="_blank">
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-7 col-xl-7 ml-xl-4 mb-4">
+            <h3 class="mb-3 font-weight-bold dark-grey-text">
+              <strong>EduTeams</strong>
+            </h3>
+            <p class="grey-text">Online application that allows teachers and students to specify an educational task and form synergistic teams to complete it</p>
+            <a href="http://eduteams.iiia.csic.es" target="_blank"
+              class="btn btn-primary btn-md">Start EduTeams
+              <i class="fas fa-play ml-2"></i>
+            </a>
+          </div>
+          <!--Grid column-->
+
+        </div>
+        <!--Grid row-->
+
+      </section>
+      <!--Section: Cards-->
+
+    </div>
+  </main>
+  <!--Main layout-->
+
+  <!--Footer-->
+  <footer class="page-footer text-center font-small mdb-color darken-2 mt-4 wow fadeIn">
+
+    <!-- Social icons -->
+    <div class="pb-4">
+    <!--
+      <a href="https://www.facebook.com/mdbootstrap" target="_blank">
+        <i class="fab fa-facebook-f mr-3"></i>
+      </a>
+
+      <a href="https://twitter.com/MDBootstrap" target="_blank">
+        <i class="fab fa-twitter mr-3"></i>
+      </a>
+
+      <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
+        <i class="fab fa-youtube mr-3"></i>
+      </a>
+
+      <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
+        <i class="fab fa-google-plus-g mr-3"></i>
+      </a>
+
+      <a href="https://dribbble.com/mdbootstrap" target="_blank">
+        <i class="fab fa-dribbble mr-3"></i>
+      </a>
+
+      <a href="https://pinterest.com/mdbootstrap" target="_blank">
+        <i class="fab fa-pinterest mr-3"></i>
+      </a>
+
+      <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
+        <i class="fab fa-github mr-3"></i>
+      </a>
+
+      <a href="http://codepen.io/mdbootstrap/" target="_blank">
+        <i class="fab fa-codepen mr-3"></i>
+      </a>
+    -->
+    </div>
+    <!-- Social icons -->
+
+  </footer>
+  <!--/.Footer-->
+
+  <!-- SCRIPTS -->
+  <!-- JQuery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- Bootstrap tooltips -->
+  <script src="js/popper.min.js"></script>
+  <!-- Bootstrap core JavaScript -->
+  <script src="js/bootstrap.min.js"></script>
+  <!-- MDB core JavaScript -->
+  <script src="js/mdb.min.js"></script>
+  <!-- Initializations -->
+  <script>
+    // Animations initialization
+    new WOW().init();
+
+  </script>
+</body>
+
+</html>
