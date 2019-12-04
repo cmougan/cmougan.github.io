@@ -1,0 +1,227 @@
+<!doctype html>
+<html lang="en">
+
+	<head>
+		<meta charset="utf-8">
+
+		<title>PEPSICO</title>
+
+
+		<meta name="description" content="A framework for easily creating beautiful presentations using HTML">
+		<meta name="author" content="Hakim El Hattab">
+
+		<meta name="apple-mobile-web-app-capable" content="yes">
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+		<link rel="stylesheet" href="css/reset.css">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css" id="theme">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/monokai.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+			
+		</script>
+		<style type="text/css" media="screen">
+			.slides section.has-dark-background,
+			.slides section.has-dark-background h2 {
+				color: #fff;
+			}
+			.slides section.has-light-background,
+			.slides section.has-light-background h2 {
+				color: #222;
+		
+		</style>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+
+			<!-- Any section element inside of this container is displayed as a slide -->
+			<div class="slides">
+				<section>
+					<h1>PEPSICO</h1>
+					<h3>Data Science - Case study</h3>
+					<p>
+						<small>Created by <a href="https://cmougan.github.io/">Carlos Mougan</a> </small>
+					</p>
+				</section>
+
+				<section>
+					<h2>Outline</h2>
+					<p>
+						Case Study statement
+					</p>
+					<p>
+						Exploratory Data Analysis
+					</p>
+					<p>
+						Exploratory Data Analysis
+					</p>
+				</section>
+				<section>
+					<h2>Case Study</h2>
+					<p> Data From SDK</p>
+					<p> Growind/Declining Outlets </p>
+					
+				</section>
+
+				<!-- Example of nested vertical slides -->
+				<section>
+					<section>
+						<h2>Outlets Distribution</h2>
+
+						<img src="kind_outlent.png" border=10>
+						<br>
+						<a href="#" class="navigate-down">
+							
+						</a>
+					</section>
+					<section>
+						<h3>Mixed Type of Outlets</h3>
+						<img src="mixed_outlent.png" border=10>
+					</section>
+					<section>
+
+						<img src="ukdist.png" border=10>
+						
+						<br>	
+					</section>
+					<section>
+						<h3>Outliers</h3>
+						<p class="fragment fade-in-then-out"><img src="outlier.png" border=10></p>
+						<p class="fragment fade-in-then-out">Data Errors</p>
+
+					</section>
+					<section>
+						<p><img src="picadilly.png" border=10></p>
+					</section>
+				</section>
+
+				<section>
+					<section>
+					<h2>Classic Statistics</h2>
+					<p class="fragment fade-in-then-out">Bars evolution through months<br><img src="bars_visits.png" border=10></p>
+					</section>
+
+					<section>
+					<h2>Classic Statistics</h2>
+					<p class="fragment fade-in-then-out">Cafe evolution through months<br><img src="cafe_visits.png" border=10></p>
+					</section>
+					<section>
+					<h2>Classic Statistics</h2>
+					<p class="fragment fade-in-then-out">Restaurants evolution through months<br><img src="restaurant_visits.png" border=10></p>
+					</section>
+					<section>
+					<p>Alsmot identical behavior</p>
+					<p>K-S Test shows no statistical significance</p>
+					</section>
+					<section>
+						<h5>Lets move to Modern Statistics  Machine Learning</h5>
+					</section>
+
+				</section>
+				<section>
+					<section>
+						<h2>Modern Statistics <br>  Machine Learning</h2>
+						<p class="fragment fade-int">
+							Let's build a model and try to predict the number of visits per month
+						</p>
+						
+					</section>
+					<section>
+						<h4>Linear Model - Lasso</h4>
+						<p class="fragment fade-int">RMSE = 104 <br>
+						<img src="lasso.png" border=10>
+						</p>
+					</section>
+					<section>
+						<h5>Lasso - Explainable Artifical Intelligence (XAI)</h5>
+						<p>
+						<img src="lasso_explain.png" border=10>
+						</p>
+					</section>
+					<section>
+						<h4>Gradient Boosting - Catboost</h4>
+						<p class="fragment fade-in">RMSE = 94 <br>
+						<img src="catboost.png" border=10>
+						</p>
+					</section>
+					<section>
+						<h3>Predictive Modelling Conclusions</h3>
+						<ul>
+							<li>Outlet type Bar is negative towards visit count</li>
+							<li>Outlet type combinations plays a small importance</li>
+							<li>Strong Geospatial Importance</li>
+						</ul>
+						
+					</section>
+				</section>
+				<section>
+					<section>
+						<h2>Next Steps</h2>
+					</section>
+					<section>
+						<h2>Next Steps</h2>
+						<p class="fragment fade-int"> 
+							<ul>
+							  <li>Improve Data Gathering </li>
+							  <li>Metadata</li>
+							  <li>Geospatial Modeling</li>
+							  
+							</ul>
+						</p>
+					</section>
+					<section>
+						<h2>END</h2>
+					</section>
+					
+				</section>
+
+				
+			</div>
+
+		</div>
+
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// More info https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				center: true,
+				hash: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// More info https://github.com/hakimel/reveal.js#dependencies
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true },
+					{ src: 'plugin/search/search.js', async: true },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
