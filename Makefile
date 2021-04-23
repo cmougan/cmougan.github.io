@@ -23,3 +23,6 @@ make install_some_packages:
 make run_script:
 	jupyter nbconvert --to script ExploratoryDataAnalysis.ipynb
 	python ExploratoryDataAnalysis.py
+
+make deploy:
+	bundle exec jekyll liveserve

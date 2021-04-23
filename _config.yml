@@ -81,12 +81,12 @@ analytics:
 # Site Author
 author:
   name             : "Carlos Mougan"
-  avatar           : "images/me.jpg"
-  bio              : "Your biography for the left-hand sidebar"
+  avatar           : "me.jpg"
+  bio              : "Marie Sklodowska-Curie Research Fellow"
   location         : "Location"
   employer         :
-  pubmed           : "https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : "http://yourfullgooglescholarurl.com"
+  pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
+  googlescholar    : #"http://yourfullgooglescholarurl.com"
   email            :
   researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
   uri              :
