@@ -8,8 +8,8 @@ redirect_from:
   - /about.html
 ---
 
-I currently am a \textbf{Marie Curie Research Fellow} in the NoBias European Innovative Training Network. My research is focused on AI and Ethics, particularly on explaining machine learning models to detect social bias.
-Previously I was a Statistician on the European Central Bank. During the last years, I have work in diverse research fields such as  Artificial Intelligence, Data Science, Meteorology \&  predictive modeling. 
+I currently am a __Marie Curie Research__ Fellow in the NoBias European Innovative Training Network. My research is focused on AI and Ethics, particularly on explaining machine learning models to detect social bias.
+Previously I was a Statistician on the European Central Bank. During the last years, I have work in diverse research fields such as  Artificial Intelligence, Data Science, Meteorology &  predictive modeling. 
 Also, I have joined numerous data science competitions achieving:\textit{1st Boston Consulting Group Gamma Datathon,1st at SpainML Telco-churn and Bronze Medal at Kaggle IEEE-CIS Fraud Detection.} I ranked top 2 of 2020 Data Science Stack Exchange. I have a special interest in data science ethics,  \& responsible Artificial Intelligence. My professional goal is to have an impact on society through research, innovation, and a sense of creativity. 
 
 A data-driven personal website
