@@ -134,3 +134,6 @@ dmypy.json
 .DS_Store
 .idea
 *.idea
+
+Gemfile.lock
+_site
