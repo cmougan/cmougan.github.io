@@ -7,10 +7,10 @@
 
 # Site Settings
 locale                   : "en-US"
-title                    : "About me"
-title_separator          : "-"
-name                     : &name "Your Name"
-description              : &description "personal description"
+title                    : ""
+title_separator          : ""
+name                     : &name "Carlos Mougan"
+description              : &description "Marie Sklodowska-Curie Research Fellow"
 url                      : https://cmougan.github.io # the base hostname & protocol for your site e.g. "https://mmistakes.github.io"
 baseurl                  : "" # the subpath of your site, e.g. "/blog"
 repository               : "academicpages/academicpages.github.io"
@@ -83,12 +83,13 @@ author:
   name             : "Carlos Mougan"
   avatar           : "me.jpg"
   bio              : "Marie Sklodowska-Curie Research Fellow"
-  location         : #"Location"
+  location         :
+  medium           : "https://medium.com/@sid_darthvader"
   employer         :
-  pubmed           : #"https://www.ncbi.nlm.nih.gov/pubmed/?term=john+snow"
-  googlescholar    : #"http://yourfullgooglescholarurl.com"
+  pubmed           :
+  googlescholar    :
   email            : carmougan@gmail.com
-  researchgate     :  # example: "https://www.researchgate.net/profile/yourprofile"
+  researchgate     :
   uri              :
   bitbucket        :
   codepen          :
@@ -100,13 +101,13 @@ author:
   google_plus      :
   keybase          :
   instagram        :
-  impactstory      : #"https://profiles.impactstory.org/u/xxxx-xxxx-xxxx-xxxx"
+  impactstory      :
   lastfm           :
   linkedin         : "carlosmougan"
-  orcid            : #"http://orcid.org/yourorcidurl"
+  orcid            :
   pinterest        :
   soundcloud       :
-  stackoverflow    : https://datascience.stackexchange.com/users/86339/carlos-mougan
+  stackoverflow    : "https://datascience.stackexchange.com/users/86339/carlos-mougan"
   steam            :
   tumblr           :
   twitter          : "CarlosMougan"

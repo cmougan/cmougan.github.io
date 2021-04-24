@@ -7,12 +7,11 @@ redirect_from:
   - /about/
   - /about.html
 ---
-WEB IN DEVELOPMENT:
-FOR CV GO TO: [https://cmougan.github.io](https://cmougan.github.io/CV/index.html)
-
 
 I currently am a __Marie Curie Research Fellow__ in the NoBias European Innovative Training Network.
 My research is focused on AI and Ethics, particularly on explaining machine learning models to detect social bias.
+
+For a more detail CV navigate to:  [https://cmougan.github.io](https://cmougan.github.io/CV/index.html)
 
 
 
@@ -21,9 +20,9 @@ My research is focused on AI and Ethics, particularly on explaining machine lear
 
 <ul>
   <li>European Central Bank: Statistician</li>
-  <li>Reserch Associate: Barcelona SuperComputing Center</li>
-  <li>Reserach Associate: Artificial Intelligence Institute of the Spanish National Research Council (IIIA - CSIC)</li>
-  <li>Robotics Consultant at Deloitte</li>
+  <li>Barcelona SuperComputing Center: Reserch Associate</li>
+  <li>IIIA - CSIC: Reserach Associate(Artificial Intelligence Institute of the Spanish National Research Council)</li>
+  <li>Deloitte: Robotics Consultant</li>
 </ul>
 
 ### Projects
