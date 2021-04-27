@@ -26,3 +26,9 @@ make run_script:
 
 make deploy:
 	bundle exec jekyll liveserve
+
+make killport:
+	kill -9 $(lsof -i:35729 -t)
+
+
+

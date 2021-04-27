@@ -137,3 +137,7 @@ dmypy.json
 
 Gemfile.lock
 _site
+stupid.txt
+
+node_modules
+package-lock.json
