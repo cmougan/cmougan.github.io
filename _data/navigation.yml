@@ -19,9 +19,9 @@ main:
 #  - title: "Portfolio"
 #    url: /portfolio/
 
-
-  - title: "Guide"
-    url: /markdown/
+## To navigate to the Guide go to: https://cmougan.github.io/markdown/
+#  - title: "Guide"
+#    url: /markdown/
 
 #  - title: "Publications"
 #    url: /publications/
