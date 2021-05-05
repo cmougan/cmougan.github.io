@@ -1,22 +1,28 @@
 # main links links
 main:
-#  - title: "Publications"
-#    url: /publications/
+  - title: Home
+    url: https://cmougan.github.io/
+
+  - title: "CV"
+    url: https://cmougan.github.io/CV/index.html
 
   - title: "Talks"
     url: /talks/    
 
-#  - title: "Teaching"
-#    url: /teaching/
-    
-#  - title: "Portfolio"
-#    url: /portfolio/
-        
   - title: "Blog Posts"
     url: /year-archive/
     
-  - title: "CV"
-    url: https://github.com/cmougan/cmougan.github.io/blob/master/CV/index.html
-    
+
+#  - title: "Teaching"
+#    url: /teaching/
+
+#  - title: "Portfolio"
+#    url: /portfolio/
+
+
 #  - title: "Guide"
 #    url: /markdown/
+-
+#  - title: "Publications"
+#    url: /publications/
+
