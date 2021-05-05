@@ -20,9 +20,9 @@ main:
 #    url: /portfolio/
 
 
-#  - title: "Guide"
-#    url: /markdown/
--
+  - title: "Guide"
+    url: /markdown/
+
 #  - title: "Publications"
 #    url: /publications/
 
