@@ -29,6 +29,7 @@ For a more detail CV navigate to:  [https://cmougan.github.io](https://cmougan.g
   <li>Barcelona SuperComputing Center: Reserch Associate</li>
   <li>IIIA - CSIC: Reserach Associate(Artificial Intelligence Institute of the Spanish National Research Council)</li>
   <li>Deloitte: Robotics Consultant</li>
+
 </ul>
 
 ### Projects
