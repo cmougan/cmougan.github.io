@@ -3,9 +3,18 @@ black:
 
 gitall:
 	git add .
-	git commit -m $$m
-	git push
 
+	echo 'Enter the commit message:'
+	read commitMessage
+
+	git commit -m "$commitMessage"
+
+	echo 'Enter the name of the branch:'
+	read branch
+
+	git push origin $branch
+
+	read
 make export_requirements:
 	conda list --export > requirements.txt
 
