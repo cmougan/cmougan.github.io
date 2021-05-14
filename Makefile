@@ -11,7 +11,6 @@ gitall:
 
 	git push
 
-	read
 make export_requirements:
 	conda list --export > requirements.txt
 
