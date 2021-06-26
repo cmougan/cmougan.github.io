@@ -22,9 +22,9 @@ For a more detailed CV navigate to:  [https://cmougan.github.io](https://cmougan
 ### Positions
 
 <ul>
-  <li>European Central Bank: Statistician</li>
-  <li>Barcelona SuperComputing Center: Reserch Associate</li>
-  <li>IIIA - CSIC: Reserach Associate(Artificial Intelligence Institute of the Spanish National Research Council)</li>
+  <li>European Central Bank: Statistician - Data Scientist</li>
+  <li>Barcelona SuperComputing Center: Research Associate (Msc)</li>
+  <li>IIIA - CSIC: Research Associate (Msc)</li>
   <li>Deloitte: Robotics Consultant</li>
 
 </ul>
