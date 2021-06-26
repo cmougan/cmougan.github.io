@@ -11,10 +11,8 @@ redirect_from:
 I am deeply excited about applied Machine Learning and its implications in society.
 
 I am very fortunate to have been able to pursue these passions at world-class research and public institutions.
-Please reach out and let me know if I can help with your projects! :)
 
 I currently am a __Marie Curie Research Fellow__ in the NoBias European Innovative Training Network.
-My research is focused on AI and Ethics, particularly on explaining machine learning models to detect social bias.
 
 For a more detailed CV navigate to:  [https://cmougan.github.io](https://cmougan.github.io/CV/index.html)
 
