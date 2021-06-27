@@ -27,7 +27,6 @@ For a more detailed CV navigate to:  [https://cmougan.github.io](https://cmougan
   <li>Barcelona SuperComputing Center: Research Assistant (Msc)</li>
   <li>IIIA - CSIC: Research Assistant (Msc)</li>
   <li>Deloitte: Robotics Consultant</li>
-
 </ul>
 
 ### Projects
