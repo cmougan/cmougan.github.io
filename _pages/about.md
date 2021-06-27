@@ -13,6 +13,7 @@ I am deeply excited about applied Machine Learning and its implications in socie
 I am very fortunate to have been able to pursue these passions at world-class research and public institutions.
 
 I currently am a __Marie Curie Research Fellow__ in the NoBias European Innovative Training Network.
+My research is currently focused on what is actually Explainable ML and how to evaluate it.
 
 For a more detailed CV navigate to:  [https://cmougan.github.io](https://cmougan.github.io/CV/index.html)
 
