@@ -8,7 +8,7 @@ redirect_from:
   - /about.html
 ---
 
-I am deeply excited about applied Machine Learning and its implications in society.
+I have passion for predictive modeling and its implications in society.
 
 I am very fortunate to have been able to pursue these passions at world-class research and public institutions.
 
