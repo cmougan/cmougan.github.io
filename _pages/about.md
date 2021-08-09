@@ -8,15 +8,14 @@ redirect_from:
   - /about.html
 ---
 
-I have passion for predictive modeling and its implications in society.
+I have a passion for predictive modeling and its implications in society.
 
 I am very fortunate to have been able to pursue these passions at world-class research and public institutions.
 
-I currently am a __Marie Curie Research Fellow__ and Phd Candidate in the NoBias European Innovative Training Network.
+I currently am a __Marie Curie Research Fellow__ and Ph.D. Candidate in the NoBias European Innovative Training Network.
 My research is currently focused on what is actually Explainable ML and how to evaluate it.
 
-For a more detailed CV navigate to:  [https://cmougan.github.io](https://cmougan.github.io/CV/index.html)
-
+For a more detailed CV navigate to [https://cmougan.github.io](https://cmougan.github.io/CV/index.html)
 
 
 ## In the past I have been
