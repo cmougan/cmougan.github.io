@@ -8,28 +8,28 @@ gitall:
 
 
 
-make export_requirements:
+export_requirements:
 	conda list --export > requirements.txt
 
-make install_requirements:
+install_requirements:
 	conda install --file requirements.txt
 
-make notebook_memory_usage:
+notebook_memory_usage:
 	conda install -c conda-forge jupyter-resource-usage
 
 
-make install_some_packages:
+install_some_packages:
 	conda install pip
 	pip install jedi==0.17.2
 
-make run_script:
+run_script:
 	jupyter nbconvert --to script ExploratoryDataAnalysis.ipynb
 	python ExploratoryDataAnalysis.py
 
-make deploy:
+deploy:
 	bundle exec jekyll liveserve
 
-make killport:
+killport:
 	kill -9 $(lsof -i:35729 -t)
 
 
