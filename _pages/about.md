@@ -8,7 +8,8 @@ redirect_from:
   - /about.html
 ---
 
-I have a passion for predictive modeling and its implications in society.
+I have a passion for predictive modeling and its implications in society. 
+At the moment I am in the topics of explainable ML and fairness.
 
 I am very fortunate to have been able to pursue these passions at world-class research and public institutions.
 
