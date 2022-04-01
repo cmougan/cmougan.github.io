@@ -16,6 +16,7 @@ I am very fortunate to have been able to pursue these passions at world-class re
 I currently am a __Marie Curie Research Fellow__ and Ph.D. Candidate in the NoBias European Innovative Training Network.
 My research is currently focused on what is actually Explainable ML and how to evaluate it.
 
+
 For a more detailed CV navigate to [https://cmougan.github.io](https://cmougan.github.io/CV/index.html)
 
 
@@ -41,6 +42,7 @@ For a more detailed CV navigate to [https://cmougan.github.io](https://cmougan.g
 <ul>
   <li><a href="https://stackexchange.com/leagues/557/year/datascience/2020-01-01">Top 2 </a> of 2020 at <a href="https://datascience.stackexchange.com/users/86339/carlos-mougan"> Data Science Stack Exchange </a></li>
   <li>1st Boston Consulting Group Gamma Datathon</li>
+  <li>1st Novartis Datathon 2021</li>
   <li>1st at SpainML</li>
   <li>Bronze Medal at Kaggle IEEE-CIS Fraud Detection</li>
 </ul>
