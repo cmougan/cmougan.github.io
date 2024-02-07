@@ -1,0 +1,170 @@
+/*!
+* Start Bootstrap - Creative Bootstrap Theme (http://startbootstrap.com)
+* Code licensed under the Apache License v2.0.
+* For details, see http://www.apache.org/licenses/LICENSE-2.0.
+*/
+
+/*font-family: 'VT323', monospace; */
+@import url("https://fonts.googleapis.com/css?family=Open+Sans");
+/* font-family: 'Slabo 27px', serif; */
+@import url("https://fonts.googleapis.com/css?family=Slabo+27px");
+/*font-family: 'VT323', monospace; */
+@import url("https://fonts.googleapis.com/css?family=Slabo+27px|Source+Serif+Pro");
+/* font-family: 'VT323', monospace; */
+@import url("https://fonts.googleapis.com/css?family=VT323");
+/* font-family: 'Vollkorn', serif; */
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;500&display=swap");
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "Inconsolata", monospace;
+  background: white;
+  font-size: 16px;
+}
+
+body a {
+  color: #cf9400;
+}
+
+a:hover {
+  color: gold;
+}
+
+h3 {
+  font-weight: 300;
+  font-size: 30px;
+}
+
+ul {
+  list-style-type: "- ";
+}
+
+.header-content {
+  position: fixed;
+  text-align: right;
+}
+
+/* If larger than 860 */
+@media (min-width: 860px) {
+  .header-content {
+    display: flex;
+    width: 25%;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+  }
+  .content {
+    width: 50%;
+    padding-top: 3%;
+    margin-left: 26%;
+    margin-right: 25%;
+  }
+  #logo {
+    padding-top: 60px;
+  }
+
+}
+
+@media (max-width: 860px) {
+  .header-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 200px;
+    justify-content: space-between;
+    /* put items at bottom of row */
+    align-items: flex-end;
+    position: fixed;
+    z-index: 10;
+    padding-top: 40px;
+    /* Make background white */
+    background: white;
+  }
+  .about-text {
+    display: block;
+  }
+  .content {
+    padding-top: 220px;
+    width: 75%;
+    margin-left: 5%;
+    margin-right: 25%;
+    /* margin-right: 50px; */
+    padding-right: 5%;
+  }
+
+  /* img {
+    max-width: 200px;
+    margin-left: 30px;
+  } */
+
+  .pages {
+    padding-right: 5%;
+  }
+
+  #menu {
+    margin-top: -130px;
+    margin-left: 300px;
+  }
+  .list-header {
+    font-size: 18px;
+  }
+}
+
+/* IF  */
+
+.content {
+  position: relative;
+  color: black;
+  margin-bottom: 3%;
+  height: 100%;
+}
+
+.research-text {
+  margin-right: 25%;
+}
+
+.about-text {
+  font-size: 16px;
+}
+
+.par-text {
+  margin-left: 5%;
+  margin-right: 25%;
+}
+
+#selected {
+  color: gold;
+}
+
+#logo {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  object-position: bottom;
+}
+
+#portrait {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: bottom;
+}
+/* Maintain aspect ratio */
+
+.plant-sun {
+  position: fixed;
+  margin-left: 60%;
+  margin-top: -45%;
+  z-index: -1;
+  width: 40%;
+}
+#plant-sun-img {
+  width: 100%;
+}
