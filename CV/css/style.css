@@ -481,3 +481,11 @@ h3.clr3 {
 		font-size: 0.75em;
 	}
 }
+.centered-links {
+    display: flex;
+    justify-content: center;
+}
+
+.centered-links a {
+    margin: 0 10px; /* Adjust as needed */
+}
