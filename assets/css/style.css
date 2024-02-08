@@ -168,3 +168,15 @@ ul {
 #plant-sun-img {
   width: 100%;
 }
+.image-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 20px;
+  background-color: #ffffff; /* Change this to match your page background color */
+}
+.image-container img {
+  width: 30%; /* Adjust the width as needed */
+  height: auto; /* Maintain aspect ratio */
+}
