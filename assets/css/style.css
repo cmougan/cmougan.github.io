@@ -168,3 +168,8 @@ ul {
 #plant-sun-img {
   width: 100%;
 }
+
+.no-padding {
+    padding: 0; /* Removes padding */
+    margin: 0; /* Removes margins */
+  }
