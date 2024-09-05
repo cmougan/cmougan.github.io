@@ -107,6 +107,9 @@ ul {
   #logo {
     display: none; /* Hide the logo image on mobile */
   }
+  #vert-image-img {
+    display: none; /* Hide vertical image on mobile */
+  }
 }
 /* IF  */
 
@@ -153,7 +156,7 @@ ul {
   object-fit: contain;
   object-position: bottom;
 }
-/* Maintain aspect ratio */
+/* Vertical Image */
 .vert-image {
   position: absolute;
   top: 0; /* Aligns the top of the container with the top of the page */
@@ -169,8 +172,6 @@ ul {
   height: 100%; 
   object-fit: cover; /* Ensures the image covers the container completely */
 }
-
-
 .vert-image {
   position: fixed; /* Fixed positioning to keep the background in place */
   top: 0;
