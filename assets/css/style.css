@@ -81,7 +81,7 @@ ul {
     height: 200px;
     justify-content: space-between;
     align-items: flex-end;
-    position: fixed;
+    position: absolute;
     z-index: 10;
     padding-top: 40px;
     background: white;
