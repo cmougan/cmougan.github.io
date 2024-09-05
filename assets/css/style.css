@@ -69,6 +69,7 @@ ul {
   #logo {
     padding-top: 60px;
   }
+
 }
 
 /* Mobile Screens - Devices Smaller than 860px */
@@ -99,6 +100,12 @@ ul {
 
   .about-text {
     font-size: 14px; /* Slightly smaller text for mobile */
+  }
+  #profile {
+    display: none; /* Hide the logo image on mobile */
+  }
+  #logo {
+    display: none; /* Hide the logo image on mobile */
   }
 }
 /* IF  */
@@ -133,6 +140,12 @@ ul {
   object-fit: contain;
   object-position: bottom;
 }
+#profile {
+  width: 85%;
+  height: 85%;
+  object-fit: contain;
+  object-position: bottom;
+}
 
 #portrait {
   width: 100%;
@@ -141,7 +154,7 @@ ul {
   object-position: bottom;
 }
 /* Maintain aspect ratio */
-.plant-sun {
+.vert-image {
   position: absolute;
   top: 0; /* Aligns the top of the container with the top of the page */
   left: 60%; /* Keep the horizontal positioning */
@@ -151,14 +164,14 @@ ul {
   overflow: auto; /* Allows scrolling within the container */
 }
 
-#plant-sun-img {
+#vert-image-img {
   width: 100%; 
   height: 100%; 
   object-fit: cover; /* Ensures the image covers the container completely */
 }
 
 
-.plant-sun {
+.vert-image {
   position: fixed; /* Fixed positioning to keep the background in place */
   top: 0;
   left: 60%; /* Position the background image on the right side */
@@ -171,7 +184,7 @@ ul {
   background-position: top; /* Starts the background image at the top */
   z-index: -2;
 }
-#plant-sun-img {
+#vert-image-img {
   width: 100%;
   height: auto;
   position: absolute;
