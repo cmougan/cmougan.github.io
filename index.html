@@ -28,8 +28,37 @@
   <link rel="stylesheet" href="assets/css/style.css" type="text/css">
   <link rel="icon" type="image/png" href="images/surficon.png">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+  <style>
+    /* Flying Image CSS Animation */
+    @keyframes fly {
+      0% {
+        top: 0%;
+        left: 0%;
+      }
+      25% {
+        top: 20%;
+        left: 30%;
+      }
+      50% {
+        top: 50%;
+        left: 50%;
+      }
+      75% {
+        top: 70%;
+        left: 70%;
+      }
+      100% {
+        top: 100%;
+        left: 100%;
+      }
+    }
 
-</head>
+    .flier img {
+      position: fixed; /* Fixed so that it stays in view while scrolling */
+      width: 400px; /* Adjust the width of the image */
+      animation: fly 10s linear infinite; /* Duration adjusted for slower movement */
+    }
+  </style>
 
 <body>
   <!--********** header *********-->
@@ -44,10 +73,13 @@
     
     </div>
   </header>
+
+  <!-- Flying Image -->
+  <div class="flier">
+    <img width="400" height="400" src="https://cortex.persona.co/t/original/i/63948173123c3e21a534cf7b935788a368c48474133a84384ffa3748061a114f/CONGA3.png" data-mid="880254" border="0" />
+  </div>
+  
   <!--********** about *********-->
-
-
-
   <div class="content">
     <div class="about-text">
         <h3 id="about"> about/ </h3>
