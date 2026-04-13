@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Act Enforcement Countdown</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@300;400;500&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --bg: #05060a;
+    --surface: #0d0f18;
+    --border: rgba(255,255,255,0.08);
+    --accent: #c8f04a;
+    --accent-dim: rgba(200,240,74,0.12);
+    --text: #f0f0e8;
+    --muted: rgba(240,240,232,0.45);
+    --faint: rgba(240,240,232,0.12);
+  }
+
+  html, body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'DM Mono', monospace;
+    overflow-x: hidden;
+  }
+
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    position: relative;
+  }
+
+  /* subtle grid bg */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      linear-gradient(rgba(200,240,74,0.03) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(200,240,74,0.03) 1px, transparent 1px);
+    background-size: 60px 60px;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  .container {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 760px;
+    text-align: center;
+  }
+
+  .eyebrow {
+    font-family: 'DM Mono', monospace;
+    font-size: 11px;
+    font-weight: 400;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+  }
+
+  .eyebrow::before, .eyebrow::after {
+    content: '';
+    display: block;
+    height: 1px;
+    width: 40px;
+    background: var(--accent);
+    opacity: 0.5;
+  }
+
+  h1 {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2rem, 6vw, 3.8rem);
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    margin-bottom: 0.4rem;
+  }
+
+  h1 span {
+    color: var(--accent);
+  }
+
+  .subtitle {
+    font-size: 12px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    margin-bottom: 3rem;
+    text-transform: uppercase;
+  }
+
+  .units-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+    margin-bottom: 2.5rem;
+  }
+
+  .unit {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 1.75rem 0.5rem 1.25rem;
+    position: relative;
+    overflow: hidden;
+    transition: border-color 0.3s;
+  }
+
+  .unit:hover {
+    border-color: rgba(200,240,74,0.3);
+  }
+
+  .unit::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: var(--accent);
+    opacity: 0.6;
+  }
+
+  .unit-number {
+    font-family: 'Syne', sans-serif;
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
+    font-weight: 700;
+    color: var(--text);
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+    transition: color 0.2s;
+  }
+
+  .unit-number.flash {
+    color: var(--accent);
+  }
+
+  .unit-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-top: 10px;
+  }
+
+  .separator {
+    display: none;
+  }
+
+  .progress-section {
+    margin-bottom: 2rem;
+  }
+
+  .progress-header {
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  .progress-header span:last-child {
+    color: var(--accent);
+  }
+
+  .progress-track {
+    width: 100%;
+    height: 3px;
+    background: var(--faint);
+    border-radius: 0;
+    overflow: hidden;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 0;
+    transition: width 1s linear;
+    position: relative;
+  }
+
+  .progress-fill::after {
+    content: '';
+    position: absolute;
+    right: 0; top: -3px;
+    width: 3px; height: 9px;
+    background: var(--accent);
+    border-radius: 1px;
+  }
+
+  .meta-row {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .meta-row span strong {
+    color: var(--text);
+    font-weight: 400;
+  }
+
+  .done-msg {
+    font-family: 'Syne', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: var(--accent);
+    padding: 3rem;
+    display: none;
+  }
+
+  .ticker {
+    font-size: 11px;
+    color: var(--muted);
+    letter-spacing: 0.05em;
+    margin-top: 1.5rem;
+  }
+
+  .ticker #live-clock {
+    color: var(--accent);
+  }
+
+  @media (max-width: 500px) {
+    .units-grid { grid-template-columns: repeat(2, 1fr); }
+    .meta-row { flex-direction: column; gap: 0.5rem; align-items: center; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="eyebrow">EU Regulation 2024/1689</div>
+  <h1>AI Act<br><span>Enforcement</span><br>Countdown</h1>
+  <p class="subtitle">Full enforcement — 2 August 2026</p>
+
+  <div id="display">
+    <div class="units-grid">
+      <div class="unit">
+        <div class="unit-number" id="days">--</div>
+        <div class="unit-label">Days</div>
+      </div>
+      <div class="unit">
+        <div class="unit-number" id="hours">--</div>
+        <div class="unit-label">Hours</div>
+      </div>
+      <div class="unit">
+        <div class="unit-number" id="minutes">--</div>
+        <div class="unit-label">Minutes</div>
+      </div>
+      <div class="unit">
+        <div class="unit-number" id="seconds">--</div>
+        <div class="unit-label">Seconds</div>
+      </div>
+    </div>
+
+    <div class="progress-section">
+      <div class="progress-header">
+        <span>Apr 13, 2026</span>
+        <span id="pct-label">0.0% elapsed</span>
+      </div>
+      <div class="progress-track">
+        <div class="progress-fill" id="prog" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="meta-row">
+      <span>Regulation <strong>2024/1689</strong></span>
+      <span>Entry into force <strong>1 Aug 2024</strong></span>
+      <span>Full application <strong>2 Aug 2026</strong></span>
+    </div>
+
+    <p class="ticker">Current time: <span id="live-clock">--</span></p>
+  </div>
+
+  <div id="done" class="done-msg">The AI Act is now fully enforced.</div>
+</div>
+
+<script>
+  const target = new Date('2026-08-02T00:00:00');
+  const start  = new Date('2026-04-13T00:00:00');
+  const totalMs = target - start;
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  let prevSec = -1;
+
+  function tick() {
+    const now = new Date();
+    const diff = target - now;
+
+    document.getElementById('live-clock').textContent =
+      now.toLocaleTimeString('en-GB', { hour12: false });
+
+    if (diff <= 0) {
+      document.getElementById('display').style.display = 'none';
+      document.getElementById('done').style.display = 'block';
+      return;
+    }
+
+    const days    = Math.floor(diff / 86400000);
+    const hours   = Math.floor((diff % 86400000) / 3600000);
+    const minutes = Math.floor((diff % 3600000) / 60000);
+    const seconds = Math.floor((diff % 60000) / 1000);
+
+    document.getElementById('days').textContent    = days;
+    document.getElementById('hours').textContent   = pad(hours);
+    document.getElementById('minutes').textContent = pad(minutes);
+
+    const secEl = document.getElementById('seconds');
+    secEl.textContent = pad(seconds);
+
+    if (seconds !== prevSec) {
+      secEl.classList.add('flash');
+      setTimeout(() => secEl.classList.remove('flash'), 300);
+      prevSec = seconds;
+    }
+
+    const elapsed = totalMs - diff;
+    const pct = Math.min(100, Math.max(0, (elapsed / totalMs) * 100));
+    document.getElementById('prog').style.width = pct.toFixed(2) + '%';
+    document.getElementById('pct-label').textContent = pct.toFixed(1) + '% elapsed';
+  }
+
+  tick();
+  setInterval(tick, 1000);
+</script>
+</body>
+</html>
