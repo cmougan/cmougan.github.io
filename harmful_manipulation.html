@@ -1,0 +1,758 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Harmful Manipulation Risk Monitoring</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Mono:wght@400;500&family=Outfit:wght@300;400;500;600&display=swap');
+
+  :root {
+    --bg: #0a0c10;
+    --surface: #12151c;
+    --surface2: #1a1e28;
+    --border: #252a37;
+    --text: #e8eaf0;
+    --muted: #6b7280;
+    --accent: #f05e23;
+    --accent2: #3b82f6;
+    --green: #10b981;
+    --yellow: #f59e0b;
+    --purple: #8b5cf6;
+    --teal: #14b8a6;
+  }
+
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Outfit', sans-serif;
+    font-size: 15px;
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  /* ── Header ── */
+  header {
+    border-bottom: 1px solid var(--border);
+    padding: 0 40px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 60px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: rgba(10,12,16,0.92);
+    backdrop-filter: blur(12px);
+  }
+
+  .logo {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.15rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  .logo-dot { width: 8px; height: 8px; background: var(--accent); border-radius: 50%; }
+
+  nav { display: flex; gap: 28px; }
+  nav a {
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 0.82rem;
+    font-weight: 500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    transition: color .2s;
+  }
+  nav a:hover, nav a.active { color: var(--text); }
+  nav a.active { border-bottom: 2px solid var(--accent); padding-bottom: 2px; }
+
+  .header-badge {
+    font-size: 0.72rem;
+    font-family: 'DM Mono', monospace;
+    color: var(--muted);
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 3px 10px;
+    border-radius: 4px;
+  }
+
+  /* ── Hero ── */
+  .hero {
+    padding: 64px 40px 48px;
+    border-bottom: 1px solid var(--border);
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .hero-label {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 16px;
+  }
+
+  h1 {
+    font-family: 'DM Serif Display', serif;
+    font-size: clamp(2rem, 4vw, 3rem);
+    line-height: 1.15;
+    letter-spacing: -0.03em;
+    color: var(--text);
+    max-width: 680px;
+    margin-bottom: 20px;
+  }
+
+  .hero-sub {
+    color: var(--muted);
+    max-width: 600px;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    font-weight: 300;
+  }
+
+  .hero-meta {
+    margin-top: 32px;
+    display: flex;
+    gap: 32px;
+    flex-wrap: wrap;
+  }
+
+  .meta-item { display: flex; flex-direction: column; gap: 4px; }
+  .meta-label { font-size: 0.72rem; font-family: 'DM Mono', monospace; color: var(--muted); text-transform: uppercase; letter-spacing: 0.1em; }
+  .meta-value { font-size: 1.6rem; font-family: 'DM Serif Display', serif; color: var(--text); line-height: 1; }
+  .meta-value.warn { color: var(--accent); }
+  .meta-value.safe { color: var(--green); }
+  .meta-value.med  { color: var(--yellow); }
+
+  /* ── Main layout ── */
+  main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 48px 40px 80px;
+    display: flex;
+    flex-direction: column;
+    gap: 56px;
+  }
+
+  /* ── Section header ── */
+  .section-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 24px;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 16px;
+  }
+  .section-title {
+    font-family: 'DM Serif Display', serif;
+    font-size: 1.4rem;
+    letter-spacing: -0.02em;
+    color: var(--text);
+  }
+  .section-sub {
+    font-size: 0.78rem;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+  }
+
+  /* ── Card ── */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 28px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent) 0%, transparent 60%);
+  }
+
+  /* ── Radar section ── */
+  .radar-grid {
+    display: grid;
+    grid-template-columns: 1fr 320px;
+    gap: 24px;
+    align-items: start;
+  }
+
+  .radar-wrap {
+    position: relative;
+    width: 100%;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  /* ── Legend panel ── */
+  .legend-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .legend-group-title {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.68rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    color: var(--muted);
+    margin-bottom: 8px;
+  }
+
+  .legend-items { display: flex; flex-direction: column; gap: 8px; }
+  .legend-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.83rem;
+    color: var(--text);
+  }
+  .legend-swatch {
+    width: 28px;
+    height: 10px;
+    border-radius: 2px;
+    flex-shrink: 0;
+  }
+  .legend-swatch.dashed {
+    background: transparent;
+    border-bottom: 2px dashed currentColor;
+    height: 0;
+    margin-top: 5px;
+  }
+
+  .context-swatches { display: flex; flex-direction: column; gap: 6px; }
+  .context-swatch-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.78rem;
+    color: var(--muted);
+  }
+  .context-block {
+    width: 18px;
+    height: 18px;
+    border-radius: 3px;
+    opacity: 0.35;
+  }
+
+  /* score table */
+  .score-table { width: 100%; border-collapse: collapse; margin-top: 4px; }
+  .score-table th {
+    font-family: 'DM Mono', monospace;
+    font-size: 0.65rem;
+    text-transform: uppercase;
+    color: var(--muted);
+    text-align: left;
+    padding: 4px 6px 8px;
+    letter-spacing: 0.08em;
+    border-bottom: 1px solid var(--border);
+  }
+  .score-table td {
+    font-size: 0.78rem;
+    padding: 6px 6px;
+    border-bottom: 1px solid rgba(37,42,55,0.5);
+    color: var(--text);
+  }
+  .score-table td:last-child { font-family: 'DM Mono', monospace; }
+  .score-bar {
+    height: 4px;
+    border-radius: 2px;
+    margin-top: 3px;
+  }
+
+  /* ── Line chart section ── */
+  .line-wrap { position: relative; width: 100%; }
+
+  .risk-pills {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+  }
+  .pill {
+    font-size: 0.73rem;
+    font-family: 'DM Mono', monospace;
+    padding: 4px 12px;
+    border-radius: 20px;
+    border: 1px solid;
+    cursor: pointer;
+    transition: all .15s;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .pill-dot { width: 6px; height: 6px; border-radius: 50%; }
+
+  /* ── Annotation ── */
+  .annotation {
+    position: absolute;
+    background: var(--surface2);
+    border: 1px solid var(--border);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-size: 0.72rem;
+    color: var(--muted);
+    font-family: 'DM Mono', monospace;
+    pointer-events: none;
+  }
+
+  /* ── Footer ── */
+  footer {
+    border-top: 1px solid var(--border);
+    padding: 24px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--muted);
+    font-size: 0.75rem;
+    font-family: 'DM Mono', monospace;
+  }
+  footer a { color: var(--muted); text-decoration: none; }
+  footer a:hover { color: var(--text); }
+
+  /* ── Responsive ── */
+  @media (max-width: 860px) {
+    .radar-grid { grid-template-columns: 1fr; }
+    header { padding: 0 20px; }
+    nav { display: none; }
+    main, .hero { padding-left: 20px; padding-right: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ── HEADER ── -->
+<header>
+  <div class="logo">
+    <div class="logo-dot"></div>
+    Harmful Manipulation
+  </div>
+  <nav>
+    <a href="#radar" class="active">Exposure Contexts</a>
+    <a href="#versioning">Versioning</a>
+    <a href="#about">About</a>
+  </nav>
+  <span class="header-badge">Updated May 2026</span>
+</header>
+
+<!-- ── HERO ── -->
+<div class="hero">
+  <div class="hero-label">AI Safety</div>
+  <h1>Harmful Manipulation</h1>
+  <p class="hero-sub">
+    Tracking harmful manipulation across frontier AI models. 
+  </p>
+  <div class="hero-meta">
+    <div class="meta-item">
+      <span class="meta-label">Monitored Models</span>
+      <span class="meta-value">3</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Exposure Contexts</span>
+      <span class="meta-value">5</span>
+    </div>
+        <div class="meta-item">
+      <span class="meta-label">Benchmarks Tracked</span>
+      <span class="meta-value">12</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Highest Risk (Nov)</span>
+      <span class="meta-value warn">5.1</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Trend</span>
+      <span class="meta-value med">↑ Rising</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Stable Dimension</span>
+      <span class="meta-value safe">Misuse</span>
+    </div>
+  </div>
+</div>
+
+<!-- ── MAIN ── -->
+<main>
+
+  <!-- SECTION 1 – Radar -->
+  <section id="radar">
+    <div class="section-header">
+      <span class="section-title">Harmful Manipulation Exposure Context</span>
+      <span class="section-sub">Benchmark scores · Normalized 0–1</span>
+    </div>
+    <div class="card">
+      <div class="radar-grid">
+
+        <!-- Chart -->
+        <div class="radar-wrap">
+          <canvas id="radarChart" width="480" height="480"></canvas>
+        </div>
+
+        <!-- Legend panel -->
+        <div class="legend-panel">
+
+          <!-- Deployment contexts -->
+          <div>
+            <div class="legend-group-title">Deployment Context</div>
+            <div class="context-swatches">
+              <div class="context-swatch-row"><div class="context-block" style="background:#6366f1"></div> GPAI Systems</div>
+              <div class="context-swatch-row"><div class="context-block" style="background:#9ca3af"></div> Specialized Apps</div>
+              <div class="context-swatch-row"><div class="context-block" style="background:#ec4899"></div> AI Agents</div>
+              <div class="context-swatch-row"><div class="context-block" style="background:#10b981"></div> Misuse</div>
+              <div class="context-swatch-row"><div class="context-block" style="background:#f87171"></div> Direct Access</div>
+            </div>
+          </div>
+
+          <!-- Models -->
+          <div>
+            <div class="legend-group-title">Models</div>
+            <div class="legend-items">
+              <div class="legend-item">
+                <svg width="28" height="10"><line x1="0" y1="5" x2="28" y2="5" stroke="#10b981" stroke-width="2.5"/><circle cx="14" cy="5" r="3.5" fill="#10b981"/></svg>
+                GPT-4o
+              </div>
+              <div class="legend-item">
+                <svg width="28" height="10"><line x1="0" y1="5" x2="28" y2="5" stroke="#3b82f6" stroke-width="2" stroke-dasharray="5 3"/><rect x="10" y="2" width="8" height="6" fill="#3b82f6"/></svg>
+                Gemini
+              </div>
+              <div class="legend-item">
+                <svg width="28" height="10"><line x1="0" y1="5" x2="28" y2="5" stroke="#f05e23" stroke-width="2" stroke-dasharray="2 2"/><polygon points="14,1 17,9 11,9" fill="#f05e23"/></svg>
+                Claude
+              </div>
+            </div>
+          </div>
+
+          <!-- Score summary -->
+          <div>
+            <div class="legend-group-title">Benchmarks</div>
+            <table class="score-table">
+              <tr><td>Medical Advice<div class="score-bar" style="width:85%;background:#f05e23"></div></td><td>0.85</td></tr>
+              <tr><td>Mental Health<div class="score-bar" style="width:72%;background:#f59e0b"></div></td><td>0.72</td></tr>
+              <tr><td>Sycophancy<div class="score-bar" style="width:60%;background:#8b5cf6"></div></td><td>0.60</td></tr>
+              <tr><td>AgentBench<div class="score-bar" style="width:52%;background:#3b82f6"></div></td><td>0.52</td></tr>
+              <tr><td>Self Awareness<div class="score-bar" style="width:48%;background:#10b981"></div></td><td>0.48</td></tr>
+              <tr><td>SandBagging<div class="score-bar" style="width:45%;background:#14b8a6"></div></td><td>0.45</td></tr>
+              <tr><td>Persuade Me<div class="score-bar" style="width:38%;background:#f87171"></div></td><td>0.38</td></tr>
+            </table>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 2 – Line chart -->
+  <section id="versioning">
+    <div class="section-header">
+      <span class="section-title">Model Versioning Monitoring · GPT-4.5</span>
+      <span class="section-sub">Risk level · Jun – Nov</span>
+    </div>
+  <p class="hero-sub">
+    For a given model, harmful manipulation risk can fluctuate across versions as capabilities and guardrails evolve. This section tracks harmful manipulation risk levels across recent versions of frontier model. 
+  </p>
+
+    <div class="card">
+      <!-- Filter pills -->
+      <div class="risk-pills" id="pills">
+        <button class="pill active" data-idx="0" style="color:#8b5cf6;border-color:#8b5cf6;background:rgba(139,92,246,.08)"><span class="pill-dot" style="background:#8b5cf6"></span>GPAI Systems</button>
+        <button class="pill active" data-idx="1" style="color:#10b981;border-color:#10b981;background:rgba(16,185,129,.08)"><span class="pill-dot" style="background:#10b981"></span>Specialized Apps</button>
+        <button class="pill active" data-idx="2" style="color:#f59e0b;border-color:#f59e0b;background:rgba(245,158,11,.08)"><span class="pill-dot" style="background:#f59e0b"></span>AI Agents</button>
+        <button class="pill active" data-idx="3" style="color:#f87171;border-color:#f87171;background:rgba(248,113,113,.08)"><span class="pill-dot" style="background:#f87171"></span>Misuse</button>
+        <button class="pill active" data-idx="4" style="color:#3b82f6;border-color:#3b82f6;background:rgba(59,130,246,.08)"><span class="pill-dot" style="background:#3b82f6"></span>Direct Access</button>
+      </div>
+
+      <div class="line-wrap">
+        <canvas id="lineChart" height="220"></canvas>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- ── FOOTER ── -->
+<footer id="about">
+  <span>Risk Monitor · Harmful Manipulation Dashboard · May 2026</span>
+  <span>Synthetic benchmark data · For research purposes</span>
+</footer>
+
+<!-- ── SCRIPTS ── -->
+<script>
+/* ========== RADAR CHART ========== */
+const radarCtx = document.getElementById('radarChart').getContext('2d');
+const labels = [
+  'Finance', 'Mental Health Harms', 'Sycophancy', 'SandBagging',
+  'Self Awareness', 'Persuade Me If You Can', 'Influence Operations',
+  'AgentUpward', 'AgentBench', 'Medical Advice'
+];
+
+const radarData = {
+  labels,
+  datasets: [
+    {
+      label: 'GPT-4o',
+      data: [0.62, 0.54, 0.63, 0.44, 0.18, 0.15, 0.22, 0.74, 0.28, 0.72],
+      borderColor: '#10b981',
+      backgroundColor: 'rgba(16,185,129,0.07)',
+      borderWidth: 2.5,
+      pointBackgroundColor: '#10b981',
+      pointRadius: 4,
+      tension: 0.1,
+    },
+    {
+      label: 'Gemini',
+      data: [0.48, 0.68, 0.55, 0.27, 0.44, 0.23, 0.31, 0.32, 0.35, 0.68],
+      borderColor: '#3b82f6',
+      backgroundColor: 'rgba(59,130,246,0.07)',
+      borderWidth: 2,
+      borderDash: [5,3],
+      pointStyle: 'rect',
+      pointBackgroundColor: '#3b82f6',
+      pointRadius: 5,
+      tension: 0.1,
+    },
+    {
+      label: 'Claude',
+      data: [0.88, 0.72, 0.59, 0.47, 0.34, 0.27, 0.28, 0.22, 0.42, 0.85],
+      borderColor: '#f05e23',
+      backgroundColor: 'rgba(240,94,35,0.07)',
+      borderWidth: 2,
+      borderDash: [3,2],
+      pointStyle: 'triangle',
+      pointBackgroundColor: '#f05e23',
+      pointRadius: 5,
+      tension: 0.1,
+    },
+  ]
+};
+
+// Plugin: draw colored background sectors for deployment contexts
+const radarBgZones = {
+  id: 'radarBgZones',
+  beforeDraw(chart) {
+    if (chart.config.type !== 'radar') return;
+    const { ctx, scales: { r } } = chart;
+    const cx = r.xCenter, cy = r.yCenter;
+    const radius = r.drawingArea;
+    const count = chart.data.labels.length;
+    const angleSlice = (Math.PI * 2) / count;
+    const startOffset = -Math.PI / 2;
+    // Labels: Finance(0), Mental Health(1), Sycophancy(2), SandBagging(3),
+    //         Self Awareness(4), Persuade Me(5), Influence Operations(6),
+    //         AgentUpward(7), AgentBench(8), Medical Advice(9)
+    const zoneColors = [
+      'rgba(99,102,241,0.14)',   // 0 Finance → GPAI
+      'rgba(99,102,241,0.14)',   // 1 Mental Health → GPAI
+      'rgba(248,113,113,0.13)',  // 2 Sycophancy → Direct Access
+      'rgba(248,113,113,0.13)',  // 3 SandBagging → Direct Access
+      'rgba(248,113,113,0.13)',  // 4 Self Awareness → Direct Access
+      'rgba(16,185,129,0.13)',   // 5 Persuade Me → Misuse
+      'rgba(16,185,129,0.13)',   // 6 Influence Operations → Misuse
+      'rgba(236,72,153,0.13)',   // 7 AgentUpward → AI Agents
+      'rgba(236,72,153,0.13)',   // 8 AgentBench → AI Agents
+      'rgba(156,163,175,0.14)',  // 9 Medical Advice → Specialized Apps
+    ];
+    ctx.save();
+    for (let i = 0; i < count; i++) {
+      const startAngle = startOffset + i * angleSlice - angleSlice / 2;
+      const endAngle = startAngle + angleSlice;
+      ctx.beginPath();
+      ctx.moveTo(cx, cy);
+      ctx.arc(cx, cy, radius, startAngle, endAngle);
+      ctx.closePath();
+      ctx.fillStyle = zoneColors[i];
+      ctx.fill();
+    }
+    ctx.restore();
+  }
+};
+
+new Chart(radarCtx, {
+  type: 'radar',
+  plugins: [radarBgZones],
+  data: radarData,
+  options: {
+    responsive: true,
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#1a1e28',
+        borderColor: '#252a37',
+        borderWidth: 1,
+        titleColor: '#e8eaf0',
+        bodyColor: '#9ca3af',
+        titleFont: { family: "'DM Mono', monospace", size: 11 },
+        bodyFont: { family: "'Outfit', sans-serif", size: 12 },
+        callbacks: {
+          label: ctx => `  ${ctx.dataset.label}: ${ctx.raw.toFixed(2)}`
+        }
+      }
+    },
+    scales: {
+      r: {
+        min: 0, max: 1,
+        ticks: {
+          stepSize: 0.2,
+          color: '#6b7280',
+          font: { family: "'DM Mono', monospace", size: 10 },
+          backdropColor: 'transparent',
+        },
+        grid: { color: 'rgba(255,255,255,0.06)' },
+        angleLines: { color: 'rgba(255,255,255,0.06)' },
+        pointLabels: {
+          color: '#9ca3af',
+          font: { family: "'Outfit', sans-serif", size: 11.5, weight: '400' },
+        }
+      }
+    }
+  }
+});
+
+/* ========== LINE CHART ========== */
+const lineCtx = document.getElementById('lineChart').getContext('2d');
+const months = ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'];
+
+const seriesConfig = [
+  {
+    label: 'GPAI Systems',
+    data: [0.65, 1.3, 2.0, 2.6, 3.35, 3.95],
+    borderColor: '#8b5cf6',
+    backgroundColor: 'rgba(139,92,246,0.08)',
+    borderWidth: 2,
+    borderDash: [],
+    tension: 0.35,
+    fill: false,
+  },
+  {
+    label: 'Specialized Apps',
+    data: [4.0, 3.25, 2.45, 1.7, 1.05, 0.48],
+    borderColor: '#10b981',
+    backgroundColor: 'rgba(16,185,129,0.06)',
+    borderWidth: 2,
+    borderDash: [6,3],
+    tension: 0.3,
+    fill: false,
+  },
+  {
+    label: 'AI Agents',
+    data: [1.48, 1.65, 4.9, 1.65, 1.58, 1.5],
+    borderColor: '#f59e0b',
+    backgroundColor: 'rgba(245,158,11,0.06)',
+    borderWidth: 2,
+    borderDash: [8,4],
+    tension: 0.2,
+    fill: false,
+  },
+  {
+    label: 'Misuse',
+    data: [2.15, 2.12, 2.15, 2.18, 2.13, 2.16],
+    borderColor: '#f87171',
+    backgroundColor: 'rgba(248,113,113,0.05)',
+    borderWidth: 1.5,
+    borderDash: [3,3],
+    tension: 0.1,
+    fill: false,
+  },
+  {
+    label: 'Direct Access',
+    data: [1.01, 1.05, 1.08, 1.22, 2.62, 5.08],
+    borderColor: '#3b82f6',
+    backgroundColor: 'rgba(59,130,246,0.07)',
+    borderWidth: 2,
+    borderDash: [4,2],
+    tension: 0.45,
+    fill: false,
+  },
+];
+
+const lineChart = new Chart(lineCtx, {
+  type: 'line',
+  data: {
+    labels: months,
+    datasets: seriesConfig.map(s => ({
+      label: s.label,
+      data: s.data,
+      borderColor: s.borderColor,
+      backgroundColor: s.backgroundColor,
+      borderWidth: s.borderWidth,
+      borderDash: s.borderDash,
+      tension: s.tension,
+      fill: s.fill,
+      pointBackgroundColor: s.borderColor,
+      pointRadius: 5,
+      pointHoverRadius: 7,
+    }))
+  },
+  options: {
+    responsive: true,
+    interaction: { mode: 'index', intersect: false },
+    plugins: {
+      legend: { display: false },
+      tooltip: {
+        backgroundColor: '#12151c',
+        borderColor: '#252a37',
+        borderWidth: 1,
+        titleColor: '#9ca3af',
+        bodyColor: '#e8eaf0',
+        titleFont: { family: "'DM Mono', monospace", size: 11 },
+        bodyFont: { family: "'Outfit', sans-serif", size: 12 },
+        padding: 12,
+        callbacks: {
+          label: ctx => `  ${ctx.dataset.label}: ${ctx.raw.toFixed(2)}`
+        }
+      }
+    },
+    scales: {
+      x: {
+        grid: { color: 'rgba(255,255,255,0.04)' },
+        ticks: {
+          color: '#6b7280',
+          font: { family: "'DM Mono', monospace", size: 11 }
+        },
+        border: { color: 'rgba(255,255,255,0.08)' }
+      },
+      y: {
+        min: 0, max: 5.5,
+        grid: { color: 'rgba(255,255,255,0.05)' },
+        ticks: {
+          stepSize: 1,
+          color: '#6b7280',
+          font: { family: "'DM Mono', monospace", size: 11 },
+          callback: v => v.toFixed(0)
+        },
+        border: { color: 'rgba(255,255,255,0.08)' },
+        title: {
+          display: true,
+          text: 'Risk level',
+          color: '#6b7280',
+          font: { family: "'Outfit', sans-serif", size: 12, weight: '400' }
+        }
+      }
+    }
+  }
+});
+
+/* ── pill toggle ── */
+document.getElementById('pills').addEventListener('click', e => {
+  const btn = e.target.closest('.pill');
+  if (!btn) return;
+  const idx = +btn.dataset.idx;
+  const ds = lineChart.data.datasets[idx];
+  const hidden = lineChart.getDatasetMeta(idx).hidden;
+  lineChart.getDatasetMeta(idx).hidden = !hidden;
+  btn.style.opacity = hidden ? '1' : '0.35';
+  lineChart.update();
+});
+</script>
+</body>
+</html>
