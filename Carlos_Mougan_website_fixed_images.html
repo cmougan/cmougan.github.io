@@ -647,8 +647,7 @@
   <header class="hero" id="top">
     <div class="container hero-grid">
       <div>
-        <p class="eyebrow">Model Monitoring · AI Safety · Machine Learning</p>
-        <h1>Carlos Mougan</h1>
+        <p class="eyebrow">Evaluations & Monitoring · AI Safety · Machine Learning</p>
         <p class="lead">
           I work at the AI Office of the European Commission on the technical implementation
           and enforcement preparation of the EU AI Act for general-purpose AI.
@@ -658,6 +657,55 @@
           child safety and post-market monitoring. My research background spans AI
           evaluations, model monitoring, explainability, fairness and data quality.
         </p>
+        <div class="previous-experience">
+<div class="previous-experience">
+  <p>
+    Before joining the European Commission, I was a Principal Investigator and Applied Skills Advisor at
+    <a href="https://www.turing.ac.uk/" target="_blank" rel="noopener noreferrer">
+      <img src="https://cmougan.github.io/images/ati.png"
+           alt="The Alan Turing Institute"
+           style="height: 30px; width: auto; vertical-align: middle; margin: 0 4px;">
+    </a>,
+    a Marie Skłodowska-Curie Research Fellow within the NoBias network
+    <a href="https://nobias-project.eu/" target="_blank" rel="noopener noreferrer">
+      <img src="https://cmougan.github.io/images/ec.png"
+           alt="European Commission"
+           style="height: 28px; width: auto; vertical-align: middle; margin: 0 4px;">
+    </a>,
+    a statistician at the European Central Bank
+    <a href="https://www.ecb.europa.eu/" target="_blank" rel="noopener noreferrer">
+      <img src="https://cmougan.github.io/images/ecb.png"
+           alt="European Central Bank"
+           style="height: 22px; width: auto; vertical-align: middle; margin: 0 4px;">
+    </a>,
+    and a consultant at Deloitte Robotics
+    <img src="https://cmougan.github.io/images/deloitte.png"
+         alt="Deloitte"
+         style="height: 22px; width: auto; vertical-align: middle; margin: 0 4px;">.
+
+    I also held research positions and visits at
+    <img src="https://cmougan.github.io/images/bbc.png"
+         alt="BBC"
+         style="height: 24px; width: auto; vertical-align: middle; margin: 0 4px;">,
+    Barcelona Supercomputing Center
+    <img src="https://cmougan.github.io/images/bsc.jpeg"
+         alt="Barcelona Supercomputing Center"
+         style="height: 25px; width: auto; vertical-align: middle; margin: 0 4px;">,
+    IIIA-CSIC
+    <img src="https://cmougan.github.io/images/iiia.png"
+         alt="IIIA-CSIC"
+         style="height: 24px; width: auto; vertical-align: middle; margin: 0 4px;">,
+    and SCHUFA
+    <img src="https://cmougan.github.io/images/schufa.png"
+         alt="SCHUFA"
+         style="height: 22px; width: auto; vertical-align: middle; margin: 0 4px;">.
+
+    Before my research career, I competed as an elite swimmer
+    <img src="https://cmougan.github.io/images/swimming.jpeg"
+         alt="Swimming"
+         style="height: 28px; width: auto; vertical-align: middle; margin-left: 4px;">.
+  </p>
+</div>
 
         <div class="hero-actions">
           <a class="button" href="https://www.linkedin.com/in/carlosmougan/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
@@ -686,7 +734,7 @@
             <h3>AI Act & Regulation</h3>
             <p>
               Technical implementation and enforcement preparation for the EU AI Act,
-              with a focus on general-purpose AI model and it's integration.
+              with a focus on general-purpose AI model and it's integration. See our Science paper on proportionality in AI evaluations for an example of the work.
             </p>
           </article>
 
@@ -996,5 +1044,62 @@
       </span>
     </div>
   </footer>
+</body>
+<!-- Flying image -->
+  <footer>
+    <div class="container footer-inner">
+      <span>© Carlos Mougan</span>
+      <span>
+        <a href="https://github.com/cmougan" target="_blank" rel="noopener noreferrer">GitHub</a>
+        ·
+        <a href="https://www.linkedin.com/in/carlosmougan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        ·
+        <a href="https://scholar.google.com/citations?user=dQ5WrokAAAAJ&hl" target="_blank" rel="noopener noreferrer">Scholar</a>
+      </span>
+    </div>
+  </footer>
+
+  <!-- Flying image -->
+  <div class="flier" aria-hidden="true">
+    <img
+      id="random-flier"
+      src="https://cortex.persona.co/t/original/i/63948173123c3e21a534cf7b935788a368c48474133a84384ffa3748061a114f/CONGA3.png"
+      alt=""
+    >
+  </div>
+
+  <script>
+    const flier = document.getElementById("random-flier");
+
+    function moveRandomly() {
+      const imageWidth = flier.offsetWidth;
+      const imageHeight = flier.offsetHeight;
+
+      const maxX = Math.max(0, window.innerWidth - imageWidth);
+      const maxY = Math.max(0, window.innerHeight - imageHeight);
+
+      const x = Math.random() * maxX;
+      const y = Math.random() * maxY;
+      const rotation = -25 + Math.random() * 50;
+
+      // Random duration between 3 and 8 seconds
+      const duration = 3000 + Math.random() * 5000;
+
+      flier.style.transition =
+        `transform ${duration}ms ease-in-out`;
+
+      flier.style.transform =
+        `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg)`;
+
+      setTimeout(moveRandomly, duration);
+    }
+
+    if (flier.complete) {
+      moveRandomly();
+    } else {
+      flier.addEventListener("load", moveRandomly);
+    }
+  </script>
+
 </body>
 </html>
