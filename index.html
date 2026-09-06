@@ -1,27 +1,23 @@
 <!DOCTYPE html>
-<!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d84a16b312864d2899a52268d06df6c1"}'></script><!-- End Cloudflare Web Analytics -->
+
+
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Carlos Mougan</title>
-  <meta name="description" content="Carlos Mougan works on AI evaluations, model monitoring, machine learning and technical AI strategy at the European Commission AI Office. Research on AI safety, model behaviour, fairness and data quality.">
-  <meta name="author" content="Carlos Mougan">
-  <meta name="keywords" content="Carlos Mougan, AI Evaluations, Model Monitoring, AI Safety, Model Behaviour, Machine Learning, Technical AI Strategy, Research Leadership, European Commission">
-
-  <link rel="canonical" href="https://cmougan.eu/">
-  <link rel="icon" type="image/png" href="https://cmougan.eu/images/surficon.png">
-
-  <meta property="og:type" content="website">
-  <meta property="og:title" content="Carlos Mougan — AI Evaluations, Model Monitoring & Machine Learning">
-  <meta property="og:description" content="Technical work on AI evaluations, model behaviour, model monitoring and machine learning, combining applied research with multidisciplinary project leadership.">
-  <meta property="og:url" content="https://cmougan.eu/">
-  <meta property="og:site_name" content="Carlos Mougan">
-
-  <meta name="google-site-verification" content="dHVLdlC0WYNPa1popeVQ2bll6YgTWAqRdCm-6yZ4HpM">
-
-  <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1" name="viewport"/>
+<title>Carlos Mougan</title>
+<meta content="Carlos Mougan works on AI evaluations, model monitoring, machine learning and technical AI strategy at the European Commission AI Office. Research on AI safety, model behaviour, fairness and data quality." name="description"/>
+<meta content="Carlos Mougan" name="author"/>
+<meta content="Carlos Mougan, AI Evaluations, Model Monitoring, AI Safety, Model Behaviour, Machine Learning, Technical AI Strategy, Research Leadership, European Commission" name="keywords"/>
+<link href="https://cmougan.eu/" rel="canonical"/>
+<link href="https://cmougan.eu/images/surficon.png" rel="icon" type="image/png"/>
+<meta content="website" property="og:type"/>
+<meta content="Carlos Mougan — AI Evaluations, Model Monitoring &amp; Machine Learning" property="og:title"/>
+<meta content="Technical work on AI evaluations, model behaviour, model monitoring and machine learning, combining applied research with multidisciplinary project leadership." property="og:description"/>
+<meta content="https://cmougan.eu/" property="og:url"/>
+<meta content="Carlos Mougan" property="og:site_name"/>
+<meta content="dHVLdlC0WYNPa1popeVQ2bll6YgTWAqRdCm-6yZ4HpM" name="google-site-verification"/>
+<script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -35,485 +31,852 @@
   }
   </script>
 
-<link rel="stylesheet" href="style.css">
+<script data-cf-beacon='{"token": "d84a16b312864d2899a52268d06df6c1"}' src="https://static.cloudflareinsights.com/beacon.min.js" type="module"></script><style id="site-redesign">
+/* =============================================================
+   CARLOS MOUGAN — DOCUMENT-STYLE PERSONAL WEBSITE
+   All layout styles are here. No framework, font download, or build step.
+   ============================================================= */
+:root {
+  --page: #ffffff;
+  --ink: #191919;
+  --body: #424242;
+  --muted: #6b6b6b;
+  --line: #e7e7e7;
+  --soft: #f6f6f5;
+  --hover: #eeeeed;
+  --header-height: 76px;
+  --sidebar-width: 246px;
+  --reading-width: 960px;
+  --gutter: clamp(32px, 5.1vw, 88px);
+  color-scheme: light;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+  font-synthesis: none;
+  -webkit-text-size-adjust: 100%;
+  text-size-adjust: 100%;
+}
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: calc(var(--header-height) + 32px); }
+body { margin: 0; color: var(--ink); background: var(--page); font-size: 16px; line-height: 1.75; -webkit-font-smoothing: antialiased; }
+[hidden] { display: none !important; }
+a { color: inherit; text-underline-offset: 4px; text-decoration-thickness: 1px; }
+a:hover { text-decoration-color: var(--ink); }
+button, summary { font: inherit; }
+button, a, summary { -webkit-tap-highlight-color: transparent; }
+button { color: inherit; }
+button, summary { touch-action: manipulation; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 2px solid var(--ink); outline-offset: 5px; border-radius: 2px; }
+img { max-width: 100%; }
+svg { display: block; flex: none; }
+h1, h2, h3, p { margin: 0; }
+h1, h2, h3 { font-weight: 500; text-wrap: balance; }
+h2 { font-size: clamp(29px, 2.8vw, 39px); line-height: 1.2; letter-spacing: -0.035em; }
+h3 { font-size: 20px; line-height: 1.4; letter-spacing: -0.018em; }
+strong { font-weight: 600; }
+::selection { color: #111; background: #e4e4e1; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.skip-link { position: fixed; left: 20px; top: 12px; z-index: 200; padding: 8px 16px; background: var(--ink); color: #fff; transform: translateY(-160%); text-decoration: none; }
+.skip-link:focus { transform: translateY(0); }
 
-</head>
+/* Quiet fixed header and desktop table of contents. */
+.site-header { position: fixed; inset: 0 0 auto; z-index: 70; height: var(--header-height); background: var(--page); border-bottom: 1px solid var(--line); }
+.header-inner { height: 100%; padding: 0 32px; display: flex; align-items: center; justify-content: space-between; gap: 20px; }
+.brand { font-size: 20px; line-height: 1.2; font-weight: 600; letter-spacing: -0.055em; text-decoration: none; white-space: nowrap; }
+.header-links { display: flex; align-items: center; gap: 28px; }
+.header-link { font-size: 13px; text-decoration: none; }
+.header-link:hover { text-decoration: underline; }
+.header-cv { min-height: 40px; display: inline-flex; align-items: center; gap: 20px; padding: 7px 16px; border: 1px solid var(--line); border-radius: 999px; font-size: 13px; line-height: 1.5; text-decoration: none; transition: background .18s ease; }
+.header-cv:hover { background: var(--soft); }
+.reading-progress { position: absolute; left: 0; bottom: -1px; height: 2px; width: 100%; background: var(--ink); transform: scaleX(0); transform-origin: left; pointer-events: none; }
+.sidebar { position: fixed; inset: var(--header-height) auto 0 0; z-index: 50; width: var(--sidebar-width); padding: 43px 22px 24px 32px; display: flex; flex-direction: column; gap: 32px; border-right: 1px solid var(--line); overflow-y: auto; background: var(--page); }
+.toc-label { margin: 0 0 18px 10px; font-size: 12px; color: var(--muted); }
+.toc-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 4px; }
+.toc-link { position: relative; display: flex; align-items: center; gap: 12px; min-height: 42px; padding: 9px 10px; font-size: 14px; line-height: 1.45; color: var(--muted); text-decoration: none; border-radius: 3px; transition: color .15s ease, background .15s ease; }
+.toc-link:hover { color: var(--ink); background: var(--soft); }
+.toc-link[aria-current="location"] { color: var(--ink); background: var(--soft); font-weight: 500; }
+.toc-link[aria-current="location"]::before { content: ""; position: absolute; top: 12px; bottom: 12px; left: 0; width: 2px; background: var(--ink); }
+.toc-number { min-width: 17px; font-size: 11px; font-variant-numeric: tabular-nums; color: var(--muted); }
+.sidebar-bottom { margin-top: auto; padding: 26px 10px 0; border-top: 1px solid var(--line); }
+.sidebar-cv { display: flex; align-items: center; justify-content: space-between; min-height: 42px; font-size: 13px; text-decoration: none; }
+.sidebar-cv:hover { text-decoration: underline; }
+.sidebar-socials { display: flex; gap: 18px; margin: 13px 0 20px; font-size: 12px; color: var(--muted); }
+.sidebar-socials a { text-decoration: none; }
+.sidebar-socials a:hover { text-decoration: underline; }
+.motion-toggle { display: inline-flex; align-items: center; gap: 7px; min-height: 36px; border: 0; padding: 6px 0; background: transparent; color: var(--muted); cursor: pointer; font-size: 11px; }
+.motion-toggle:hover { color: var(--ink); }
+.motion-toggle:disabled { opacity: .6; cursor: default; }
+.motion-symbol { display: inline-flex; justify-content: center; width: 14px; font-size: 11px; }
+.mobile-toc, .mobile-motion { display: none; }
 
-<body>
+/* The single reading column, with generous margins and restrained type. */
+.document-shell { margin-left: var(--sidebar-width); padding: calc(var(--header-height) + 44px) var(--gutter) 0; }
+.document { max-width: var(--reading-width); margin: 0 auto; min-width: 0; }
+.document:focus { outline: none; }
+.document-path { display: flex; align-items: center; gap: 10px; margin-bottom: 52px; font-size: 12px; line-height: 1.5; color: var(--muted); }
+.document-path a { text-decoration: none; }
+.document-path a:hover { text-decoration: underline; }
+.path-separator { color: #aaa; }
+.container { width: 100%; }
+.hero { padding-bottom: 68px; scroll-margin-top: 0; }
+.hero-title-block { margin-bottom: 38px; }
+h1 { font-size: clamp(48px, 5.5vw, 78px); line-height: 1.08; letter-spacing: -0.06em; }
+.eyebrow { max-width: 680px; margin-top: 22px; color: var(--muted); font-size: 13px; line-height: 1.7; letter-spacing: .015em; }
+.hero-grid { display: grid; grid-template-columns: minmax(0, 1fr) 172px; gap: 46px; align-items: start; }
+.introduction { min-width: 0; }
+.hero-note { font-size: 18px; line-height: 1.85; letter-spacing: -.012em; color: var(--body); }
+.profile-photo-wrap { position: relative; padding-top: 5px; }
+.profile-photo { display: block; width: 172px; height: 214px; object-fit: cover; object-position: center 35%; border-radius: 3px; background: var(--soft); }
+.photo-accent { display: none; }
+.previous-experience { margin-top: 30px; color: var(--body); font-size: 15px; line-height: 1.95; }
+.previous-experience p { margin: 0; }
+.previous-experience img { max-width: 100%; object-fit: contain; }
+.previous-experience a { text-decoration: none; }
+.hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 26px; margin-top: 30px; }
+.button { display: inline-flex; align-items: center; min-height: 40px; padding: 4px 0; border-bottom: 1px solid #bdbdbd; font-size: 13px; line-height: 1.5; text-decoration: none; }
+.button:hover { border-color: var(--ink); }
+section { border-top: 1px solid var(--line); padding: 48px 0 62px; scroll-margin-top: 0; }
+.section-header { margin-bottom: 33px; }
+.section-kicker { display: flex; align-items: center; gap: 10px; margin-bottom: 16px; color: var(--muted); font-size: 12px; line-height: 1.5; }
+.section-index { font-size: 11px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.section-intro { max-width: 740px; margin-top: 18px; color: var(--body); font-size: 16px; line-height: 1.8; }
+.focus-grid { display: grid; }
+.focus-card { display: grid; grid-template-columns: 118px minmax(0, 1fr); column-gap: 26px; row-gap: 10px; padding: 24px 0; border-top: 1px solid var(--line); }
+.focus-card:first-child { border-top: 0; padding-top: 0; }
+.focus-card:last-child { padding-bottom: 0; }
+.focus-card .number { grid-column: 1; grid-row: 1 / span 2; padding-top: 3px; color: var(--muted); font-size: 12px; }
+.focus-card h3, .focus-card p { grid-column: 2; }
+.focus-card p { color: var(--body); font-size: 15px; line-height: 1.85; }
+.focus-card p a { text-decoration-color: #bdbdbd; }
 
-  <!-- Random flying image: fixed to the browser viewport -->
-<img
-id="random-flier"
-src="https://cortex.persona.co/t/original/i/63948173123c3e21a534cf7b935788a368c48474133a84384ffa3748061a114f/CONGA3.png"
-alt=""
-aria-hidden="true"
->
+/* Experience and publications remain complete, rather than truncated cards. */
+.role { display: grid; grid-template-columns: 138px minmax(0, 1fr); gap: 28px; padding: 27px 0; border-top: 1px solid var(--line); }
+.role:first-child { padding-top: 0; border-top: 0; }
+.role:last-child { padding-bottom: 0; }
+.role-date { padding-top: 4px; color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.role-org { margin-top: 5px; color: var(--muted); font-size: 13px; }
+.role p { margin-top: 12px; color: var(--body); font-size: 15px; line-height: 1.85; }
+.pub-featured { margin-bottom: 22px; padding: 27px 30px 29px; background: var(--soft); border-radius: 3px; }
+.pub-year { color: var(--muted); font-size: 12px; font-variant-numeric: tabular-nums; }
+.pub-title { font-size: 18px; line-height: 1.5; letter-spacing: -.014em; font-weight: 500; text-wrap: pretty; }
+.pub-featured .pub-title { max-width: 720px; margin-top: 11px; font-size: 25px; line-height: 1.4; letter-spacing: -.025em; }
+.pub-authors { margin-top: 9px; font-size: 13px; line-height: 1.8; color: var(--body); }
+.pub-venue { margin-top: 4px; font-size: 12px; color: var(--muted); }
+.publication { display: grid; grid-template-columns: 76px minmax(0, 1fr); gap: 26px; padding: 23px 0; border-bottom: 1px solid var(--line); }
+.publication .pub-year { padding-top: 4px; }
 
-  <nav class="site-nav" aria-label="Primary navigation">
-    <div class="container nav-inner">
-      <a class="brand" href="#top">Carlos Mougan</a>
-      <div class="nav-links">
-        <a href="#work">Work</a>
-        <a href="#experience">Experience</a>
-        <a href="#research">Research</a>
-        <a href="#background">Background</a>
-        <a href="https://cmougan.eu/cmougan_CV.pdf">CV</a>
-      </div>
-    </div>
-  </nav>
+/* Background, talks, and the original photo gallery. */
+.two-col { display: grid; grid-template-columns: 1.1fr 1fr; gap: 48px; }
+.panel + .panel { border-left: 1px solid var(--line); padding-left: 36px; }
+.panel > h3 { margin-bottom: 22px; font-size: 18px; }
+.education-list { display: grid; gap: 23px; }
+.degree { display: grid; gap: 6px; font-size: 13px; line-height: 1.8; }
+.degree strong { font-size: 14px; line-height: 1.6; }
+.degree span { color: var(--muted); }
+.compact-list { margin: 0; padding-left: 17px; color: var(--body); font-size: 14px; line-height: 1.9; }
+.compact-list li + li { margin-top: 17px; }
+.compact-list a { text-decoration-color: #bdbdbd; overflow-wrap: anywhere; }
+.talk { display: grid; grid-template-columns: 240px minmax(0, 1fr); gap: 28px; padding: 22px 0; border-top: 1px solid var(--line); }
+.talk:first-child { padding-top: 0; border: 0; }
+.talk:last-child { padding-bottom: 0; }
+.talk strong { font-size: 13px; font-weight: 500; line-height: 1.8; }
+.talk span { color: var(--body); font-size: 15px; line-height: 1.8; }
+.gallery { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.gallery img { display: block; width: 100%; aspect-ratio: 4 / 3; height: auto; object-fit: cover; border-radius: 3px; background: var(--soft); }
+footer { padding: 28px 0 36px; border-top: 1px solid var(--line); font-size: 12px; color: var(--muted); }
+.footer-inner { display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px; }
+footer a { text-decoration: none; }
+footer a:hover { text-decoration: underline; }
+.back-to-top { display: inline-flex; align-items: center; min-height: 36px; margin-top: 16px; font-size: 12px; text-decoration: none; }
 
-  <header class="hero" id="top">
-    <div class="container hero-grid">
-      <div>
-        <p class="eyebrow">AI Evaluations · Model Monitoring · Applied Machine Learning</p>
-        <p class="hero-note">
+/* Original moving object: decorative and never intercepts clicks. */
+#random-flier {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 40;
+  width: clamp(220px, 25vw, 400px);
+  height: auto;
+  max-height: 360px;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-drag: none;
+  visibility: hidden;
+  will-change: transform;
+}
+#random-flier.is-ready { visibility: visible; }
+
+@media (min-width: 1700px) {
+  :root { --sidebar-width: 270px; }
+  .sidebar { padding-left: 40px; padding-right: 30px; }
+  .header-inner { padding: 0 40px; }
+}
+@media (max-width: 1180px) and (min-width: 961px) {
+  :root { --sidebar-width: 222px; --gutter: 36px; }
+  .sidebar { padding-left: 23px; padding-right: 17px; }
+  .hero-grid { grid-template-columns: minmax(0, 1fr) 144px; gap: 30px; }
+  .profile-photo { width: 144px; height: 184px; }
+  .hero-note { font-size: 17px; }
+  .two-col { gap: 28px; }
+  .panel + .panel { padding-left: 26px; }
+  .talk { grid-template-columns: 200px minmax(0,1fr); }
+}
+@media (max-width: 960px) {
+  :root { --header-height: 66px; --gutter: 36px; }
+  html { scroll-padding-top: 140px; }
+  .header-inner { padding: 0 var(--gutter); }
+  .sidebar { display: none; }
+  .header-links { gap: 20px; }
+  .header-link { display: none; }
+  .mobile-motion { display: inline-flex; min-height: 40px; min-width: 34px; justify-content: center; padding: 5px; }
+  .mobile-motion .motion-symbol { font-size: 14px; }
+  .mobile-motion .motion-text { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+  .mobile-toc { display: block; position: fixed; inset: var(--header-height) 0 auto; z-index: 60; background: var(--page); border-bottom: 1px solid var(--line); }
+  .mobile-toc summary { min-height: 49px; display: flex; align-items: center; gap: 12px; padding: 10px var(--gutter); font-size: 12px; cursor: pointer; list-style: none; }
+  .mobile-toc summary::-webkit-details-marker { display: none; }
+  .mobile-toc-label { color: var(--muted); }
+  .mobile-toc-current { margin-left: auto; }
+  .toc-chevron { width: 12px; height: 12px; margin-left: 2px; transition: transform .2s ease; }
+  .mobile-toc[open] .toc-chevron { transform: rotate(180deg); }
+  .mobile-toc nav { padding: 8px var(--gutter) 18px; max-height: min(65vh, 440px); overflow-y: auto; border-top: 1px solid var(--line); box-shadow: 0 12px 16px -18px #666; }
+  .mobile-toc .toc-list { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 6px 20px; }
+  .mobile-toc .toc-link { min-height: 44px; }
+  .document-shell { margin-left: 0; padding-top: 151px; }
+  .document-path { margin-bottom: 40px; }
+  h1 { font-size: clamp(48px, 7.7vw, 68px); }
+  .hero, section { scroll-margin-top: 0; }
+  .hero-grid { grid-template-columns: minmax(0,1fr) 154px; gap: 38px; }
+  .profile-photo { width: 154px; height: 196px; }
+  .hero-note { font-size: 17px; }
+}
+@media (max-width: 600px) {
+  :root { --gutter: 23px; }
+  body { font-size: 15px; }
+  .brand { font-size: 18px; }
+  .header-links { gap: 8px; }
+  .header-cv { min-height: 38px; padding: 6px 12px; gap: 12px; font-size: 12px; }
+  .document-shell { padding-top: 145px; }
+  .document-path { margin-bottom: 34px; }
+  .hero { padding-bottom: 44px; }
+  .hero-title-block { margin-bottom: 27px; }
+  h1 { font-size: clamp(42px, 10.4vw, 60px); letter-spacing: -.055em; }
+  .eyebrow { margin-top: 18px; font-size: 12px; line-height: 1.9; max-width: 350px; }
+  .hero-grid { display: flex; flex-direction: column; gap: 24px; }
+  .profile-photo-wrap { order: -1; padding-top: 0; }
+  .profile-photo { width: 114px; height: 142px; }
+  .hero-note { font-size: 16px; line-height: 1.9; }
+  .previous-experience { margin-top: 24px; font-size: 14px; line-height: 2; }
+  .hero-actions { gap: 24px; margin-top: 23px; }
+  .button { font-size: 12px; }
+  section { padding: 34px 0 42px; }
+  .section-kicker { margin-bottom: 13px; font-size: 11px; }
+  .section-header { margin-bottom: 27px; }
+  h2 { font-size: 29px; line-height: 1.22; }
+  h3 { font-size: 18px; }
+  .section-intro { font-size: 15px; line-height: 1.9; }
+  .focus-card { display: block; padding: 23px 0; }
+  .focus-card .number { display: block; margin-bottom: 9px; padding: 0; font-size: 11px; }
+  .focus-card p { margin-top: 9px; font-size: 14px; }
+  .role { grid-template-columns: 1fr; gap: 9px; padding: 24px 0; }
+  .role-date { padding: 0; font-size: 11px; }
+  .role-org { font-size: 12px; }
+  .role p { font-size: 14px; }
+  .pub-featured { padding: 23px; margin-bottom: 14px; }
+  .pub-featured .pub-title { font-size: 22px; }
+  .publication { grid-template-columns: 40px minmax(0,1fr); gap: 14px; padding: 22px 0; }
+  .pub-title { font-size: 17px; }
+  .pub-year { font-size: 11px; }
+  .pub-authors, .pub-venue { font-size: 12px; }
+  .two-col { grid-template-columns: 1fr; gap: 28px; }
+  .panel + .panel { padding: 28px 0 0; border-left: 0; border-top: 1px solid var(--line); }
+  .talk { grid-template-columns: 1fr; gap: 6px; padding: 20px 0; }
+  .talk strong { font-size: 12px; }
+  .talk span { font-size: 14px; }
+  .gallery { grid-template-columns: 1fr; gap: 16px; }
+  .footer-inner { align-items: flex-start; flex-direction: column; gap: 7px; }
+  .mobile-toc .toc-list { grid-template-columns: 1fr; gap: 3px; }
+  #random-flier { width: 68px; max-height: 94px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .toc-link, .header-cv, .toc-chevron { transition: none; }
+}
+@media print {
+  :root { --gutter: 0px; }
+  body { color: #111; font-size: 11pt; }
+  .site-header, .sidebar, .mobile-toc, #random-flier, .skip-link, .document-path, .back-to-top { display: none !important; }
+  .document-shell { margin: 0; padding: 0; }
+  .document { max-width: none; }
+  .hero { padding-bottom: 25px; }
+  h1 { font-size: 38pt; }
+  h2 { font-size: 24pt; }
+  section { padding: 25px 0; }
+  .hero-grid { display: grid; grid-template-columns: 1fr 115px; gap: 24px; }
+  .profile-photo { width: 115px; height: 145px; }
+  .profile-photo-wrap { order: initial; }
+  .hero-note, .previous-experience, .section-intro { font-size: 11pt; }
+  .role, .publication, .pub-featured, .talk, .degree, .focus-card { break-inside: avoid; }
+  h2, h3, .section-header { break-after: avoid; }
+  .gallery { grid-template-columns: 1fr 1fr; }
+  .gallery img { break-inside: avoid; }
+  a { text-decoration: none; }
+}
+</style><meta content="#ffffff" name="theme-color"/></head>
+<body><img alt="" aria-hidden="true" id="random-flier" src="https://cortex.persona.co/t/original/i/63948173123c3e21a534cf7b935788a368c48474133a84384ffa3748061a114f/CONGA3.png"/>
+<a class="skip-link" href="#main-content">Skip to content</a>
+<header class="site-header">
+<nav aria-label="Primary navigation" class="header-inner">
+<a class="brand" href="#top">Carlos Mougan</a>
+<div class="header-links">
+<a class="header-link" href="https://www.linkedin.com/in/carlosmougan/" rel="noopener noreferrer" target="_blank">LinkedIn ↗</a>
+<button aria-label="Pause animation" aria-pressed="false" class="motion-toggle mobile-motion" hidden="" title="Pause the moving image" type="button"><span aria-hidden="true" class="motion-symbol">Ⅱ</span><span class="motion-text">Pause animation</span></button>
+<a class="header-cv" href="https://cmougan.eu/cmougan_CV.pdf"><span>View CV</span><span aria-hidden="true">↗</span></a>
+</div>
+</nav>
+<div aria-hidden="true" class="reading-progress"></div>
+</header>
+<aside aria-label="Page contents" class="sidebar">
+<nav aria-label="On this page">
+<p class="toc-label">On this page</p>
+<ul class="toc-list"><li><a aria-current="location" class="toc-link" data-section="top" href="#top"><span aria-hidden="true" class="toc-number">00</span><span>Overview</span></a></li><li><a class="toc-link" data-section="work" href="#work"><span aria-hidden="true" class="toc-number">01</span><span>Work</span></a></li><li><a class="toc-link" data-section="experience" href="#experience"><span aria-hidden="true" class="toc-number">02</span><span>Experience</span></a></li><li><a class="toc-link" data-section="research" href="#research"><span aria-hidden="true" class="toc-number">03</span><span>Research</span></a></li><li><a class="toc-link" data-section="background" href="#background"><span aria-hidden="true" class="toc-number">04</span><span>Background</span></a></li><li><a class="toc-link" data-section="talks" href="#talks"><span aria-hidden="true" class="toc-number">05</span><span>Selected talks</span></a></li><li><a class="toc-link" data-section="personal" href="#personal"><span aria-hidden="true" class="toc-number">06</span><span>Outside work</span></a></li></ul>
+</nav>
+<div class="sidebar-bottom">
+<a class="sidebar-cv" href="https://cmougan.eu/cmougan_CV.pdf"><span>View CV</span><span aria-hidden="true">↗</span></a>
+<div class="sidebar-socials">
+<a href="https://www.linkedin.com/in/carlosmougan/" rel="noopener noreferrer" target="_blank">LinkedIn ↗</a>
+<a href="https://scholar.google.com/citations?user=dQ5WrokAAAAJ&amp;hl" rel="noopener noreferrer" target="_blank">Scholar ↗</a>
+</div>
+<button aria-label="Pause animation" aria-pressed="false" class="motion-toggle" hidden="" title="Pause the moving image" type="button"><span aria-hidden="true" class="motion-symbol">Ⅱ</span><span class="motion-text">Pause animation</span></button>
+</div>
+</aside>
+<details class="mobile-toc">
+<summary>
+<span class="mobile-toc-label">On this page</span>
+<span class="mobile-toc-current">Overview</span>
+<svg aria-hidden="true" class="toc-chevron" viewbox="0 0 12 12"><path d="m2 4 4 4 4-4" fill="none" stroke="currentColor" stroke-width="1.2"></path></svg>
+</summary>
+<nav aria-label="Mobile page contents"><ul class="toc-list"><li><a aria-current="location" class="toc-link" data-section="top" href="#top"><span aria-hidden="true" class="toc-number">00</span><span>Overview</span></a></li><li><a class="toc-link" data-section="work" href="#work"><span aria-hidden="true" class="toc-number">01</span><span>Work</span></a></li><li><a class="toc-link" data-section="experience" href="#experience"><span aria-hidden="true" class="toc-number">02</span><span>Experience</span></a></li><li><a class="toc-link" data-section="research" href="#research"><span aria-hidden="true" class="toc-number">03</span><span>Research</span></a></li><li><a class="toc-link" data-section="background" href="#background"><span aria-hidden="true" class="toc-number">04</span><span>Background</span></a></li><li><a class="toc-link" data-section="talks" href="#talks"><span aria-hidden="true" class="toc-number">05</span><span>Selected talks</span></a></li><li><a class="toc-link" data-section="personal" href="#personal"><span aria-hidden="true" class="toc-number">06</span><span>Outside work</span></a></li></ul></nav>
+</details>
+<div class="document-shell">
+<main class="document" id="main-content" tabindex="-1">
+<nav aria-label="Breadcrumb" class="document-path"><a href="#top">Home</a><span aria-hidden="true" class="path-separator">/</span><span aria-current="page">Overview</span></nav>
+<header class="hero" id="top"><div class="hero-title-block"><h1>Carlos Mougan</h1><p class="eyebrow">AI Evaluations · Model Monitoring · Applied Machine Learning</p></div>
+<div class="hero-grid">
+<div class="introduction">
+
+<p class="hero-note">
           At the European Commission AI Office, I work on emerging risks from
           general-purpose AI, including harmful manipulation, child safety and post market monitoring. I've been working on AI for +8 years, and my broader research and work experience spans the whole AI life cycle, from data quality to deployment and monitoring and policy. I also work with interdisciplinary technical teams and external research collaborations, and have published in Science, Nature Machine Intelligence, NeurIPS, AAAI, AIES and TMLR.
         </p>
-        <div class="previous-experience">
-  <p>
+
+
+</div>
+<div class="profile-photo-wrap">
+<img alt="Carlos Mougan" class="profile-photo" src="https://cmougan.eu/images/me.jpg"/>
+<span aria-hidden="true" class="photo-accent"></span>
+</div>
+</div>
+<div class="previous-experience">
+<p>
     Before joining the European Commission, I was a Principal Investigator and Applied Skills Advisor at
-    <a href="https://www.turing.ac.uk/" target="_blank" rel="noopener noreferrer">
-      <img src="https://cmougan.github.io/images/ati.png"
-           alt="The Alan Turing Institute"
-           style="height: 30px; width: auto; vertical-align: middle; margin: 0 4px;">
-    </a>
+    <a href="https://www.turing.ac.uk/" rel="noopener noreferrer" target="_blank">
+<img alt="The Alan Turing Institute" src="https://cmougan.github.io/images/ati.png" style="height: 30px; width: auto; vertical-align: middle; margin: 0 4px;"/>
+</a>
     a Marie Skłodowska-Curie Research Fellow
-    <a href="https://nobias-project.eu/" target="_blank" rel="noopener noreferrer">
-      <img src="https://cmougan.github.io/images/mca.png"
-           alt="Marie Curie Action"
-           style="height: 28px; width: auto; vertical-align: middle; margin: 0 4px;">
-    </a>,
+    <a href="https://nobias-project.eu/" rel="noopener noreferrer" target="_blank">
+<img alt="Marie Curie Action" src="https://cmougan.github.io/images/mca.png" style="height: 28px; width: auto; vertical-align: middle; margin: 0 4px;"/>
+</a>,
     a statistician at the European Central Bank
-    <a href="https://www.ecb.europa.eu/" target="_blank" rel="noopener noreferrer">
-      <img src="https://cmougan.github.io/images/ecb.png"
-           alt="European Central Bank"
-           style="height: 22px; width: auto; vertical-align: middle; margin: 0 4px;">
-    </a>,
+    <a href="https://www.ecb.europa.eu/" rel="noopener noreferrer" target="_blank">
+<img alt="European Central Bank" src="https://cmougan.github.io/images/ecb.png" style="height: 22px; width: auto; vertical-align: middle; margin: 0 4px;"/>
+</a>,
     and a consultant at Deloitte Robotics
-    <img src="https://cmougan.github.io/images/deloitte.png"
-         alt="Deloitte"
-         style="height: 22px; width: auto; vertical-align: middle; margin: 0 4px;">.
+    <img alt="Deloitte" src="https://cmougan.github.io/images/deloitte.png" style="height: 22px; width: auto; vertical-align: middle; margin: 0 4px;"/>.
 
 I also held research positions and visits at
-<img src="https://cmougan.github.io/images/bbc.png"
-     alt="BBC"
-     style="height: 24px; width: auto; vertical-align: middle; margin: 0 4px;">,
+<img alt="BBC" src="https://cmougan.github.io/images/bbc.png" style="height: 24px; width: auto; vertical-align: middle; margin: 0 4px;"/>,
 Barcelona Supercomputing Center
-<img src="https://cmougan.github.io/images/bsc.jpeg"
-     alt="Barcelona Supercomputing Center"
-     style="height: 25px; width: auto; vertical-align: middle; margin: 0 4px;">,
+<img alt="Barcelona Supercomputing Center" src="https://cmougan.github.io/images/bsc.jpeg" style="height: 25px; width: auto; vertical-align: middle; margin: 0 4px;"/>,
 IIIA-CSIC
-<img src="https://cmougan.github.io/images/iiia.png"
-     alt="IIIA-CSIC"
-     style="height: 24px; width: auto; vertical-align: middle; margin: 0 4px;">,
+<img alt="IIIA-CSIC" src="https://cmougan.github.io/images/iiia.png" style="height: 24px; width: auto; vertical-align: middle; margin: 0 4px;"/>,
 and
-<img src="https://cmougan.github.io/images/schufa.png"
-     alt="SCHUFA"
-     style="height: 22px; width: auto; vertical-align: middle; margin: 0 4px;">.
+<img alt="SCHUFA" src="https://cmougan.github.io/images/schufa.png" style="height: 22px; width: auto; vertical-align: middle; margin: 0 4px;"/>.
 
 Before my research career, I competed as an elite swimmer
-<img src="https://cmougan.github.io/images/swimming.jpeg"
-     alt="Swimming"
-     style="height: 28px; width: auto; vertical-align: middle; margin-left: 4px;">.
+<img alt="Swimming" src="https://cmougan.github.io/images/swimming.jpeg" style="height: 28px; width: auto; vertical-align: middle; margin-left: 4px;"/>.
   </p>
-</div>
-    <div class="hero-actions">
-      <a class="button" href="https://www.linkedin.com/in/carlosmougan/" target="_blank" rel="noopener noreferrer">LinkedIn ↗</a>
-      <a class="button" href="https://scholar.google.com/citations?user=dQ5WrokAAAAJ&hl" target="_blank" rel="noopener noreferrer">Google Scholar ↗</a>
-    </div>
-  </div>
-
-  <div class="profile-photo-wrap">
-    <img class="profile-photo" src="https://cmougan.eu/images/me.jpg" alt="Carlos Mougan">
-    <span class="photo-accent" aria-hidden="true"></span>
-  </div>
-</div>
-  </header>
-
-  <main>
-    <section id="work">
-      <div class="container">
-        <div class="section-header">
-          <div class="section-kicker">Currently</div>
-
-    </div>
-
-    <div class="focus-grid">
-      <article class="focus-card">
-        <span class="number">Technical</span>
-        <h3>AI evaluations & model behaviour</h3>
-        <p>
-          Design and lead evaluations of frontier AI models, translating
+</div><div class="hero-actions">
+<a class="button" href="https://www.linkedin.com/in/carlosmougan/" rel="noopener noreferrer" target="_blank">LinkedIn ↗</a>
+<a class="button" href="https://scholar.google.com/citations?user=dQ5WrokAAAAJ&amp;hl" rel="noopener noreferrer" target="_blank">Google Scholar ↗</a>
+</div></header><section aria-labelledby="work-heading" id="work">
+<div class="container">
+<div class="section-header">
+<div class="section-kicker"><span aria-hidden="true" class="section-index">01</span>Currently</div>
+<h2 id="work-heading">EU AI Office - European Commission</h2></div>
+<div class="focus-grid">
+<article class="focus-card">
+<span class="number">Technical</span>
+<h3>AI evaluations &amp; model behaviour</h3>
+<p>
+          Design valuations of frontier AI models, translating
           ambiguous questions about model behaviour into measurable experiments. See our
           <a href="https://www.science.org/doi/10.1126/science.aea3835">Science paper on AI evaluations</a>
           for an example of this work.
         </p>
-      </article>
-
-      <article class="focus-card">
-        <span class="number">Research</span>
-        <h3>Emerging AI risks</h3>
-        <p>
+</article>
+<article class="focus-card">
+<span class="number">Research</span>
+<h3>Emerging AI risks</h3>
+<p>
           Research emerging behaviours and risks from frontier AI, including post-market monitoring, manipulation,
           persuasion, over-reliance, child safety and mental-health interactions.
         </p>
-      </article>
-
-      <article class="focus-card">
-        <span class="number">Applied</span>
-        <h3>Technical projects & mentoring</h3>
-        <p>
+</article>
+<article class="focus-card">
+<span class="number">Applied</span>
+<h3>Technical projects &amp; mentoring</h3>
+<p>
           Lead interdisciplinary teams and external research collaborations
           on post-deployment evaluation and monitoring. Mentor and tutor students and early-career researchers on applied research.
         </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="experience">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-kicker">Experience</div>
-      <div>
-        <h2>Applied research, machine learning and policy</h2>
-        <p class="section-intro">
+</article>
+</div>
+</div>
+</section><section aria-labelledby="experience-heading" id="experience">
+<div class="container">
+<div class="section-header">
+<div class="section-kicker"><span aria-hidden="true" class="section-index">02</span>Experience</div>
+<div>
+<h2 id="experience-heading">Applied research, machine learning and policy</h2>
+<p class="section-intro">
           I've worked across research, technical projects and public institutions,
           combining applied research with product.
         </p>
-      </div>
-    </div>
-
-    <div class="timeline">
-      <article class="role">
-        <div class="role-date">2024 — Present</div>
-        <div>
-          <h3>AI Office — AI Safety</h3>
-          <div class="role-org">European Commission · Brussels</div>
-          <p>
+</div>
+</div>
+<div class="timeline">
+<article class="role">
+<div class="role-date">2024 — Present</div>
+<div>
+<h3>AI Office — AI Safety</h3>
+<div class="role-org">European Commission · Brussels</div>
+<p>
                 Design technical evaluations of general-purpose AI models, including experimental work on manipulation, persuasion, child safety and post-deployment monitoring. Develop evaluation methodologies, coordinate external technical research teams, and monitoring emerging behaviours after deployment.
           </p>
-        </div>
-      </article>
-
-      <article class="role">
-        <div class="role-date">2022 — 2025</div>
-        <div>
-          <h3>Principal Investigator, Applied Skills Team</h3>
-          <div class="role-org">The Alan Turing Institute · London</div>
-          <p>
+</div>
+</article>
+<article class="role">
+<div class="role-date">2022 — 2025</div>
+<div>
+<h3>Principal Investigator, Applied Skills Team</h3>
+<div class="role-org">The Alan Turing Institute · London</div>
+<p>
                 Applied research and advisory work for public, nonprofit and industry
                 partners such as: British Antarctic Survey, WWF, Amnesty International, Roche, Astra Zeneca, Defence and Security Gov, Environmental Investigation Agency, John Muir Trust, CEFAS, Telenor, Turkcell, ...
           </p>
-        </div>
-      </article>
-
-      <article class="role">
-        <div class="role-date">2021 — 2024</div>
-        <div>
-          <h3>Marie Skłodowska-Curie Research Fellow & PhD Researcher</h3>
-          <div class="role-org">University of Southampton</div>
-          <p>
+</div>
+</article>
+<article class="role">
+<div class="role-date">2021 — 2024</div>
+<div>
+<h3>Marie Skłodowska-Curie Research Fellow &amp; PhD Researcher</h3>
+<div class="role-org">University of Southampton</div>
+<p>
                 Research on model monitoring, explainability and fairness within the
                 EU-funded NoBias Innovative Training Network, including research visits
                 at SCHUFA, the University of Pisa and BBC DataLab.
           </p>
-        </div>
-      </article>
-
-      <article class="role">
-        <div class="role-date">2020 — 2021</div>
-        <div>
-          <h3>Statistician, Directorate General Statistics</h3>
-          <div class="role-org">European Central Bank · Frankfurt</div>
-          <p>
+</div>
+</article>
+<article class="role">
+<div class="role-date">2020 — 2021</div>
+<div>
+<h3>Statistician, Directorate General Statistics</h3>
+<div class="role-org">European Central Bank · Frankfurt</div>
+<p>
                 Statistical quality monitoring across EU Member States and applied
                 machine-learning work for the European System of Central Banks.
           </p>
-        </div>
-      </article>
-
-      <article class="role">
-        <div class="role-date">2017 — 2018</div>
-        <div>
-          <h3>Technology Consultant</h3>
-          <div class="role-org">Deloitte Robotics · Madrid</div>
-          <p>
+</div>
+</article>
+<article class="role">
+<div class="role-date">2017 — 2018</div>
+<div>
+<h3>Technology Consultant</h3>
+<div class="role-org">Deloitte Robotics · Madrid</div>
+<p>
                 Applied OCR and robotic process automation to audit and banking
                 workflows, and trained Deloitte teams on UiPath.
           </p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="research">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-kicker">Research</div>
-      <div>
-        <h2>Selected publications.</h2>
-        <p class="section-intro">
+</div>
+</article>
+</div>
+</div>
+</section><section aria-labelledby="research-heading" id="research">
+<div class="container">
+<div class="section-header">
+<div class="section-kicker"><span aria-hidden="true" class="section-index">03</span>Research</div>
+<div>
+<h2 id="research-heading">Selected publications.</h2>
+<p class="section-intro">
               My research spans the full AI lifecycle: data collection, data quality, preprocessing, modeling, and monitoring. I have led publications to NeurIPS, AAAI, AIES, TMLR and Science.
         </p>
+</div>
+</div>
+<article class="pub-featured">
+<div class="pub-year">2026 · Science</div>
+<h3 class="pub-title">The science and practice of proportionality in AI evaluations</h3>
+<div class="pub-authors">
+<strong>Carlos Mougan</strong>, Lauritz Morlock, et al.
       </div>
-    </div>
-
-    <article class="pub-featured">
-      <div class="pub-year">2026 · Science</div>
-      <div class="pub-title">The science and practice of proportionality in AI evaluations</div>
-      <div class="pub-authors">
-        <strong>Carlos Mougan</strong>, Lauritz Morlock, et al.
-      </div>
-      <div class="pub-venue">Science</div>
-    </article>
-
-    <div class="publication-list">
-      <article class="publication">
-        <div class="pub-year">2023</div>
-        <div>
-          <div class="pub-title">How to Data in Datathons</div>
-          <div class="pub-authors"><strong>Carlos Mougan</strong>, Richard Plant, Clare Teng, Marya Bazzi, et al.</div>
-          <div class="pub-venue">Advances in Neural Information Processing Systems (NeurIPS)</div>
-        </div>
-      </article>
-
-      <article class="publication">
-        <div class="pub-year">2023</div>
-        <div>
-          <div class="pub-title">Monitoring Model Deterioration with Explainable Uncertainty Estimation via Non-parametric Bootstrap</div>
-          <div class="pub-authors"><strong>Carlos Mougan</strong>, Dan Saattrup Nielsen</div>
-          <div class="pub-venue">AAAI Conference on Artificial Intelligence</div>
-        </div>
-      </article>
-
-      <article class="publication">
-        <div class="pub-year">2023</div>
-        <div>
-          <div class="pub-title">Fairness Implications of Encoding Protected Categorical Attributes</div>
-          <div class="pub-authors"><strong>Carlos Mougan</strong>, Jose Alvarez, Salvatore Ruggieri, Steffen Staab</div>
-          <div class="pub-venue">AAAI/ACM Conference on AI, Ethics, and Society (AIES)</div>
-        </div>
-      </article>
-
-
-      <article class="publication">
-        <div class="pub-year">2021</div>
-        <div>
-          <div class="pub-title">Quantile Encoder: Tackling High Cardinality Categorical Features in Regression Problems</div>
-          <div class="pub-authors"><strong>Carlos Mougan</strong>, David Masip, Jordi Nin, Oriol Pujol</div>
-          <div class="pub-venue">Modeling Decisions for Artificial Intelligence</div>
-        </div>
-      </article>
-
-      <article class="publication">
-        <div class="pub-year">2021</div>
-        <div>
-          <div class="pub-title">Desiderata for Explainable AI in Statistical Production Systems of the European Central Bank</div>
-          <div class="pub-authors"><strong>Carlos Mougan</strong>, Georgios Kanellos, Thomas Gottron</div>
-          <div class="pub-venue">ECML PKDD Workshops</div>
-        </div>
-      </article>
-    </div>
-
-    <p style="margin-top: 28px;">
-      <a class="button" href="https://scholar.google.com/citations?user=dQ5WrokAAAAJ&hl" target="_blank" rel="noopener noreferrer">
+<div class="pub-venue">Science</div>
+</article>
+<div class="publication-list">
+<article class="publication">
+<div class="pub-year">2023</div>
+<div>
+<h3 class="pub-title">How to Data in Datathons</h3>
+<div class="pub-authors"><strong>Carlos Mougan</strong>, Richard Plant, Clare Teng, Marya Bazzi, et al.</div>
+<div class="pub-venue">Advances in Neural Information Processing Systems (NeurIPS)</div>
+</div>
+</article>
+<article class="publication">
+<div class="pub-year">2023</div>
+<div>
+<h3 class="pub-title">Monitoring Model Deterioration with Explainable Uncertainty Estimation via Non-parametric Bootstrap</h3>
+<div class="pub-authors"><strong>Carlos Mougan</strong>, Dan Saattrup Nielsen</div>
+<div class="pub-venue">AAAI Conference on Artificial Intelligence</div>
+</div>
+</article>
+<article class="publication">
+<div class="pub-year">2023</div>
+<div>
+<h3 class="pub-title">Fairness Implications of Encoding Protected Categorical Attributes</h3>
+<div class="pub-authors"><strong>Carlos Mougan</strong>, Jose Alvarez, Salvatore Ruggieri, Steffen Staab</div>
+<div class="pub-venue">AAAI/ACM Conference on AI, Ethics, and Society (AIES)</div>
+</div>
+</article>
+<article class="publication">
+<div class="pub-year">2021</div>
+<div>
+<h3 class="pub-title">Quantile Encoder: Tackling High Cardinality Categorical Features in Regression Problems</h3>
+<div class="pub-authors"><strong>Carlos Mougan</strong>, David Masip, Jordi Nin, Oriol Pujol</div>
+<div class="pub-venue">Modeling Decisions for Artificial Intelligence</div>
+</div>
+</article>
+<article class="publication">
+<div class="pub-year">2021</div>
+<div>
+<h3 class="pub-title">Desiderata for Explainable AI in Statistical Production Systems of the European Central Bank</h3>
+<div class="pub-authors"><strong>Carlos Mougan</strong>, Georgios Kanellos, Thomas Gottron</div>
+<div class="pub-venue">ECML PKDD Workshops</div>
+</div>
+</article>
+</div>
+<p style="margin-top: 28px;">
+<a class="button" href="https://scholar.google.com/citations?user=dQ5WrokAAAAJ&amp;hl" rel="noopener noreferrer" target="_blank">
         View all publications on Google Scholar ↗
       </a>
-    </p>
-  </div>
-</section>
-
-<section id="background">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-kicker">Background</div>
-      <div>
-        <h2>Education and selected highlights.</h2>
-      </div>
-    </div>
-
-    <div class="two-col">
-      <div class="panel">
-        <h3>Education</h3>
-        <div class="education-list">
-          <div class="degree">
-            <strong>PhD — Model Monitoring & Machine Learning</strong>
-            <span>University of Southampton · 2021–2024</span>
-            <span>Thesis: Model Monitoring in the Absence of Ground Truth Data via Feature Attribution Explanations.</span>
-          </div>
-          <div class="degree">
-            <strong>MSc — Mathematical Modelling</strong>
-            <span>Universitat Autònoma de Barcelona · 2018–2019</span>
-          </div>
-          <div class="degree">
-            <strong>BSc — Physics</strong>
-            <span>Universidad Complutense de Madrid · 2013–2018</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="panel">
-        <h3>Other highlights</h3>
-        <ul class="compact-list">
-                        <li>Elite swimming athlete, 2013–2017</li>
-          <li>
+</p>
+</div>
+</section><section aria-labelledby="background-heading" id="background">
+<div class="container">
+<div class="section-header">
+<div class="section-kicker"><span aria-hidden="true" class="section-index">04</span>Background</div>
+<div>
+<h2 id="background-heading">Education and selected highlights.</h2>
+</div>
+</div>
+<div class="two-col">
+<div class="panel">
+<h3>Education</h3>
+<div class="education-list">
+<div class="degree">
+<strong>PhD — Model Monitoring &amp; Machine Learning</strong>
+<span>University of Southampton · 2021–2024</span>
+<span>Thesis: Model Monitoring in the Absence of Ground Truth Data via Feature Attribution Explanations.</span>
+</div>
+<div class="degree">
+<strong>MSc — Mathematical Modelling</strong>
+<span>Universitat Autònoma de Barcelona · 2018–2019</span>
+</div>
+<div class="degree">
+<strong>BSc — Physics</strong>
+<span>Universidad Complutense de Madrid · 2013–2018</span>
+</div>
+</div>
+</div>
+<div class="panel">
+<h3>Other highlights</h3>
+<ul class="compact-list">
+<li>Elite swimming athlete, 2013–2017</li>
+<li>
             Main contributor to
-            <a href="https://contrib.scikit-learn.org/category_encoders/" target="_blank" rel="noopener noreferrer">Category Encoders</a>;
+            <a href="https://contrib.scikit-learn.org/category_encoders/" rel="noopener noreferrer" target="_blank">Category Encoders</a>;
             main developer of
-            <a href="https://skshift.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer">skshift</a>
+            <a href="https://skshift.readthedocs.io/en/latest/" rel="noopener noreferrer" target="_blank">skshift</a>
             and
-            <a href="https://explanationspace.readthedocs.io/en/latest/" target="_blank" rel="noopener noreferrer">explanationspace</a>.
+            <a href="https://explanationspace.readthedocs.io/en/latest/" rel="noopener noreferrer" target="_blank">explanationspace</a>.
           </li>
-          <li>
+<li>
             Ranked among the top two Data Science Stack Exchange users in 2020.
           </li>
-          <li>
+<li>
             1st @BCG Gamma Datathon; 1st @Novartis 2021 Datathon; Bronze Medal @
             Kaggle IEEE-CIS Fraud Detection.
           </li>
-                    
-        </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="talks">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-kicker">Selected talks</div>
-      <div>
-        <h2>Presentations & invited talks.</h2>
-      </div>
-    </div>
-
-    <div class="talks">
-      <div class="talk">
-        <strong>Royal Society for Spanish Mathematics · 2024</strong>
-        <span>Beyond Demographic Parity: Redefining Equal Treatment</span>
-      </div>
-      <div class="talk">
-        <strong>NeurIPS · 2023</strong>
-        <span>How To Data in Datathons</span>
-      </div>
-      <div class="talk">
-        <strong>Regulatable ML Workshop, NeurIPS · 2023</strong>
-        <span>Necessity of Processing Sensitive Data</span>
-      </div>
-      <div class="talk">
-        <strong>AAAI · 2023</strong>
-        <span>Monitoring Model Deterioration with Explainable Uncertainty Estimation via Non-Parametric Bootstrap</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section id="personal">
-  <div class="container">
-    <div class="section-header">
-      <div class="section-kicker">Outside work</div>
-      <div>
-        <h2>Fun pictures</h2>
-      </div>
-    </div>
-
-    <div class="gallery">
-      <img src="https://cmougan.eu/images/carlos_board.jpg" alt="Board" loading="lazy">
-      <img src="https://cmougan.eu/images/kite.jpg" alt="Kitesurfing" loading="lazy">
-      <img src="https://cmougan.eu/images/turing.jpg" alt="At The Alan Turing Institute" loading="lazy">
-      <img src="https://cmougan.eu/images/chile.jpeg" alt="Chile" loading="lazy">
-      
-    </div>
-  </div>
-</section>
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <span>© Carlos Mougan</span>
-      <span>
-        <a href="https://github.com/cmougan" target="_blank" rel="noopener noreferrer">GitHub</a>
+</ul>
+</div>
+</div>
+</div>
+</section><section aria-labelledby="talks-heading" id="talks">
+<div class="container">
+<div class="section-header">
+<div class="section-kicker"><span aria-hidden="true" class="section-index">05</span>Selected talks</div>
+<div>
+<h2 id="talks-heading">Presentations &amp; invited talks.</h2>
+</div>
+</div>
+<div class="talks">
+<div class="talk">
+<strong>Royal Society for Spanish Mathematics · 2024</strong>
+<span>Beyond Demographic Parity: Redefining Equal Treatment</span>
+</div>
+<div class="talk">
+<strong>NeurIPS · 2023</strong>
+<span>How To Data in Datathons</span>
+</div>
+<div class="talk">
+<strong>Regulatable ML Workshop, NeurIPS · 2023</strong>
+<span>Necessity of Processing Sensitive Data</span>
+</div>
+<div class="talk">
+<strong>AAAI · 2023</strong>
+<span>Monitoring Model Deterioration with Explainable Uncertainty Estimation via Non-Parametric Bootstrap</span>
+</div>
+</div>
+</div>
+</section><section aria-labelledby="personal-heading" id="personal">
+<div class="container">
+<div class="section-header">
+<div class="section-kicker"><span aria-hidden="true" class="section-index">06</span>Outside work</div>
+<div>
+<h2 id="personal-heading">Fun pictures</h2>
+</div>
+</div>
+<div class="gallery">
+<img alt="Board" loading="lazy" src="https://cmougan.eu/images/carlos_board.jpg"/>
+<img alt="Kitesurfing" loading="lazy" src="https://cmougan.eu/images/kite.jpg"/>
+<img alt="At The Alan Turing Institute" loading="lazy" src="https://cmougan.eu/images/turing.jpg"/>
+<img alt="Chile" loading="lazy" src="https://cmougan.eu/images/chile.jpeg"/>
+</div>
+</div>
+</section><footer>
+<div class="container footer-inner">
+<span>© Carlos Mougan</span>
+<span>
+<a href="https://github.com/cmougan" rel="noopener noreferrer" target="_blank">GitHub</a>
         ·
-        <a href="https://www.linkedin.com/in/carlosmougan/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/carlosmougan/" rel="noopener noreferrer" target="_blank">LinkedIn</a>
         ·
-        <a href="https://scholar.google.com/citations?user=dQ5WrokAAAAJ&hl" target="_blank" rel="noopener noreferrer">Scholar</a>
-      </span>
-    </div>
-  </footer>
+        <a href="https://scholar.google.com/citations?user=dQ5WrokAAAAJ&amp;hl" rel="noopener noreferrer" target="_blank">Scholar</a>
+</span>
+<a class="back-to-top" href="#top">Back to top ↑</a></div>
+</footer></main>
+</div>
+<script id="site-behaviour">
+/* Navigation works as ordinary anchor links without JavaScript.
+   JavaScript only adds the active section, mobile-menu behaviour,
+   reading progress, and the original decorative animation. */
+(() => {
+  "use strict";
+  const links = [...document.querySelectorAll(".toc-link")];
+  const sections = [...document.querySelectorAll(".hero[id], main > section[id]")];
+  const progress = document.querySelector(".reading-progress");
+  const mobileToc = document.querySelector(".mobile-toc");
+  const mobileLabel = document.querySelector(".mobile-toc-current");
+  let framePending = false;
 
-  <script>
-    (() => {
-      const flier = document.getElementById("random-flier");
-
-      if (!flier) return;
-
-      let timer;
-
-      function getBounds() {
-        return {
-          x: Math.max(0, window.innerWidth - flier.offsetWidth),
-          y: Math.max(0, window.innerHeight - flier.offsetHeight)
-        };
+  function updateNavigation() {
+    framePending = false;
+    const activationLine = window.innerWidth <= 960 ? 165 : 135;
+    let current = sections[0];
+    for (const section of sections) {
+      if (section.getBoundingClientRect().top <= activationLine) current = section;
+    }
+    const maximum = document.documentElement.scrollHeight - window.innerHeight;
+    if (maximum > 0 && window.scrollY >= maximum - 3) current = sections.at(-1);
+    if (current) {
+      for (const link of links) {
+        const active = link.dataset.section === current.id;
+        if (active) link.setAttribute("aria-current", "location");
+        else link.removeAttribute("aria-current");
       }
+      const activeLink = links.find(link => link.dataset.section === current.id);
+      if (activeLink && mobileLabel) mobileLabel.textContent = activeLink.lastElementChild.textContent;
+    }
+    if (progress) progress.style.transform = `scaleX(${maximum > 0 ? Math.min(1, Math.max(0, window.scrollY / maximum)) : 0})`;
+  }
 
-      function placeInitially() {
-        const bounds = getBounds();
-        const x = Math.random() * bounds.x;
-        const y = Math.random() * bounds.y;
-        const rotation = -20 + Math.random() * 40;
+  function requestUpdate() {
+    if (!framePending) {
+      framePending = true;
+      window.requestAnimationFrame(updateNavigation);
+    }
+  }
+  window.addEventListener("scroll", requestUpdate, { passive: true });
+  window.addEventListener("resize", requestUpdate, { passive: true });
+  window.addEventListener("load", requestUpdate, { once: true });
+  updateNavigation();
 
-        // Initial placement is immediate rather than animating in from (0, 0).
-        flier.style.transition = "none";
-        flier.style.transform =
-          `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg)`;
-
-        // Force the initial transform to render before adding a transition.
-        void flier.offsetWidth;
-
-        moveRandomly();
+  if (mobileToc) {
+    mobileToc.addEventListener("click", event => {
+      const link = event.target.closest("a[href^='#']");
+      if (link) {
+        mobileToc.open = false;
+        // Move keyboard focus to the destination rather than leave it inside
+        // the now-closed contents menu. Do not disturb native anchor scrolling.
+        const target = document.getElementById(link.hash.slice(1));
+        if (target) {
+          target.setAttribute("tabindex", "-1");
+          target.focus({ preventScroll: true });
+          target.addEventListener("blur", () => target.removeAttribute("tabindex"), { once: true });
+        }
       }
-
-      function moveRandomly() {
-        const bounds = getBounds();
-
-        const x = Math.random() * bounds.x;
-        const y = Math.random() * bounds.y;
-        const rotation = -30 + Math.random() * 60;
-
-        // Different speed on every trip: 3–8 seconds.
-        const duration = 3000 + Math.random() * 5000;
-
-        flier.style.transition =
-          `transform ${duration}ms cubic-bezier(0.45, 0, 0.55, 1)`;
-
-        flier.style.transform =
-          `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg)`;
-
-        clearTimeout(timer);
-        timer = window.setTimeout(moveRandomly, duration);
+    });
+    document.addEventListener("click", event => {
+      if (mobileToc.open && !mobileToc.contains(event.target)) mobileToc.open = false;
+    });
+    document.addEventListener("keydown", event => {
+      if (event.key === "Escape" && mobileToc.open) {
+        mobileToc.open = false;
+        mobileToc.querySelector("summary").focus();
       }
+    });
+    window.addEventListener("resize", () => {
+      if (window.innerWidth > 960) mobileToc.open = false;
+    }, { passive: true });
+  }
+})();
 
-      function start() {
-        // Wait until the image has measurable dimensions.
-        window.requestAnimationFrame(placeInitially);
-      }
+(() => {
+  "use strict";
+  const flier = document.getElementById("random-flier");
+  if (!flier) return;
+  const controls = [...document.querySelectorAll(".motion-toggle")];
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
+  let paused = reducedMotion.matches;
+  let ready = false;
+  let timer = 0;
+  let resizeTimer = 0;
 
-      if (flier.complete && flier.naturalWidth > 0) {
-        start();
-      } else {
-        flier.addEventListener("load", start, { once: true });
-      }
+  // Use the diagonal to leave room for rotation, so the same original image
+  // stays inside the viewport on both desktop and mobile screens.
+  function getBounds() {
+    const width = flier.offsetWidth;
+    const height = flier.offsetHeight;
+    const radius = Math.hypot(width, height) / 2;
+    const horizontalInset = Math.max(0, radius - width / 2);
+    const verticalInset = Math.max(0, radius - height / 2);
+    return {
+      minX: horizontalInset,
+      maxX: Math.max(horizontalInset, window.innerWidth - width - horizontalInset),
+      minY: verticalInset,
+      maxY: Math.max(verticalInset, window.innerHeight - height - verticalInset)
+    };
+  }
 
-      // Keep future random destinations inside the viewport after resizing.
-      window.addEventListener("resize", () => {
-        clearTimeout(timer);
-        moveRandomly();
-      });
-    })();
-  </script>
+  function randomPosition() {
+    const bounds = getBounds();
+    return {
+      x: bounds.minX + Math.random() * (bounds.maxX - bounds.minX),
+      y: bounds.minY + Math.random() * (bounds.maxY - bounds.minY)
+    };
+  }
 
-</body>
+  function freeze() {
+    window.clearTimeout(timer);
+    if (!ready) return;
+    const transform = window.getComputedStyle(flier).transform;
+    flier.style.transition = "none";
+    flier.style.transform = transform;
+  }
+
+  function updateControls() {
+    for (const button of controls) {
+      const label = paused ? "Resume animation" : "Pause animation";
+      button.setAttribute("aria-pressed", String(paused));
+      button.setAttribute("aria-label", label);
+      button.title = paused ? "Resume the moving image" : "Pause the moving image";
+      button.querySelector(".motion-text").textContent = label;
+      button.querySelector(".motion-symbol").textContent = paused ? "▷" : "Ⅱ";
+    }
+  }
+
+  function moveRandomly() {
+    window.clearTimeout(timer);
+    if (!ready || paused || document.hidden) return;
+    const { x, y } = randomPosition();
+    const rotation = -30 + Math.random() * 60;
+    // The original random timing and easing: each trip takes 3–8 seconds.
+    const duration = 3000 + Math.random() * 5000;
+    flier.style.transition = `transform ${duration}ms cubic-bezier(0.45, 0, 0.55, 1)`;
+    flier.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg)`;
+    timer = window.setTimeout(moveRandomly, duration);
+  }
+
+  function placeInitially() {
+    window.clearTimeout(timer);
+    const { x, y } = randomPosition();
+    const rotation = -20 + Math.random() * 40;
+    flier.style.transition = "none";
+    flier.style.transform = `translate3d(${x}px, ${y}px, 0) rotate(${rotation}deg)`;
+    flier.classList.add("is-ready");
+    void flier.offsetWidth;
+    moveRandomly();
+  }
+
+  function start() {
+    if (ready) return;
+    ready = true;
+    controls.forEach(button => { button.hidden = false; });
+    updateControls();
+    window.requestAnimationFrame(placeInitially);
+  }
+
+  controls.forEach(button => button.addEventListener("click", () => {
+    paused = !paused;
+    if (paused) freeze();
+    else {
+      void flier.offsetWidth;
+      moveRandomly();
+    }
+    updateControls();
+  }));
+
+  reducedMotion.addEventListener("change", event => {
+    paused = event.matches;
+    if (paused) freeze();
+    else moveRandomly();
+    updateControls();
+  });
+  document.addEventListener("visibilitychange", () => {
+    if (document.hidden) freeze();
+    else moveRandomly();
+  });
+  window.addEventListener("resize", () => {
+    window.clearTimeout(resizeTimer);
+    freeze();
+    resizeTimer = window.setTimeout(() => { if (ready) placeInitially(); }, 120);
+  }, { passive: true });
+
+  if (flier.complete && flier.naturalWidth > 0) start();
+  else flier.addEventListener("load", start, { once: true });
+  // A failed external decorative image should not leave a broken-image icon.
+  flier.addEventListener("error", () => {
+    freeze();
+    flier.hidden = true;
+    controls.forEach(button => { button.hidden = true; });
+  }, { once: true });
+})();
+</script></body>
 </html>
