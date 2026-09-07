@@ -1,0 +1,149 @@
+<!doctype html>
+<html lang="$lang$">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>$pagetitle$ | Carlos Mougan</title>
+  $for(css)$
+  <link rel="stylesheet" href="$css$">
+  $endfor$
+  $for(header-includes)$
+  $header-includes$
+  $endfor$
+  $if(math)$$math$$endif$
+</head>
+<body>
+  <a class="skip-link" href="#paper-content">Skip to the document</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="$home-url$">Carlos Mougan<span class="brand-separator" aria-hidden="true">/</span><span class="brand-section">Research</span></a>
+      <nav class="header-actions" aria-label="Document actions">
+        <a href="$pdf-url$">View PDF <span aria-hidden="true">↗</span></a>
+        <a class="edit-button" href="$edit-url$">Suggest an edit <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="document-layout">
+    <aside class="contents" aria-label="Document navigation">
+      <details class="contents-panel" open>
+        <summary><span class="contents-label">In this paper</span><span class="contents-toggle-icon" aria-hidden="true"></span></summary>
+        <nav id="TOC" aria-label="Table of contents">
+          $toc$
+        </nav>
+        <div class="sidebar-links">
+          <a href="$pdf-url$">View PDF <span aria-hidden="true">↗</span></a>
+          <a href="$edit-url$">Suggest an edit <span aria-hidden="true">↗</span></a>
+          <a href="$history-url$">Revision history <span aria-hidden="true">↗</span></a>
+        </div>
+      </details>
+    </aside>
+
+    <main id="paper-content" tabindex="-1">
+      <article>
+        <header class="paper-header">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Working paper <span aria-hidden="true">·</span> Open draft</p>
+          <h1 class="paper-title">$title$</h1>
+          $if(subtitle)$<p class="paper-subtitle">$subtitle$</p>$endif$
+          <div class="paper-meta">
+            <span class="authors">
+              $if(by-author)$
+                $for(by-author)$$by-author.name.literal$$sep$, $endfor$
+              $else$
+                $for(author)$$author$$sep$, $endfor$
+              $endif$
+            </span>
+            $if(date)$<span class="meta-divider" aria-hidden="true">/</span><span>Draft dated $date$</span>$endif$
+          </div>
+          $if(abstract)$
+          <section class="abstract" aria-labelledby="abstract-label">
+            <h2 id="abstract-label">Abstract</h2>
+            $abstract$
+          </section>
+          $endif$
+        </header>
+
+        <div class="paper-body">
+          $body$
+        </div>
+
+        <footer class="paper-footer">
+          <div>
+            <p class="footer-label">An open document</p>
+            <p>Corrections and contributions are welcome.</p>
+          </div>
+          <a href="$edit-url$">Suggest an edit <span aria-hidden="true">↗</span></a>
+          <p class="source-links"><a href="$arxiv-source-url$">LaTeX source package</a><span aria-hidden="true"> · </span><a href="$history-url$">Revision history</a></p>
+        </footer>
+      </article>
+    </main>
+  </div>
+
+  <script>
+    // Navigation is usable without JavaScript. These are small enhancements.
+    (() => {
+      const layout = document.querySelector('.document-layout');
+      const panel = document.querySelector('.contents-panel');
+      const mobile = window.matchMedia('(max-width: 850px)');
+      let desktopOpen = true;
+
+      try {
+        const saved = localStorage.getItem('paper-contents-open');
+        if (saved !== null) desktopOpen = saved === 'true';
+      } catch (_) {}
+
+      const syncLayout = () => {
+        layout.classList.toggle('contents-collapsed', !mobile.matches && !panel.open);
+      };
+
+      const updatePanel = () => {
+        panel.open = mobile.matches ? false : desktopOpen;
+        syncLayout();
+      };
+
+      panel.addEventListener('toggle', () => {
+        if (!mobile.matches) {
+          desktopOpen = panel.open;
+          try { localStorage.setItem('paper-contents-open', String(desktopOpen)); } catch (_) {}
+        }
+        syncLayout();
+      });
+
+      updatePanel();
+      mobile.addEventListener('change', updatePanel);
+
+      const links = Array.from(document.querySelectorAll('#TOC a[href^="#"]'));
+      const entries = links.map(link => ({
+        link,
+        heading: document.getElementById(decodeURIComponent(link.hash.slice(1)))
+      })).filter(entry => entry.heading);
+      let scheduled = false;
+      function highlightSection() {
+        scheduled = false;
+        let current = entries[0];
+        for (const entry of entries) {
+          if (entry.heading.getBoundingClientRect().top <= 150) current = entry;
+        }
+        for (const entry of entries) {
+          if (entry === current) entry.link.setAttribute('aria-current', 'location');
+          else entry.link.removeAttribute('aria-current');
+        }
+      }
+      window.addEventListener('scroll', () => {
+        if (!scheduled) {
+          scheduled = true;
+          window.requestAnimationFrame(highlightSection);
+        }
+      }, { passive: true });
+      links.forEach(link => link.addEventListener('click', () => {
+        if (mobile.matches) panel.open = false;
+      }));
+      highlightSection();
+    })();
+  </script>
+  $for(include-after)$
+  $include-after$
+  $endfor$
+</body>
+</html>

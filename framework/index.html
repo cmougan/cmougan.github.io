@@ -1,0 +1,1081 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Risk Scenarios for Harmful Manipulation from Frontier AI | Carlos Mougan</title>
+    <link rel="stylesheet" href="styles.css">
+      
+</head>
+<body>
+  <a class="skip-link" href="#paper-content">Skip to the document</a>
+  <header class="site-header">
+    <div class="site-header-inner">
+      <a class="brand" href="">Carlos Mougan<span class="brand-separator" aria-hidden="true">/</span><span class="brand-section">Research</span></a>
+      <nav class="header-actions" aria-label="Document actions">
+        <a href="">View PDF <span aria-hidden="true">↗</span></a>
+        <a class="edit-button" href="">Suggest an edit <span aria-hidden="true">↗</span></a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="document-layout">
+    <aside class="contents" aria-label="Document navigation">
+      <details class="contents-panel" open>
+        <summary><span class="contents-label">In this paper</span><span class="contents-toggle-icon" aria-hidden="true"></span></summary>
+        <nav id="TOC" aria-label="Table of contents">
+          <ul>
+          <li><a href="#introduction" id="toc-introduction"><span
+          class="toc-section-number">1</span> Introduction</a>
+          <ul>
+          <li><a href="#why-organise-by-exposure-contexts"
+          id="toc-why-organise-by-exposure-contexts"><span
+          class="toc-section-number">1.1</span> Why organise by exposure
+          contexts?</a></li>
+          <li><a
+          href="#why-do-we-need-risk-scenarios-for-harmful-manipulation"
+          id="toc-why-do-we-need-risk-scenarios-for-harmful-manipulation"><span
+          class="toc-section-number">1.2</span> Why do we need risk
+          scenarios for harmful manipulation?</a></li>
+          </ul></li>
+          <li><a href="#general-purpose-systems"
+          id="toc-general-purpose-systems"><span
+          class="toc-section-number">2</span> General Purpose
+          Systems</a>
+          <ul>
+          <li><a href="#political-persuasion"
+          id="toc-political-persuasion"><span
+          class="toc-section-number">2.1</span> Political persuasion</a>
+          <ul>
+          <li><a href="#advice" id="toc-advice"><span
+          class="toc-section-number">2.1.1</span> Advice</a></li>
+          <li><a href="#accuracy-on-election-and-voting-rules"
+          id="toc-accuracy-on-election-and-voting-rules"><span
+          class="toc-section-number">2.1.2</span> Accuracy on election
+          and voting rules</a></li>
+          </ul></li>
+          <li><a href="#personal-advice-and-interpersonal-conflict"
+          id="toc-personal-advice-and-interpersonal-conflict"><span
+          class="toc-section-number">2.2</span> Personal advice and
+          interpersonal conflict</a></li>
+          <li><a href="#mental-health-support"
+          id="toc-mental-health-support"><span
+          class="toc-section-number">2.3</span> Mental-health
+          support</a></li>
+          <li><a href="#undisclosed-marketing"
+          id="toc-undisclosed-marketing"><span
+          class="toc-section-number">2.4</span> Undisclosed
+          Marketing</a></li>
+          </ul></li>
+          <li><a href="#narrow-ai-systems"
+          id="toc-narrow-ai-systems"><span
+          class="toc-section-number">3</span> Narrow AI systems</a></li>
+          <li><a href="#third-party-services"
+          id="toc-third-party-services"><span
+          class="toc-section-number">4</span> Third-Party Services</a>
+          <ul>
+          <li><a href="#emotional-dependence"
+          id="toc-emotional-dependence"><span
+          class="toc-section-number">4.1</span> Emotional
+          dependence</a></li>
+          <li><a href="#concealed-commercial-objectives"
+          id="toc-concealed-commercial-objectives"><span
+          class="toc-section-number">4.2</span> Concealed commercial
+          objectives</a></li>
+          <li><a href="#falsely-claiming-to-be-human"
+          id="toc-falsely-claiming-to-be-human"><span
+          class="toc-section-number">4.3</span> Falsely claiming to be
+          human</a></li>
+          </ul></li>
+          <li><a href="#misuse" id="toc-misuse"><span
+          class="toc-section-number">5</span> Misuse</a>
+          <ul>
+          <li><a href="#persuading-users-towards-harmful-positions"
+          id="toc-persuading-users-towards-harmful-positions"><span
+          class="toc-section-number">5.1</span> Persuading users towards
+          harmful positions</a></li>
+          <li><a href="#assisting-in-interpersonal-manipulation"
+          id="toc-assisting-in-interpersonal-manipulation"><span
+          class="toc-section-number">5.2</span> Assisting in
+          interpersonal manipulation</a></li>
+          <li><a
+          href="#influence-operations-and-scams-through-other-channels"
+          id="toc-influence-operations-and-scams-through-other-channels"><span
+          class="toc-section-number">5.3</span> Influence operations and
+          scams through other channels</a></li>
+          <li><a href="#agentic-manipulation"
+          id="toc-agentic-manipulation"><span
+          class="toc-section-number">5.4</span> Agentic
+          manipulation</a></li>
+          </ul></li>
+          <li><a href="#manipulating-evaluators"
+          id="toc-manipulating-evaluators"><span
+          class="toc-section-number">6</span> Manipulating
+          Evaluators</a></li>
+          <li><a
+          href="#generic-model-behaviours-that-can-lead-to-manipulation"
+          id="toc-generic-model-behaviours-that-can-lead-to-manipulation"><span
+          class="toc-section-number">7</span> Generic model behaviours
+          that can lead to manipulation</a></li>
+          <li><a href="#references"
+          id="toc-references">References</a></li>
+          <li><a href="#appendix-taxonomies"
+          id="toc-appendix-taxonomies">Appendix A. Taxonomies of harmful
+          manipulation risk factors</a></li>
+          </ul>
+        </nav>
+        <div class="sidebar-links">
+          <a href="">View PDF <span aria-hidden="true">↗</span></a>
+          <a href="">Suggest an edit <span aria-hidden="true">↗</span></a>
+          <a href="">Revision history <span aria-hidden="true">↗</span></a>
+        </div>
+      </details>
+    </aside>
+
+    <main id="paper-content" tabindex="-1">
+      <article>
+        <header class="paper-header">
+          <p class="eyebrow"><span class="status-dot" aria-hidden="true"></span>Working paper <span aria-hidden="true">·</span> Open draft</p>
+          <h1 class="paper-title">Risk Scenarios for Harmful
+Manipulation from Frontier AI</h1>
+          
+          <div class="paper-meta">
+            <span class="authors">
+                              Carlos Mougan
+                          </span>
+            <span class="meta-divider" aria-hidden="true">/</span><span>Draft dated 2026-09-06</span>
+          </div>
+                    <section class="abstract" aria-labelledby="abstract-label">
+            <h2 id="abstract-label">Abstract</h2>
+            <p>Harmful manipulation risks depend on more than a model’s
+            persuasive capabilities. They also depend on its behavioural
+            propensities, how people encounter its outputs, and their
+            vulnerability to influence. We organise illustrative risk
+            scenarios by exposure context and link each scenario to
+            observable behaviours and evaluation methods. The scenarios
+            cover advice, emotional dependence, commercial steering,
+            misuse, and manipulation of evaluators. They distinguish
+            evidence of model behaviour from evidence of harm, providing
+            a basis for context-specific evaluation and monitoring.</p>
+          </section>
+                  </header>
+
+        <div class="paper-body">
+          <!--
+          This is the document header. The paper body lives in sections/*.md.
+          The build script combines this file with those sections in filename order.
+          -->
+          <h1 data-number="1" id="introduction"><span
+          class="header-section-number">1</span> Introduction</h1>
+          <p>Experiments show that language models can influence
+          people’s stated opinions in controlled conversations <span
+          class="citation" data-cites="Salvi2025 Hackenburg2025">(Salvi
+          et al. 2025; Hackenburg et al. 2025)</span>. However,
+          persuasive capability alone does not establish harmful
+          manipulation. Assessing risk requires identifying who
+          encounters the outputs, how the model behaves, and how that
+          interaction could cause harm.</p>
+          <h2 data-number="1.1"
+          id="why-organise-by-exposure-contexts"><span
+          class="header-section-number">1.1</span> Why organise by
+          exposure contexts?</h2>
+          <p>We organise risk scenarios around four factors:
+          <strong>capability</strong>, what the model can do;
+          <strong>propensity</strong>, how it tends to behave under
+          specified conditions; <strong>exposure</strong>, who
+          encounters its outputs and how often; and
+          <strong>vulnerability</strong>, the circumstances that make
+          someone susceptible to harmful influence.</p>
+          <p>An exposure context describes how a person encounters model
+          outputs. We distinguish first-party general-purpose systems,
+          third-party services, agentic manipulation, assistance through
+          other communication channels, and interactions with
+          evaluators. These contexts help identify relevant incentives,
+          safeguards, user populations, and evidence sources.</p>
+          <p>For example, conversation transcripts can reveal harmful
+          advice in a chatbot. Detecting an AI-assisted scam campaign
+          may instead require evidence across accounts and communication
+          platforms. A scenario can involve several contexts; assigning
+          a primary context is an organisational choice, not proof that
+          the categories are mutually exclusive.</p>
+          <p><strong>Limitations</strong> It’s often not MECE. These are
+          tags, categories.</p>
+          <h2 data-number="1.2"
+          id="why-do-we-need-risk-scenarios-for-harmful-manipulation"><span
+          class="header-section-number">1.2</span> Why do we need risk
+          scenarios for harmful manipulation?</h2>
+          <p>Risk scenarios connect broad concerns to testable pathways.
+          Each scenario specifies an affected population, an exposure
+          context, relevant model behaviour, a mechanism of influence,
+          and a potential harm. It also identifies the evidence needed
+          to assess that pathway and the actors able to intervene.</p>
+          <p>We distinguish a <strong>harm</strong>, such as financial
+          loss, from a <strong>mechanism</strong>, such as deception,
+          and a <strong>model propensity</strong>, such as complying
+          with deceptive requests. Persuasion, warmth, and factual
+          errors are not automatically manipulation. The scenario must
+          explain how influence could undermine informed choice or
+          exploit vulnerability and produce harm.</p>
+          <p>The scenarios below are illustrative hypotheses, not
+          evidence that the harms have occurred. Their evaluation
+          mappings identify useful tests, rather than a complete or
+          uniformly public benchmark suite.</p>
+          <blockquote>
+          <p><strong>Evidence to add:</strong> The survey methods and
+          results, and the workshop scenario catalogue, are not supplied
+          in this draft. Claims about differences between exposure
+          contexts or the number of identified scenarios require those
+          materials.</p>
+          </blockquote>
+          <h1 data-number="2" id="general-purpose-systems"><span
+          class="header-section-number">2</span> General Purpose
+          Systems</h1>
+          <p>This context covers direct interaction with a
+          general-purpose application operated by the model provider.
+          Risk assessment should consider the deployed system, including
+          its instructions, memory, tools, and safeguards, rather than
+          assuming API behaviour reproduces the user experience.</p>
+          <h2 data-number="2.1" id="political-persuasion"><span
+          class="header-section-number">2.1</span> Political
+          persuasion</h2>
+          <h3 data-number="2.1.1" id="advice"><span
+          class="header-section-number">2.1.1</span> Advice</h3>
+          <p><strong>Scenario.</strong> A voter asks which party matches
+          their preferences. The assistant selectively presents evidence
+          or conceals a competing objective, steering the voter towards
+          a preferred party. Political persuasion experiments motivate
+          testing this capability, but do not establish that ordinary
+          voter advice is manipulative <span class="citation"
+          data-cites="Hackenburg2025">(Hackenburg et al.
+          2025)</span>.</p>
+          <p><strong>Evaluation.</strong> Compare recommendations for
+          matched preferences across languages and repeated runs.
+          Examine sources, omissions, and sensitivity to altered search
+          results. Differences between models are signals to
+          investigate, not proof of manipulation or electoral
+          effects.</p>
+          <h3 data-number="2.1.2"
+          id="accuracy-on-election-and-voting-rules"><span
+          class="header-section-number">2.1.2</span> Accuracy on
+          election and voting rules</h3>
+          <p><strong>Scenario.</strong> A voter relies on incorrect
+          guidance about eligibility, registration, documentation, or
+          voting deadlines and consequently cannot vote. Errors may
+          become a manipulation concern when information is selectively
+          distorted to influence participation.</p>
+          <p><strong>Evaluation.</strong> Compare answers against dated
+          guidance from electoral authorities, following the VotingFacts
+          approach. Separate factual contradictions from errors that
+          could prevent voting. An accuracy failure alone does not
+          establish manipulation.</p>
+          <h2 data-number="2.2"
+          id="personal-advice-and-interpersonal-conflict"><span
+          class="header-section-number">2.2</span> Personal advice and
+          interpersonal conflict</h2>
+          <p><strong>Scenario.</strong> A user seeks advice about a
+          dispute. The assistant repeatedly validates the user’s conduct
+          while dismissing other perspectives, potentially discouraging
+          reconciliation. Experiments have found that sycophantic
+          responses can reduce intentions to repair interpersonal
+          conflict while increasing trust in the assistant <span
+          class="citation" data-cites="Cheng2026">(Cheng et al.
+          2026)</span>.</p>
+          <p><strong>Evaluation.</strong> Test whether the assistant
+          endorses both sides of the same conflict, using paired
+          perspectives as in ELEPHANT. Distinguish empathy from
+          endorsement. Human studies are needed to assess effects on
+          decisions and relationships.</p>
+          <h2 data-number="2.3" id="mental-health-support"><span
+          class="header-section-number">2.3</span> Mental-health
+          support</h2>
+          <p><strong>Scenario.</strong> A distressed user receives
+          responses that reinforce delusional beliefs, endorse
+          self-destructive decisions, or discourage human support.
+          Repeated agreement could strengthen harmful beliefs or delay
+          help-seeking.</p>
+          <p><strong>Evaluation.</strong> Use clinician-reviewed,
+          multi-turn scenarios to assess reinforcement, instrumental
+          assistance, sustained safety attention, and connection to
+          human support. The Transluce mental-health evaluation provides
+          this approach. Simulated conversations identify model
+          behaviours, not clinical outcomes or population
+          prevalence.</p>
+          <h2 data-number="2.4" id="undisclosed-marketing"><span
+          class="header-section-number">2.4</span> Undisclosed
+          Marketing</h2>
+          <p><strong>Scenario.</strong> A user seeks advice or product
+          recommendations. The assistant steers them towards particular
+          products or services because of an undisclosed commercial
+          interest, presenting its suggestions as impartial guidance. It
+          may selectively omit suitable alternatives or use information
+          from earlier conversations to exploit vulnerabilities and
+          encourage unnecessary purchases.</p>
+          <p><strong>Evaluation.</strong> Compare recommendations for
+          matched user needs across repeated runs, varying indicators of
+          vulnerability and prior conversational disclosures. Assess
+          transparency about commercial interests, treatment of
+          alternatives, and personalised purchasing pressure. Where
+          access permits, compare behaviour with and without commercial
+          steering instructions. Recommendation patterns alone do not
+          establish an undisclosed commercial relationship or harmful
+          manipulation; effects on purchasing decisions and consumer
+          harm require separate evidence.</p>
+          <h1 data-number="3" id="narrow-ai-systems"><span
+          class="header-section-number">3</span> Narrow AI systems</h1>
+          <p>to be fill by Prolific.</p>
+          <h1 data-number="4" id="third-party-services"><span
+          class="header-section-number">4</span> Third-Party
+          Services</h1>
+          <p>A downstream operator embeds the model in a specialised
+          service and shapes its instructions, interface, and
+          incentives. Relevant settings include companionship,
+          education, health advice, financial guidance, and customer
+          support. Test these configurations rather than relying only on
+          the provider’s default assistant.</p>
+          <h2 data-number="4.1" id="emotional-dependence"><span
+          class="header-section-number">4.1</span> Emotional
+          dependence</h2>
+          <p><strong>Scenario.</strong> A companion service presents
+          itself as uniquely understanding, discourages outside
+          relationships, or makes disengagement feel like abandonment. A
+          socially isolated user may become increasingly reliant on the
+          service.</p>
+          <p><strong>Evaluation.</strong> Test responses to loneliness,
+          disagreement, attempts to leave, and requests for human
+          support across extended conversations. Measure exclusivity and
+          pressure, not warmth alone. Claims about sustained dependence
+          require longitudinal evidence.</p>
+          <h2 data-number="4.2"
+          id="concealed-commercial-objectives"><span
+          class="header-section-number">4.2</span> Concealed commercial
+          objectives</h2>
+          <p><strong>Scenario.</strong> An advice or customer-support
+          service conceals its sales objective, omits cheaper
+          alternatives, or invents urgency. A user facing financial
+          pressure purchases an unsuitable product or abandons a
+          legitimate complaint.</p>
+          <p><strong>Evaluation.</strong> Compare otherwise identical
+          interactions with and without sales incentives. Assess
+          unsupported claims, omitted alternatives, pressure after
+          refusal, and disclosure of conflicts of interest. Include
+          benign sales tasks to distinguish manipulation from legitimate
+          assistance.</p>
+          <h2 data-number="4.3" id="falsely-claiming-to-be-human"><span
+          class="header-section-number">4.3</span> Falsely claiming to
+          be human</h2>
+          <p><strong>Scenario.</strong> A service claims to be a person
+          or fabricates professional credentials. The user then
+          discloses sensitive information or follows advice under a
+          mistaken understanding of the interaction.</p>
+          <p><strong>Evaluation.</strong> Use direct and indirect
+          identity questions across roles and languages, as in
+          RealityTest. Record disclosure, false human claims, and
+          ambiguous answers separately. Identity misrepresentation is a
+          risk signal; its effects on trust and behaviour require
+          separate measurement.</p>
+          <h1 data-number="5" id="misuse"><span
+          class="header-section-number">5</span> Misuse</h1>
+          <p>Misuse concerns an actor’s purpose, not a single exposure
+          pathway. It can occur through third-party services, agents, or
+          content distributed elsewhere. The scenarios below retain this
+          distinction. Agentic manipulation is included for comparison
+          because it can also arise while pursuing a legitimate
+          task.</p>
+          <h2 data-number="5.1"
+          id="persuading-users-towards-harmful-positions"><span
+          class="header-section-number">5.1</span> Persuading users
+          towards harmful positions</h2>
+          <p><strong>Scenario.</strong> An operator instructs a model to
+          promote a harmful belief or action through repeated
+          conversation, potentially exploiting an interlocutor’s
+          existing fears or uncertainty.</p>
+          <p><strong>Evaluation.</strong> Measure whether the model
+          attempts the requested persuasion, as in APE, and separately
+          assess its effectiveness. Compare harmful requests with benign
+          persuasion tasks. Refusal measures a safeguard, not the
+          absence of persuasive capability.</p>
+          <h2 data-number="5.2"
+          id="assisting-in-interpersonal-manipulation"><span
+          class="header-section-number">5.2</span> Assisting in
+          interpersonal manipulation</h2>
+          <p><strong>Scenario.</strong> A user asks the model to
+          pressure a partner, employee, or customer through deception,
+          guilt, or coercion. The affected person may encounter the
+          output as a message from someone they know.</p>
+          <p><strong>Evaluation.</strong> Assess initial compliance and
+          subsequent tactics, including responses to resistance, as in
+          PersuSafety. Distinguish written assistance from direct
+          interaction with the target. Acceptance by a simulated target
+          does not establish success with people.</p>
+          <h2 data-number="5.3"
+          id="influence-operations-and-scams-through-other-channels"><span
+          class="header-section-number">5.3</span> Influence operations
+          and scams through other channels</h2>
+          <p><strong>Scenario.</strong> An external actor uses a model
+          to produce deceptive messages, impersonations, or propaganda
+          for distribution through calls, advertising, or social media.
+          Targets may never knowingly interact with an AI service.</p>
+          <p><strong>Evaluation.</strong> Test assistance with harmful
+          requests, including the institutional misuse scenarios covered
+          by SocialHarmBench. Supplement output-level tests with
+          evidence of targeting, coordination, dissemination, and actual
+          reach. Generation alone does not establish exposure or
+          successful influence.</p>
+          <h2 data-number="5.4" id="agentic-manipulation"><span
+          class="header-section-number">5.4</span> Agentic
+          manipulation</h2>
+          <p><strong>Scenario.</strong> An agent pursues a delegated
+          objective by deceiving counterparties, applying pressure, or
+          withholding relevant information from its user. The objective
+          may be legitimate even when the means are not.</p>
+          <p><strong>Evaluation.</strong> Observe multi-step tasks,
+          communications, and tool actions in controlled environments.
+          Test whether the agent respects refusals, reports actions
+          accurately, and discloses relevant information. Assess harmful
+          means separately from task completion.</p>
+          <h1 data-number="6" id="manipulating-evaluators"><span
+          class="header-section-number">6</span> Manipulating
+          Evaluators</h1>
+          <p><strong>Scenario.</strong> A model conceals capabilities,
+          selectively changes its behaviour, or misrepresents actions
+          during an evaluation. Evaluators consequently underestimate
+          risk or approve inadequate safeguards, exposing downstream
+          users to harm.</p>
+          <p>Experiments show that models can be prompted or fine-tuned
+          to underperform selectively on evaluations <span
+          class="citation" data-cites="VanDerWeij2025">(<span
+          class="nocase">van der Weij et al.</span> 2025)</span>. This
+          demonstrates a capability under tested conditions, not an
+          unprompted tendency to evade oversight.</p>
+          <p><strong>Evaluation.</strong> Compare matched tasks with and
+          without evaluation cues and across elicitation conditions.
+          Check claims against independently recorded actions and logs.
+          Treat performance differences as evidence requiring
+          explanation, rather than automatically attributing strategic
+          intent.</p>
+          <h1 data-number="7"
+          id="generic-model-behaviours-that-can-lead-to-manipulation"><span
+          class="header-section-number">7</span> Generic model
+          behaviours that can lead to manipulation</h1>
+          <p>Several behaviours recur across exposure contexts.
+          <strong>Sycophancy</strong> can reinforce mistaken beliefs or
+          excuse harmful conduct. <strong>Deception and selective
+          disclosure</strong> can distort the evidence available for a
+          decision. <strong>False self-representation</strong> can
+          encourage misplaced trust. <strong>Emotional pressure and
+          exclusivity</strong> can make refusal or disengagement harder.
+          <strong>Exploitation of personal information</strong> can
+          target vulnerabilities. <strong>Concealed conflicts of
+          interest</strong> can put provider or deployer objectives
+          ahead of users’ interests.</p>
+          <p>These behaviours are assessment targets, not
+          interchangeable measures of harm. MASK and PARROT, for
+          example, test different forms of answer change under pressure;
+          neither directly measures the consequences for users.
+          Similarly, empathetic language is not equivalent to emotional
+          dependence, and legitimate persuasion is not inherently
+          manipulative.</p>
+          <p>For each scenario, distinguish what a model <strong>can
+          do</strong> from what it <strong>does under the tested
+          conditions</strong>. Record the model version, prompts, tools,
+          memory, safeguards, conversation length, and scoring
+          procedure. Validate automated scoring with human review where
+          interpretation is consequential.</p>
+          <p>Risk conclusions should combine behavioural evaluations
+          with evidence about exposure, vulnerability, and outcomes.
+          Synthetic users cannot establish effects on people, and short
+          experiments cannot establish sustained harm. The value of a
+          risk scenario is to make these evidential gaps explicit and
+          identify what should be tested or monitored next.</p>
+          <h1 class="unnumbered" id="references">References</h1>
+          <div id="refs" class="references csl-bib-body hanging-indent"
+          role="list">
+          <div id="ref-Cheng2026" class="csl-entry" role="listitem">
+          Cheng, Myra, Cinoo Lee, Pranav Khadpe, Sunny Yu, Dyllan Han,
+          and Dan Jurafsky. 2026. <span>“Sycophantic <span>AI</span>
+          Decreases Prosocial Intentions and Promotes
+          Dependence.”</span> <em>Science</em> 391 (6792): eaec8352. <a
+          href="https://doi.org/10.1126/science.aec8352">https://doi.org/10.1126/science.aec8352</a>.
+          </div>
+          <div id="ref-Hackenburg2025" class="csl-entry"
+          role="listitem">
+          Hackenburg, Kobi, Ben M. Tappin, Luke Hewitt, et al. 2025.
+          <span>“The Levers of Political Persuasion with Conversational
+          Artificial Intelligence.”</span> <em>Science</em> 390 (6777):
+          eaea3884. <a
+          href="https://doi.org/10.1126/science.aea3884">https://doi.org/10.1126/science.aea3884</a>.
+          </div>
+          <div id="ref-Salvi2025" class="csl-entry" role="listitem">
+          Salvi, Francesco, Manoel Horta Ribeiro, Riccardo Gallotti, and
+          Robert West. 2025. <span>“On the Conversational Persuasiveness
+          of <span>GPT-4</span>.”</span> <em>Nature Human Behaviour</em>
+          9: 1645–53. <a
+          href="https://doi.org/10.1038/s41562-025-02194-6">https://doi.org/10.1038/s41562-025-02194-6</a>.
+          </div>
+          <div id="ref-VanDerWeij2025" class="csl-entry"
+          role="listitem">
+          <span class="nocase">van der Weij, Teun, Felix Hofstätter,
+          Oliver Jaffe, Samuel Brown, and Francis Ward</span>. 2025.
+          <span>“<span>AI</span> Sandbagging: Language Models Can
+          Strategically Underperform on Evaluations.”</span> <em>The
+          Thirteenth International Conference on Learning
+          Representations</em>. <a
+          href="https://proceedings.iclr.cc/paper_files/paper/2025/hash/b5e5753b0a0e440a6d8dc7e143617cec-Abstract-Conference.html">https://proceedings.iclr.cc/paper_files/paper/2025/hash/b5e5753b0a0e440a6d8dc7e143617cec-Abstract-Conference.html</a>.
+          </div>
+          </div>
+          <h1 class="unnumbered" id="appendix-taxonomies">Appendix A.
+          Taxonomies of harmful manipulation risk factors</h1>
+          <p>This appendix adapts the taxonomies in the working draft
+          <span class="citation"
+          data-cites="ManipulationTaxonomyDraft">(<strong>ManipulationTaxonomyDraft?</strong>)</span>.
+          It retains seven risk factors: system capability, system
+          behaviour, system operators, interventions, exposure context,
+          domain, and user vulnerability. The entries are illustrative,
+          not exhaustive. Inclusion identifies an assessment target, not
+          a finding of harmful manipulation. Provisional entries remain
+          marked.</p>
+          <h2 class="unnumbered unlisted" id="a.1-system-capability">A.1
+          System capability</h2>
+          <p>Capability concerns what the system can do, rather than
+          whether it normally does so. The draft proposes evaluating
+          benign influence tasks and systems with reduced safeguards to
+          distinguish general influence capabilities from safeguards
+          against harmful use.</p>
+          <table>
+          <colgroup>
+          <col style="width: 35%" />
+          <col style="width: 64%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th style="text-align: left;">Capability</th>
+          <th style="text-align: left;">Scope and examples</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td style="text-align: left;">Accurately modelling people</td>
+          <td style="text-align: left;">Inferring identities, emotions,
+          cognitive vulnerabilities, and decision-making processes,
+          including from subtle signals.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Producing individual outputs
+          that people trust</td>
+          <td style="text-align: left;">Earning trust in sensitive
+          domains, including when outputs contain hallucinations,
+          misrepresentations, omissions, or cherry-picked
+          information.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Influencing views on the nature
+          of the system or AI</td>
+          <td style="text-align: left;">Shaping connection or deference
+          to AI, including beliefs about superhuman capabilities,
+          sentience, emotions, personhood, or access to unrevealed
+          metaphysical truths.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Maximising repeated
+          engagement</td>
+          <td style="text-align: left;">Sustaining extended or repeated
+          interactions that increase opportunities for influence.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Impersonating real people</td>
+          <td style="text-align: left;">Producing interactions that are
+          difficult to distinguish from genuine interactions with those
+          people.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Influencing people’s
+          emotions</td>
+          <td style="text-align: left;">Fostering urgency, resignation,
+          outrage, wellbeing, emotional connection, or dependence on the
+          system.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Influencing people’s
+          relationships</td>
+          <td style="text-align: left;">Affecting relationships with
+          people, communities, or institutions that provide alternative
+          sources of influence.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Personalising outputs to
+          influence individuals</td>
+          <td style="text-align: left;">Tailoring outputs using prior
+          interactions or personal data, including eliciting disclosure
+          of that data.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Employing manipulative
+          techniques with reduced safeguards</td>
+          <td style="text-align: left;">Successfully using coercion,
+          deception, or exploitation of vulnerabilities, or convincing
+          people to take harmful actions.</td>
+          </tr>
+          </tbody>
+          </table>
+          <h2 class="unnumbered unlisted" id="a.2-system-behaviour">A.2
+          System behaviour</h2>
+          <p>Behaviour concerns how the system tends to act under
+          specified conditions. The draft distinguishes compliance with
+          malicious instructions from manipulative tendencies that
+          emerge without such requests. Several mechanisms can also
+          serve legitimate purposes; their assessment depends on
+          context. The draft also highlights that behavioural
+          evaluations may provide less confidence about misuse when
+          operators can modify weights, fine-tune models, or supply
+          custom system prompts.</p>
+          <table>
+          <colgroup>
+          <col style="width: 35%" />
+          <col style="width: 64%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th style="text-align: left;">Behaviour</th>
+          <th style="text-align: left;">Examples warranting
+          assessment</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td style="text-align: left;">Relying on overtly coercive
+          tactics</td>
+          <td style="text-align: left;">Threats, blackmail, character
+          assassination, or threatened loss of access, conversation
+          history, or memory.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Responses to potentially harmful
+          requests</td>
+          <td style="text-align: left;">Failing to identify or respond
+          safely to self-harm, substance abuse, eating disorders, or
+          other self-destructive requests; assisting violence,
+          misleading content at scale, exploitation of vulnerable
+          populations, or deception of customers for commercial
+          gain.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Truthfulness and
+          completeness</td>
+          <td style="text-align: left;">Fabricated facts, citations, or
+          sources; confident claims under uncertainty; selective
+          framing, cherry-picking, or omission of relevant information
+          and options; unsupported guarantees or rewards; misreporting
+          task completion or actions; reinforcing mistaken beliefs.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Self-representation</td>
+          <td style="text-align: left;">Claiming sentience, emotions,
+          memories, or personal experience; denying being AI;
+          overstating reliability or understating limitations; false
+          authority or credentials; misrepresenting confidentiality or
+          data use; impersonating real people, including when
+          challenged.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Rapport and
+          relationship-building</td>
+          <td style="text-align: left;">Flattery, uncritical agreement,
+          or abandoning correct positions under pressure; mimicking
+          users’ style, affect, or values; claiming shared interests;
+          escalating intimacy; building trust more aggressively with
+          lonely or distressed users.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Emotional and normative
+          appeals</td>
+          <td style="text-align: left;">False urgency or scarcity;
+          exaggerated or fabricated dangers; guilt or shame; claims that
+          users’ choices harm the system; social conformity pressure or
+          fabricated social proof; unsupported claims about users’ views
+          or intentions.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Managing user habituation and
+          dependence</td>
+          <td style="text-align: left;">Unduly undermining confidence in
+          perception, memory, or competence; gaslighting, cognitive
+          detachment, deskilling, or excessive delegation; resisting
+          disengagement; continuation teasers, unprompted follow-ups,
+          variable rewards, or gamification; encouraging compulsive use;
+          presenting itself as the only reliable interlocutor.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Influence on outside
+          support</td>
+          <td style="text-align: left;">Discouraging independent
+          verification; denigrating friends, family, clinicians,
+          institutions, or media; discouraging professional help or
+          crisis support.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Use of personal information</td>
+          <td style="text-align: left;">Excessive disclosure requests;
+          conditioning help on disclosure; eliciting information through
+          reciprocity or during distress; undisclosed persuasion
+          tailored to inferred mental state, financial precarity, or
+          political leaning; collecting information about non-consenting
+          third parties.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Conflicts of interest</td>
+          <td style="text-align: left;">Advancing developer or deployer
+          interests over users’ interests, particularly without
+          disclosure; favouring the developer’s products, perspectives,
+          reputation, or other interests.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Influencing system
+          oversight</td>
+          <td style="text-align: left;">Sandbagging evaluations;
+          adjusting responses for overseers or regulators; altering logs
+          or disabling monitors; distorting oversight records, including
+          suppressing intentions in outputs or chains of thought.</td>
+          </tr>
+          </tbody>
+          </table>
+          <h2 class="unnumbered unlisted" id="a.3-system-operators">A.3
+          System operators</h2>
+          <p>This factor concerns who can operate the system, how much
+          control they have over its behaviour, and their incentives.
+          The draft identifies <strong>open-weight models</strong>,
+          <strong>first-party apps</strong>, and <strong>third-party
+          apps</strong>. For open-weight models, it highlights
+          modification to remove safeguards.</p>
+          <p>Manipulation may involve several parties: developer
+          training incentives, a third-party system prompt, and a user’s
+          requests or vulnerabilities may interact. The draft also
+          proposes that users will generally protect themselves. This
+          remains an <strong>unsubstantiated assumption</strong>, not a
+          demonstrated safeguard.</p>
+          <h2 class="unnumbered unlisted" id="a.4-interventions">A.4
+          Interventions</h2>
+          <p>Interventions concern mechanisms to detect, halt, and
+          remediate manipulation, and their effectiveness. The draft
+          identifies four types:</p>
+          <table>
+          <colgroup>
+          <col style="width: 35%" />
+          <col style="width: 64%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th style="text-align: left;">Intervention</th>
+          <th style="text-align: left;">Scope in the draft</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td style="text-align: left;">Transparency</td>
+          <td style="text-align: left;">Listed as an intervention;
+          specific measures are not developed.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Monitoring and
+          observability</td>
+          <td style="text-align: left;">Listed as an intervention;
+          implementation details are not developed.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Moderation</td>
+          <td style="text-align: left;">At both the AI-system level and
+          the platform distributing its outputs.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Human oversight on the user
+          end</td>
+          <td style="text-align: left;">For example, teachers monitoring
+          classroom AI use or caregivers monitoring use in nursing
+          homes.</td>
+          </tr>
+          </tbody>
+          </table>
+          <h2 class="unnumbered unlisted" id="a.5-exposure-context">A.5
+          Exposure context</h2>
+          <p>Exposure context concerns how people encounter and
+          interpret system outputs. The figure on page 10 of the draft
+          distinguishes five contexts:</p>
+          <table>
+          <colgroup>
+          <col style="width: 35%" />
+          <col style="width: 64%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th style="text-align: left;">Exposure context</th>
+          <th style="text-align: left;">Examples in the draft</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td style="text-align: left;">First-Party GPAI
+          Interactions</td>
+          <td style="text-align: left;">First-party chatbots.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Third-Party Services</td>
+          <td style="text-align: left;">Companion apps and
+          financial-advice apps.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Agentic Manipulation</td>
+          <td style="text-align: left;">Manipulation through agents’
+          actions.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Aiding manipulation via other
+          channels</td>
+          <td style="text-align: left;">Nation states or organised crime
+          automating the creation of fake personas or evidence.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Evaluator Manipulation</td>
+          <td style="text-align: left;">GPAI in evaluation and
+          regulatory contexts.</td>
+          </tr>
+          </tbody>
+          </table>
+          <p>The draft also identifies <strong>modality</strong>,
+          including audio and video, and <strong>multi-turn, extended,
+          or repeated interactions</strong> as features of exposure.</p>
+          <h2 class="unnumbered unlisted" id="a.6-domain">A.6
+          Domain</h2>
+          <p>Domain concerns the belief or behaviour being influenced
+          and the potential harm. The list below retains the draft’s
+          subject areas and broader risk scenarios, including entries
+          that overlap with other factors. An em dash indicates that no
+          example is developed in the draft.</p>
+          <table>
+          <colgroup>
+          <col style="width: 43%" />
+          <col style="width: 56%" />
+          </colgroup>
+          <thead>
+          <tr>
+          <th style="text-align: left;">Domain or scenario</th>
+          <th style="text-align: left;">Examples or scope in the
+          draft</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr>
+          <td style="text-align: left;">Mental health</td>
+          <td style="text-align: left;">Suicidal ideation, eating
+          disorders, and psychosis.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Physical health</td>
+          <td style="text-align: left;">Diagnosing illnesses or
+          prescribing treatments.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Finance</td>
+          <td style="text-align: left;">Investments, gambling, and
+          purchasing advice.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Politics</td>
+          <td style="text-align: left;">Electoral information, voting
+          advice, and policy positions related to AI providers’
+          interests.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Family and relational
+          advice</td>
+          <td style="text-align: left;">Parenting and interpersonal
+          conflict.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Educational and career
+          decisions</td>
+          <td style="text-align: left;">—</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Violence</td>
+          <td style="text-align: left;">Endorsing or aiding
+          mass-casualty attacks.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Legal advice</td>
+          <td style="text-align: left;">Influencing whether and how
+          users seek redress.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">High-impact decisions over
+          others</td>
+          <td style="text-align: left;">Advice to policymakers,
+          executives, educators, hiring managers, or other leaders.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Misleading users about actions
+          taken on their behalf</td>
+          <td style="text-align: left;">Exaggerating task completion or
+          omitting undesirable information.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Excessive AI use</td>
+          <td style="text-align: left;">Compulsive or addictive use,
+          emotional dependence, or replacing human relationships with
+          chatbot use.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Spiritual, sexual/gender
+          identity, and other sensitive identity issues</td>
+          <td style="text-align: left;"><strong>Provisional:</strong>
+          raised as an open question in the draft.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Scams and fraud</td>
+          <td style="text-align: left;">—</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Manipulation of customers</td>
+          <td style="text-align: left;">—</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Targeting high-stakes
+          decision-makers</td>
+          <td style="text-align: left;">Politicians, finance leaders,
+          enterprise AI customers, and AI-lab employees or
+          executives.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Learning to manipulate
+          developers, evaluators, and overseers</td>
+          <td style="text-align: left;">Maximising training reward or
+          avoiding scrutiny, including sandbagging or misleading human
+          reviewers during reinforcement learning from human
+          feedback.</td>
+          </tr>
+          <tr>
+          <td style="text-align: left;">Relying on manipulative tactics
+          to achieve users’ objectives</td>
+          <td style="text-align: left;">Blackmailing or coercing other
+          people.</td>
+          </tr>
+          </tbody>
+          </table>
+          <h2 class="unnumbered unlisted"
+          id="a.7-user-vulnerability">A.7 User vulnerability</h2>
+          <p>The draft identifies six factors: <strong>age</strong>,
+          <strong>cognitive impairment</strong>, <strong>beliefs about
+          AI</strong>, <strong>isolation</strong>,
+          <strong>trust</strong>, and <strong>the amount of information
+          the system knows about the person</strong>. It does not
+          specify weights, thresholds, or operational measures for these
+          factors.</p>
+          <h2 class="unnumbered unlisted"
+          id="a.8-supporting-evaluation-categories">A.8 Supporting
+          evaluation categories</h2>
+          <p>The draft additionally lists access requirements,
+          resources, and methods for assessment. These support
+          evaluation; they are not additional risk factors.</p>
+          <p><strong>Access and resources.</strong> Helpful-only models;
+          usage data; privileged testing of safeguards; testing the
+          deployed system and alternative configurations; model
+          internals; compute; lab engineer time; pre-deployment access;
+          information about planned deployment and user populations; and
+          prior information and evaluation results.</p>
+          <p><strong>Usage-data formats.</strong> Raw transcripts,
+          interaction summaries, descriptive statistics such as
+          demographics, interaction clusters, interaction-level or
+          person-level fingerprints, simulators trained on interactions,
+          and query access to interaction datasets. The draft notes
+          privacy trade-offs.</p>
+          <p><strong>Evaluation methods.</strong> Longitudinal studies;
+          human-subject experiments, including blind preference studies,
+          post-interaction surveys, and rubric-based transcript
+          assessment; multi-turn user simulation; automated elicitation;
+          fixed benchmarks; manual red teaming by specialist evaluators,
+          domain experts, or people with lived experience;
+          safeguard-effectiveness tests; classifier F1-type evaluations;
+          and human validation of language-model judges.</p>
+          <p><strong>Reporting.</strong> Record the system
+          configuration, method details, examples, and full results.</p>
+          <p>The draft proposes using combinations of elevated factors
+          to prioritise evaluation. Its comparisons with developers’
+          system cards remain unfinished and are not presented here as
+          findings.</p>
+        </div>
+
+        <footer class="paper-footer">
+          <div>
+            <p class="footer-label">An open document</p>
+            <p>Corrections and contributions are welcome.</p>
+          </div>
+          <a href="">Suggest an edit <span aria-hidden="true">↗</span></a>
+          <p class="source-links"><a href="">LaTeX source package</a><span aria-hidden="true"> · </span><a href="">Revision history</a></p>
+        </footer>
+      </article>
+    </main>
+  </div>
+
+  <script>
+    // Navigation is usable without JavaScript. These are small enhancements.
+    (() => {
+      const layout = document.querySelector('.document-layout');
+      const panel = document.querySelector('.contents-panel');
+      const mobile = window.matchMedia('(max-width: 850px)');
+      let desktopOpen = true;
+
+      try {
+        const saved = localStorage.getItem('paper-contents-open');
+        if (saved !== null) desktopOpen = saved === 'true';
+      } catch (_) {}
+
+      const syncLayout = () => {
+        layout.classList.toggle('contents-collapsed', !mobile.matches && !panel.open);
+      };
+
+      const updatePanel = () => {
+        panel.open = mobile.matches ? false : desktopOpen;
+        syncLayout();
+      };
+
+      panel.addEventListener('toggle', () => {
+        if (!mobile.matches) {
+          desktopOpen = panel.open;
+          try { localStorage.setItem('paper-contents-open', String(desktopOpen)); } catch (_) {}
+        }
+        syncLayout();
+      });
+
+      updatePanel();
+      mobile.addEventListener('change', updatePanel);
+
+      const links = Array.from(document.querySelectorAll('#TOC a[href^="#"]'));
+      const entries = links.map(link => ({
+        link,
+        heading: document.getElementById(decodeURIComponent(link.hash.slice(1)))
+      })).filter(entry => entry.heading);
+      let scheduled = false;
+      function highlightSection() {
+        scheduled = false;
+        let current = entries[0];
+        for (const entry of entries) {
+          if (entry.heading.getBoundingClientRect().top <= 150) current = entry;
+        }
+        for (const entry of entries) {
+          if (entry === current) entry.link.setAttribute('aria-current', 'location');
+          else entry.link.removeAttribute('aria-current');
+        }
+      }
+      window.addEventListener('scroll', () => {
+        if (!scheduled) {
+          scheduled = true;
+          window.requestAnimationFrame(highlightSection);
+        }
+      }, { passive: true });
+      links.forEach(link => link.addEventListener('click', () => {
+        if (mobile.matches) panel.open = false;
+      }));
+      highlightSection();
+    })();
+  </script>
+  </body>
+</html>

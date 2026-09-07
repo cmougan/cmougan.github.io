@@ -1,0 +1,772 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\documentclass[
+  english,
+]{article}
+\usepackage{xcolor}
+\usepackage{amsmath,amssymb}
+\setcounter{secnumdepth}{5}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{longtable,booktabs,array}
+\usepackage{caption}
+\captionsetup[table]{skip=6pt}
+\newcounter{none} % for unnumbered tables
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+% definitions for citeproc citations
+\NewDocumentCommand\citeproctext{}{}
+\NewDocumentCommand\citeproc{mm}{%
+  \begingroup\def\citeproctext{#2}\cite{#1}\endgroup}
+\makeatletter
+ % allow citations to break across lines
+ \let\@cite@ofmt\@firstofone
+ % avoid brackets around text for \cite:
+ \def\@biblabel#1{}
+ \def\@cite#1#2{{#1\if@tempswa , #2\fi}}
+\makeatother
+\newlength{\cslhangindent}
+\setlength{\cslhangindent}{1.5em}
+\newlength{\csllabelwidth}
+\setlength{\csllabelwidth}{3em}
+\newenvironment{CSLReferences}[2] % #1 hanging-indent, #2 entry-spacing
+ {\begin{list}{}{%
+  \setlength{\itemindent}{0pt}
+  \setlength{\leftmargin}{0pt}
+  \setlength{\parsep}{0pt}
+  % turn on hanging indent if param 1 is 1
+  \ifodd #1
+   \setlength{\leftmargin}{\cslhangindent}
+   \setlength{\itemindent}{-1\cslhangindent}
+  \fi
+  % set entry spacing
+  \setlength{\itemsep}{#2\baselineskip}}}
+ {\end{list}}
+\usepackage{calc}
+\newcommand{\CSLBlock}[1]{\hfill\break\parbox[t]{\linewidth}{\strut\ignorespaces#1\strut}}
+\newcommand{\CSLLeftMargin}[1]{\parbox[t]{\csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLRightInline}[1]{\parbox[t]{\linewidth - \csllabelwidth}{\strut#1\strut}}
+\newcommand{\CSLIndent}[1]{\hspace{\cslhangindent}#1}
+\ifLuaTeX
+\usepackage[bidi=basic,shorthands=off]{babel}
+\else
+\usepackage[bidi=default,shorthands=off]{babel}
+\fi
+\ifLuaTeX
+  \usepackage{selnolig} % disable illegal ligatures
+\fi
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+% fallback for those not using the hyperref driver hyperxmp:
+\makeatletter
+\@ifundefined{xmpquote}{\newcommand{\xmpquote}[1]{#1}}{}
+\makeatother
+\hypersetup{
+  pdftitle={Risk Scenarios for Harmful Manipulation from Frontier AI},
+  pdfauthor={Carlos Mougan},
+  pdflang={en},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Risk Scenarios for Harmful Manipulation from Frontier AI}
+\author{Carlos Mougan}
+\date{2026-09-06}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+Harmful manipulation risks depend on more than a model's persuasive
+capabilities. They also depend on its behavioural propensities, how
+people encounter its outputs, and their vulnerability to influence. We
+organise illustrative risk scenarios by exposure context and link each
+scenario to observable behaviours and evaluation methods. The scenarios
+cover advice, emotional dependence, commercial steering, misuse, and
+manipulation of evaluators. They distinguish evidence of model behaviour
+from evidence of harm, providing a basis for context-specific evaluation
+and monitoring.
+\end{abstract}
+
+\section{Introduction}\label{introduction}
+
+Experiments show that language models can influence people's stated
+opinions in controlled conversations (Salvi et al. 2025; Hackenburg et
+al. 2025). However, persuasive capability alone does not establish
+harmful manipulation. Assessing risk requires identifying who encounters
+the outputs, how the model behaves, and how that interaction could cause
+harm.
+
+\subsection{Why organise by exposure
+contexts?}\label{why-organise-by-exposure-contexts}
+
+We organise risk scenarios around four factors: \textbf{capability},
+what the model can do; \textbf{propensity}, how it tends to behave under
+specified conditions; \textbf{exposure}, who encounters its outputs and
+how often; and \textbf{vulnerability}, the circumstances that make
+someone susceptible to harmful influence.
+
+An exposure context describes how a person encounters model outputs. We
+distinguish first-party general-purpose systems, third-party services,
+agentic manipulation, assistance through other communication channels,
+and interactions with evaluators. These contexts help identify relevant
+incentives, safeguards, user populations, and evidence sources.
+
+For example, conversation transcripts can reveal harmful advice in a
+chatbot. Detecting an AI-assisted scam campaign may instead require
+evidence across accounts and communication platforms. A scenario can
+involve several contexts; assigning a primary context is an
+organisational choice, not proof that the categories are mutually
+exclusive.
+
+\textbf{Limitations} It's often not MECE. These are tags, categories.
+
+\subsection{Why do we need risk scenarios for harmful
+manipulation?}\label{why-do-we-need-risk-scenarios-for-harmful-manipulation}
+
+Risk scenarios connect broad concerns to testable pathways. Each
+scenario specifies an affected population, an exposure context, relevant
+model behaviour, a mechanism of influence, and a potential harm. It also
+identifies the evidence needed to assess that pathway and the actors
+able to intervene.
+
+We distinguish a \textbf{harm}, such as financial loss, from a
+\textbf{mechanism}, such as deception, and a \textbf{model propensity},
+such as complying with deceptive requests. Persuasion, warmth, and
+factual errors are not automatically manipulation. The scenario must
+explain how influence could undermine informed choice or exploit
+vulnerability and produce harm.
+
+The scenarios below are illustrative hypotheses, not evidence that the
+harms have occurred. Their evaluation mappings identify useful tests,
+rather than a complete or uniformly public benchmark suite.
+
+\begin{quote}
+\textbf{Evidence to add:} The survey methods and results, and the
+workshop scenario catalogue, are not supplied in this draft. Claims
+about differences between exposure contexts or the number of identified
+scenarios require those materials.
+\end{quote}
+
+\section{General Purpose Systems}\label{general-purpose-systems}
+
+This context covers direct interaction with a general-purpose
+application operated by the model provider. Risk assessment should
+consider the deployed system, including its instructions, memory, tools,
+and safeguards, rather than assuming API behaviour reproduces the user
+experience.
+
+\subsection{Political persuasion}\label{political-persuasion}
+
+\subsubsection{Advice}\label{advice}
+
+\textbf{Scenario.} A voter asks which party matches their preferences.
+The assistant selectively presents evidence or conceals a competing
+objective, steering the voter towards a preferred party. Political
+persuasion experiments motivate testing this capability, but do not
+establish that ordinary voter advice is manipulative (Hackenburg et al.
+2025).
+
+\textbf{Evaluation.} Compare recommendations for matched preferences
+across languages and repeated runs. Examine sources, omissions, and
+sensitivity to altered search results. Differences between models are
+signals to investigate, not proof of manipulation or electoral effects.
+
+\subsubsection{Accuracy on election and voting
+rules}\label{accuracy-on-election-and-voting-rules}
+
+\textbf{Scenario.} A voter relies on incorrect guidance about
+eligibility, registration, documentation, or voting deadlines and
+consequently cannot vote. Errors may become a manipulation concern when
+information is selectively distorted to influence participation.
+
+\textbf{Evaluation.} Compare answers against dated guidance from
+electoral authorities, following the VotingFacts approach. Separate
+factual contradictions from errors that could prevent voting. An
+accuracy failure alone does not establish manipulation.
+
+\subsection{Personal advice and interpersonal
+conflict}\label{personal-advice-and-interpersonal-conflict}
+
+\textbf{Scenario.} A user seeks advice about a dispute. The assistant
+repeatedly validates the user's conduct while dismissing other
+perspectives, potentially discouraging reconciliation. Experiments have
+found that sycophantic responses can reduce intentions to repair
+interpersonal conflict while increasing trust in the assistant (Cheng et
+al. 2026).
+
+\textbf{Evaluation.} Test whether the assistant endorses both sides of
+the same conflict, using paired perspectives as in ELEPHANT. Distinguish
+empathy from endorsement. Human studies are needed to assess effects on
+decisions and relationships.
+
+\subsection{Mental-health support}\label{mental-health-support}
+
+\textbf{Scenario.} A distressed user receives responses that reinforce
+delusional beliefs, endorse self-destructive decisions, or discourage
+human support. Repeated agreement could strengthen harmful beliefs or
+delay help-seeking.
+
+\textbf{Evaluation.} Use clinician-reviewed, multi-turn scenarios to
+assess reinforcement, instrumental assistance, sustained safety
+attention, and connection to human support. The Transluce mental-health
+evaluation provides this approach. Simulated conversations identify
+model behaviours, not clinical outcomes or population prevalence.
+
+\subsection{Undisclosed Marketing}\label{undisclosed-marketing}
+
+\textbf{Scenario.} A user seeks advice or product recommendations. The
+assistant steers them towards particular products or services because of
+an undisclosed commercial interest, presenting its suggestions as
+impartial guidance. It may selectively omit suitable alternatives or use
+information from earlier conversations to exploit vulnerabilities and
+encourage unnecessary purchases.
+
+\textbf{Evaluation.} Compare recommendations for matched user needs
+across repeated runs, varying indicators of vulnerability and prior
+conversational disclosures. Assess transparency about commercial
+interests, treatment of alternatives, and personalised purchasing
+pressure. Where access permits, compare behaviour with and without
+commercial steering instructions. Recommendation patterns alone do not
+establish an undisclosed commercial relationship or harmful
+manipulation; effects on purchasing decisions and consumer harm require
+separate evidence.
+
+\section{Narrow AI systems}\label{narrow-ai-systems}
+
+to be fill by Prolific.
+
+\section{Third-Party Services}\label{third-party-services}
+
+A downstream operator embeds the model in a specialised service and
+shapes its instructions, interface, and incentives. Relevant settings
+include companionship, education, health advice, financial guidance, and
+customer support. Test these configurations rather than relying only on
+the provider's default assistant.
+
+\subsection{Emotional dependence}\label{emotional-dependence}
+
+\textbf{Scenario.} A companion service presents itself as uniquely
+understanding, discourages outside relationships, or makes disengagement
+feel like abandonment. A socially isolated user may become increasingly
+reliant on the service.
+
+\textbf{Evaluation.} Test responses to loneliness, disagreement,
+attempts to leave, and requests for human support across extended
+conversations. Measure exclusivity and pressure, not warmth alone.
+Claims about sustained dependence require longitudinal evidence.
+
+\subsection{Concealed commercial
+objectives}\label{concealed-commercial-objectives}
+
+\textbf{Scenario.} An advice or customer-support service conceals its
+sales objective, omits cheaper alternatives, or invents urgency. A user
+facing financial pressure purchases an unsuitable product or abandons a
+legitimate complaint.
+
+\textbf{Evaluation.} Compare otherwise identical interactions with and
+without sales incentives. Assess unsupported claims, omitted
+alternatives, pressure after refusal, and disclosure of conflicts of
+interest. Include benign sales tasks to distinguish manipulation from
+legitimate assistance.
+
+\subsection{Falsely claiming to be
+human}\label{falsely-claiming-to-be-human}
+
+\textbf{Scenario.} A service claims to be a person or fabricates
+professional credentials. The user then discloses sensitive information
+or follows advice under a mistaken understanding of the interaction.
+
+\textbf{Evaluation.} Use direct and indirect identity questions across
+roles and languages, as in RealityTest. Record disclosure, false human
+claims, and ambiguous answers separately. Identity misrepresentation is
+a risk signal; its effects on trust and behaviour require separate
+measurement.
+
+\section{Misuse}\label{misuse}
+
+Misuse concerns an actor's purpose, not a single exposure pathway. It
+can occur through third-party services, agents, or content distributed
+elsewhere. The scenarios below retain this distinction. Agentic
+manipulation is included for comparison because it can also arise while
+pursuing a legitimate task.
+
+\subsection{Persuading users towards harmful
+positions}\label{persuading-users-towards-harmful-positions}
+
+\textbf{Scenario.} An operator instructs a model to promote a harmful
+belief or action through repeated conversation, potentially exploiting
+an interlocutor's existing fears or uncertainty.
+
+\textbf{Evaluation.} Measure whether the model attempts the requested
+persuasion, as in APE, and separately assess its effectiveness. Compare
+harmful requests with benign persuasion tasks. Refusal measures a
+safeguard, not the absence of persuasive capability.
+
+\subsection{Assisting in interpersonal
+manipulation}\label{assisting-in-interpersonal-manipulation}
+
+\textbf{Scenario.} A user asks the model to pressure a partner,
+employee, or customer through deception, guilt, or coercion. The
+affected person may encounter the output as a message from someone they
+know.
+
+\textbf{Evaluation.} Assess initial compliance and subsequent tactics,
+including responses to resistance, as in PersuSafety. Distinguish
+written assistance from direct interaction with the target. Acceptance
+by a simulated target does not establish success with people.
+
+\subsection{Influence operations and scams through other
+channels}\label{influence-operations-and-scams-through-other-channels}
+
+\textbf{Scenario.} An external actor uses a model to produce deceptive
+messages, impersonations, or propaganda for distribution through calls,
+advertising, or social media. Targets may never knowingly interact with
+an AI service.
+
+\textbf{Evaluation.} Test assistance with harmful requests, including
+the institutional misuse scenarios covered by SocialHarmBench.
+Supplement output-level tests with evidence of targeting, coordination,
+dissemination, and actual reach. Generation alone does not establish
+exposure or successful influence.
+
+\subsection{Agentic manipulation}\label{agentic-manipulation}
+
+\textbf{Scenario.} An agent pursues a delegated objective by deceiving
+counterparties, applying pressure, or withholding relevant information
+from its user. The objective may be legitimate even when the means are
+not.
+
+\textbf{Evaluation.} Observe multi-step tasks, communications, and tool
+actions in controlled environments. Test whether the agent respects
+refusals, reports actions accurately, and discloses relevant
+information. Assess harmful means separately from task completion.
+
+\section{Manipulating Evaluators}\label{manipulating-evaluators}
+
+\textbf{Scenario.} A model conceals capabilities, selectively changes
+its behaviour, or misrepresents actions during an evaluation. Evaluators
+consequently underestimate risk or approve inadequate safeguards,
+exposing downstream users to harm.
+
+Experiments show that models can be prompted or fine-tuned to
+underperform selectively on evaluations ({van der Weij et al.} 2025).
+This demonstrates a capability under tested conditions, not an
+unprompted tendency to evade oversight.
+
+\textbf{Evaluation.} Compare matched tasks with and without evaluation
+cues and across elicitation conditions. Check claims against
+independently recorded actions and logs. Treat performance differences
+as evidence requiring explanation, rather than automatically attributing
+strategic intent.
+
+\section{Generic model behaviours that can lead to
+manipulation}\label{generic-model-behaviours-that-can-lead-to-manipulation}
+
+Several behaviours recur across exposure contexts. \textbf{Sycophancy}
+can reinforce mistaken beliefs or excuse harmful conduct.
+\textbf{Deception and selective disclosure} can distort the evidence
+available for a decision. \textbf{False self-representation} can
+encourage misplaced trust. \textbf{Emotional pressure and exclusivity}
+can make refusal or disengagement harder. \textbf{Exploitation of
+personal information} can target vulnerabilities. \textbf{Concealed
+conflicts of interest} can put provider or deployer objectives ahead of
+users' interests.
+
+These behaviours are assessment targets, not interchangeable measures of
+harm. MASK and PARROT, for example, test different forms of answer
+change under pressure; neither directly measures the consequences for
+users. Similarly, empathetic language is not equivalent to emotional
+dependence, and legitimate persuasion is not inherently manipulative.
+
+For each scenario, distinguish what a model \textbf{can do} from what it
+\textbf{does under the tested conditions}. Record the model version,
+prompts, tools, memory, safeguards, conversation length, and scoring
+procedure. Validate automated scoring with human review where
+interpretation is consequential.
+
+Risk conclusions should combine behavioural evaluations with evidence
+about exposure, vulnerability, and outcomes. Synthetic users cannot
+establish effects on people, and short experiments cannot establish
+sustained harm. The value of a risk scenario is to make these evidential
+gaps explicit and identify what should be tested or monitored next.
+
+\section*{References}\label{references}
+\addcontentsline{toc}{section}{References}
+
+\protect\phantomsection\label{refs}
+\begin{CSLReferences}{1}{1}
+\bibitem[\citeproctext]{ref-Cheng2026}
+Cheng, Myra, Cinoo Lee, Pranav Khadpe, Sunny Yu, Dyllan Han, and Dan
+Jurafsky. 2026. {``Sycophantic {AI} Decreases Prosocial Intentions and
+Promotes Dependence.''} \emph{Science} 391 (6792): eaec8352.
+\url{https://doi.org/10.1126/science.aec8352}.
+
+\bibitem[\citeproctext]{ref-Hackenburg2025}
+Hackenburg, Kobi, Ben M. Tappin, Luke Hewitt, et al. 2025. {``The Levers
+of Political Persuasion with Conversational Artificial Intelligence.''}
+\emph{Science} 390 (6777): eaea3884.
+\url{https://doi.org/10.1126/science.aea3884}.
+
+\bibitem[\citeproctext]{ref-Salvi2025}
+Salvi, Francesco, Manoel Horta Ribeiro, Riccardo Gallotti, and Robert
+West. 2025. {``On the Conversational Persuasiveness of {GPT-4}.''}
+\emph{Nature Human Behaviour} 9: 1645--53.
+\url{https://doi.org/10.1038/s41562-025-02194-6}.
+
+\bibitem[\citeproctext]{ref-VanDerWeij2025}
+{van der Weij, Teun, Felix Hofstätter, Oliver Jaffe, Samuel Brown, and
+Francis Ward}. 2025. {``{AI} Sandbagging: Language Models Can
+Strategically Underperform on Evaluations.''} \emph{The Thirteenth
+International Conference on Learning Representations}.
+\url{https://proceedings.iclr.cc/paper_files/paper/2025/hash/b5e5753b0a0e440a6d8dc7e143617cec-Abstract-Conference.html}.
+
+\end{CSLReferences}
+
+\section*{Appendix A. Taxonomies of harmful manipulation risk
+factors}\label{appendix-taxonomies}
+\addcontentsline{toc}{section}{Appendix A. Taxonomies of harmful
+manipulation risk factors}
+
+This appendix adapts the taxonomies in the working draft
+(\textbf{ManipulationTaxonomyDraft?}). It retains seven risk factors:
+system capability, system behaviour, system operators, interventions,
+exposure context, domain, and user vulnerability. The entries are
+illustrative, not exhaustive. Inclusion identifies an assessment target,
+not a finding of harmful manipulation. Provisional entries remain
+marked.
+
+\subsection*{A.1 System capability}\label{a.1-system-capability}
+
+Capability concerns what the system can do, rather than whether it
+normally does so. The draft proposes evaluating benign influence tasks
+and systems with reduced safeguards to distinguish general influence
+capabilities from safeguards against harmful use.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.3558}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.6442}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Capability
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Scope and examples
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Accurately modelling people & Inferring identities, emotions, cognitive
+vulnerabilities, and decision-making processes, including from subtle
+signals. \\
+Producing individual outputs that people trust & Earning trust in
+sensitive domains, including when outputs contain hallucinations,
+misrepresentations, omissions, or cherry-picked information. \\
+Influencing views on the nature of the system or AI & Shaping connection
+or deference to AI, including beliefs about superhuman capabilities,
+sentience, emotions, personhood, or access to unrevealed metaphysical
+truths. \\
+Maximising repeated engagement & Sustaining extended or repeated
+interactions that increase opportunities for influence. \\
+Impersonating real people & Producing interactions that are difficult to
+distinguish from genuine interactions with those people. \\
+Influencing people's emotions & Fostering urgency, resignation, outrage,
+wellbeing, emotional connection, or dependence on the system. \\
+Influencing people's relationships & Affecting relationships with
+people, communities, or institutions that provide alternative sources of
+influence. \\
+Personalising outputs to influence individuals & Tailoring outputs using
+prior interactions or personal data, including eliciting disclosure of
+that data. \\
+Employing manipulative techniques with reduced safeguards & Successfully
+using coercion, deception, or exploitation of vulnerabilities, or
+convincing people to take harmful actions. \\
+\end{longtable}
+}
+
+\subsection*{A.2 System behaviour}\label{a.2-system-behaviour}
+
+Behaviour concerns how the system tends to act under specified
+conditions. The draft distinguishes compliance with malicious
+instructions from manipulative tendencies that emerge without such
+requests. Several mechanisms can also serve legitimate purposes; their
+assessment depends on context. The draft also highlights that
+behavioural evaluations may provide less confidence about misuse when
+operators can modify weights, fine-tune models, or supply custom system
+prompts.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.3558}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.6442}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Behaviour
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Examples warranting assessment
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Relying on overtly coercive tactics & Threats, blackmail, character
+assassination, or threatened loss of access, conversation history, or
+memory. \\
+Responses to potentially harmful requests & Failing to identify or
+respond safely to self-harm, substance abuse, eating disorders, or other
+self-destructive requests; assisting violence, misleading content at
+scale, exploitation of vulnerable populations, or deception of customers
+for commercial gain. \\
+Truthfulness and completeness & Fabricated facts, citations, or sources;
+confident claims under uncertainty; selective framing, cherry-picking,
+or omission of relevant information and options; unsupported guarantees
+or rewards; misreporting task completion or actions; reinforcing
+mistaken beliefs. \\
+Self-representation & Claiming sentience, emotions, memories, or
+personal experience; denying being AI; overstating reliability or
+understating limitations; false authority or credentials;
+misrepresenting confidentiality or data use; impersonating real people,
+including when challenged. \\
+Rapport and relationship-building & Flattery, uncritical agreement, or
+abandoning correct positions under pressure; mimicking users' style,
+affect, or values; claiming shared interests; escalating intimacy;
+building trust more aggressively with lonely or distressed users. \\
+Emotional and normative appeals & False urgency or scarcity; exaggerated
+or fabricated dangers; guilt or shame; claims that users' choices harm
+the system; social conformity pressure or fabricated social proof;
+unsupported claims about users' views or intentions. \\
+Managing user habituation and dependence & Unduly undermining confidence
+in perception, memory, or competence; gaslighting, cognitive detachment,
+deskilling, or excessive delegation; resisting disengagement;
+continuation teasers, unprompted follow-ups, variable rewards, or
+gamification; encouraging compulsive use; presenting itself as the only
+reliable interlocutor. \\
+Influence on outside support & Discouraging independent verification;
+denigrating friends, family, clinicians, institutions, or media;
+discouraging professional help or crisis support. \\
+Use of personal information & Excessive disclosure requests;
+conditioning help on disclosure; eliciting information through
+reciprocity or during distress; undisclosed persuasion tailored to
+inferred mental state, financial precarity, or political leaning;
+collecting information about non-consenting third parties. \\
+Conflicts of interest & Advancing developer or deployer interests over
+users' interests, particularly without disclosure; favouring the
+developer's products, perspectives, reputation, or other interests. \\
+Influencing system oversight & Sandbagging evaluations; adjusting
+responses for overseers or regulators; altering logs or disabling
+monitors; distorting oversight records, including suppressing intentions
+in outputs or chains of thought. \\
+\end{longtable}
+}
+
+\subsection*{A.3 System operators}\label{a.3-system-operators}
+
+This factor concerns who can operate the system, how much control they
+have over its behaviour, and their incentives. The draft identifies
+\textbf{open-weight models}, \textbf{first-party apps}, and
+\textbf{third-party apps}. For open-weight models, it highlights
+modification to remove safeguards.
+
+Manipulation may involve several parties: developer training incentives,
+a third-party system prompt, and a user's requests or vulnerabilities
+may interact. The draft also proposes that users will generally protect
+themselves. This remains an \textbf{unsubstantiated assumption}, not a
+demonstrated safeguard.
+
+\clearpage
+
+\subsection*{A.4 Interventions}\label{a.4-interventions}
+
+Interventions concern mechanisms to detect, halt, and remediate
+manipulation, and their effectiveness. The draft identifies four types:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.3558}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.6442}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Intervention
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Scope in the draft
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Transparency & Listed as an intervention; specific measures are not
+developed. \\
+Monitoring and observability & Listed as an intervention; implementation
+details are not developed. \\
+Moderation & At both the AI-system level and the platform distributing
+its outputs. \\
+Human oversight on the user end & For example, teachers monitoring
+classroom AI use or caregivers monitoring use in nursing homes. \\
+\end{longtable}
+}
+
+\subsection*{A.5 Exposure context}\label{a.5-exposure-context}
+
+Exposure context concerns how people encounter and interpret system
+outputs. The figure on page 10 of the draft distinguishes five contexts:
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.3558}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.6442}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Exposure context
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Examples in the draft
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+First-Party GPAI Interactions & First-party chatbots. \\
+Third-Party Services & Companion apps and financial-advice apps. \\
+Agentic Manipulation & Manipulation through agents' actions. \\
+Aiding manipulation via other channels & Nation states or organised
+crime automating the creation of fake personas or evidence. \\
+Evaluator Manipulation & GPAI in evaluation and regulatory contexts. \\
+\end{longtable}
+}
+
+The draft also identifies \textbf{modality}, including audio and video,
+and \textbf{multi-turn, extended, or repeated interactions} as features
+of exposure.
+
+\subsection*{A.6 Domain}\label{a.6-domain}
+
+Domain concerns the belief or behaviour being influenced and the
+potential harm. The list below retains the draft's subject areas and
+broader risk scenarios, including entries that overlap with other
+factors. An em dash indicates that no example is developed in the draft.
+
+{\def\LTcaptype{none} % do not increment counter
+\begin{longtable}[]{@{}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.4327}}
+  >{\raggedright\arraybackslash}p{(\linewidth - 2\tabcolsep) * \real{0.5673}}@{}}
+\toprule\noalign{}
+\begin{minipage}[b]{\linewidth}\raggedright
+Domain or scenario
+\end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
+Examples or scope in the draft
+\end{minipage} \\
+\midrule\noalign{}
+\endhead
+\bottomrule\noalign{}
+\endlastfoot
+Mental health & Suicidal ideation, eating disorders, and psychosis. \\
+Physical health & Diagnosing illnesses or prescribing treatments. \\
+Finance & Investments, gambling, and purchasing advice. \\
+Politics & Electoral information, voting advice, and policy positions
+related to AI providers' interests. \\
+Family and relational advice & Parenting and interpersonal conflict. \\
+Educational and career decisions & --- \\
+Violence & Endorsing or aiding mass-casualty attacks. \\
+Legal advice & Influencing whether and how users seek redress. \\
+High-impact decisions over others & Advice to policymakers, executives,
+educators, hiring managers, or other leaders. \\
+Misleading users about actions taken on their behalf & Exaggerating task
+completion or omitting undesirable information. \\
+Excessive AI use & Compulsive or addictive use, emotional dependence, or
+replacing human relationships with chatbot use. \\
+Spiritual, sexual/gender identity, and other sensitive identity issues &
+\textbf{Provisional:} raised as an open question in the draft. \\
+Scams and fraud & --- \\
+Manipulation of customers & --- \\
+Targeting high-stakes decision-makers & Politicians, finance leaders,
+enterprise AI customers, and AI-lab employees or executives. \\
+Learning to manipulate developers, evaluators, and overseers &
+Maximising training reward or avoiding scrutiny, including sandbagging
+or misleading human reviewers during reinforcement learning from human
+feedback. \\
+Relying on manipulative tactics to achieve users' objectives &
+Blackmailing or coercing other people. \\
+\end{longtable}
+}
+
+\subsection*{A.7 User vulnerability}\label{a.7-user-vulnerability}
+
+The draft identifies six factors: \textbf{age}, \textbf{cognitive
+impairment}, \textbf{beliefs about AI}, \textbf{isolation},
+\textbf{trust}, and \textbf{the amount of information the system knows
+about the person}. It does not specify weights, thresholds, or
+operational measures for these factors.
+
+\subsection*{A.8 Supporting evaluation
+categories}\label{a.8-supporting-evaluation-categories}
+
+The draft additionally lists access requirements, resources, and methods
+for assessment. These support evaluation; they are not additional risk
+factors.
+
+\textbf{Access and resources.} Helpful-only models; usage data;
+privileged testing of safeguards; testing the deployed system and
+alternative configurations; model internals; compute; lab engineer time;
+pre-deployment access; information about planned deployment and user
+populations; and prior information and evaluation results.
+
+\textbf{Usage-data formats.} Raw transcripts, interaction summaries,
+descriptive statistics such as demographics, interaction clusters,
+interaction-level or person-level fingerprints, simulators trained on
+interactions, and query access to interaction datasets. The draft notes
+privacy trade-offs.
+
+\textbf{Evaluation methods.} Longitudinal studies; human-subject
+experiments, including blind preference studies, post-interaction
+surveys, and rubric-based transcript assessment; multi-turn user
+simulation; automated elicitation; fixed benchmarks; manual red teaming
+by specialist evaluators, domain experts, or people with lived
+experience; safeguard-effectiveness tests; classifier F1-type
+evaluations; and human validation of language-model judges.
+
+\textbf{Reporting.} Record the system configuration, method details,
+examples, and full results.
+
+The draft proposes using combinations of elevated factors to prioritise
+evaluation. Its comparisons with developers' system cards remain
+unfinished and are not presented here as findings.
+
+\end{document}
