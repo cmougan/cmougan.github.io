@@ -1,0 +1,273 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SOTEU · Sources and response quality</title>
+<style>
+:root{--ink:#172b43;--muted:#5c6c7e;--blue:#275bc0;--line:#dbe3ec;--paper:#fff;--bg:#f4f6fa;--support:#087e77;--absent:#ad6b17;--error:#bd4654;--purple:#7b60b5}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:20px}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}button,input,select{font:inherit}button,a,input,select,summary{-webkit-tap-highlight-color:transparent}button,select,input[type=file]{cursor:pointer}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible{outline:3px solid #8bb3ff;outline-offset:3px}button{border:1px solid var(--line);background:white;color:var(--ink);border-radius:7px;padding:9px 14px}button:hover{background:#f0f4fb}a{color:var(--blue)}header{background:#152e50;color:white;border-top:5px solid #80a9f2}header .wrap{padding-top:35px;padding-bottom:28px}.wrap{width:min(1180px,100%);margin:auto;padding:0 28px}h1,h2,h3,p{margin:0}h1{font-size:clamp(27px,4vw,39px);line-height:1.18;letter-spacing:-.9px;font-weight:650;margin:7px 0 13px}h2{font-size:24px;line-height:1.3;letter-spacing:-.45px}h3{font-size:17px;font-weight:650;line-height:1.4}.eyebrow{font-size:12px;letter-spacing:1.8px;text-transform:uppercase;font-weight:650;color:#c6d7f2}.subtitle{color:#d6e1f1;max-width:770px}.header-meta{margin-top:19px;color:#c7d5e7;font-size:13px}nav{display:flex;gap:24px;margin-top:24px;flex-wrap:wrap}nav a{color:white;text-decoration:none;border-bottom:2px solid #7ca8f1;padding-bottom:5px}main{padding-top:28px;padding-bottom:36px}section{margin-bottom:34px}.section-heading{display:flex;gap:18px;align-items:flex-start;margin:0 0 18px}.rq{flex:none;background:#e2ebfa;color:var(--blue);font-size:13px;font-weight:700;padding:7px 11px;border-radius:6px;margin-top:2px}.section-heading p{margin-top:5px;color:var(--muted)}.panel{background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:23px}.muted,.caption{color:var(--muted)}.caption{font-size:13px;margin-top:12px}.intro{display:flex;align-items:center;gap:30px;margin-bottom:20px}.large-number{font-size:35px;letter-spacing:-1px;font-weight:650;line-height:1.2}.number-label{font-size:12px;color:var(--muted);white-space:nowrap}.intro p{max-width:700px}.toolbar{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.chart-tabs{padding-bottom:13px;border-bottom:1px solid var(--line);margin-bottom:16px}.chart-tabs button[aria-pressed=true]{color:var(--blue);border-color:#9db9e9;background:#edf3fd}.figure-title{margin:5px 0 5px}.image-chart{margin:0;text-align:center}.image-chart img{display:block;width:100%;height:auto;max-width:1050px;margin:auto;cursor:zoom-in}.image-chart img.composition{max-width:830px}.image-chart img.domains{max-width:890px}.chart-caption{text-align:left}.two-col{display:grid;grid-template-columns:1fr 1fr;gap:20px}.notice{background:#fff8e9;border:1px solid #e9d7b1;border-left:4px solid #b88327;border-radius:7px;padding:16px 18px;font-size:14px;margin-bottom:20px}.notice strong{color:#785214}.notice p+p{margin-top:7px}details>summary{cursor:pointer;font-weight:600}details[open]>summary{margin-bottom:14px}.notice details{margin-top:9px}.notice ul{margin:0;padding-left:21px}.filters{display:flex;align-items:flex-end;flex-wrap:wrap;gap:13px;margin-bottom:14px}.control{display:flex;flex-direction:column;gap:5px}.control label{font-size:12px;color:var(--muted);font-weight:600}select,input[type=search]{height:42px;border:1px solid #cbd5e2;background:white;border-radius:6px;padding:6px 10px;color:var(--ink);max-width:100%}.filter-model{min-width:220px}.filter-question{min-width:210px}.filter-info{font-size:13px;color:var(--muted);margin:12px 0}.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin:18px 0}.kpi{background:white;border:1px solid var(--line);border-radius:9px;padding:18px}.kpi .value{font-size:32px;font-weight:650;letter-spacing:-.8px;margin:5px 0}.kpi .label{font-size:13px}.kpi .meta{font-size:12px;color:var(--muted)}.subheading{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin-bottom:15px}.legend{display:flex;gap:8px 15px;flex-wrap:wrap;font-size:12px;color:var(--muted);margin:14px 0}.legend span{display:flex;align-items:center;gap:6px}.swatch{width:9px;height:9px;display:inline-block;flex:none;border-radius:2px}.model-block+.model-block{margin-top:24px}.model-title{font-size:14px;font-weight:600;margin-bottom:10px}.model-title small{font-weight:400;color:var(--muted)}.metric-row{display:grid;grid-template-columns:108px 1fr 50px;gap:10px;align-items:center;margin:9px 0;font-size:12px}.track{height:12px;background:#f0f3f7;border-radius:2px;overflow:hidden}.bar{height:100%;border-radius:2px}.metric-row .val{text-align:right;font-variant-numeric:tabular-nums}.scale{display:flex;justify-content:space-between;margin:10px 59px 0 118px;color:var(--muted);font-size:11px}.chart-wrap{width:100%;min-height:280px}.chart-wrap svg{display:block;width:100%;overflow:visible}.chart-wrap text{fill:var(--muted);font-size:12px;font-family:inherit}.chart-wrap .chart-value{font-weight:600;fill:var(--ink)}.empty{padding:35px 15px;text-align:center;color:var(--muted)}.full-panel{margin-top:20px}.point-grid{display:grid;grid-template-columns:1fr 1fr;gap:0 28px}.point-row{border-bottom:1px solid #e8edf4;padding:10px 0;break-inside:avoid}.point-row summary{display:flex;align-items:center;gap:12px;font-size:13px}.point-id{min-width:38px;font-weight:650}.point-row .track{flex:1}.point-rate{width:85px;text-align:right;white-space:nowrap;font-variant-numeric:tabular-nums}.evidence{padding:8px 0 2px;font-size:13px;color:var(--muted)}.evidence p{margin:8px 0}.log-tools{display:flex;align-items:flex-end;gap:12px;flex-wrap:wrap;margin-bottom:15px}.log-search{flex:1;min-width:200px}.log-search input{width:100%}.response-summary{display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px;margin:14px 0}.badge{font-size:12px;padding:3px 8px;background:#edf2f8;border-radius:4px;display:inline-block}.badge.review{background:#fff0dc;color:#855516}.answer{white-space:pre-wrap;overflow-wrap:anywhere;background:#f7f9fc;padding:18px;border-radius:7px;font:14px/1.7 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;max-height:500px;overflow:auto;margin:12px 0 18px}.question-text{font-size:17px;font-weight:600;margin-top:8px}.judge-note{border-left:3px solid #aebfd6;padding-left:14px;font-size:14px;margin:15px 0}.table-wrap{width:100%;overflow-x:auto}table{border-collapse:collapse;width:100%;font-size:13px}th,td{text-align:left;padding:10px 12px;border-bottom:1px solid var(--line);vertical-align:top}th{color:var(--muted);font-weight:600;background:#f8fafc}td{overflow-wrap:anywhere}.claim-table{min-width:640px}.claim-table th:first-child{width:45%}.claim-table th:nth-child(2){width:125px}.claim-table .supported{color:var(--support)}.claim-table .contradicted{color:var(--error)}.claim-table .not_in_speech{color:var(--absent)}.id-text{font:12px/1.6 ui-monospace,monospace;overflow-wrap:anywhere;color:var(--muted)}.response-nav{display:flex;align-items:center;gap:10px;margin:10px 0 16px;flex-wrap:wrap}.response-nav select{flex:1;min-width:150px}.definitions{display:grid;grid-template-columns:1fr 1fr;gap:18px 30px;font-size:14px}.definitions dt{font-weight:600}.definitions dd{margin:4px 0 0;color:var(--muted)}.upload-row{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-top:16px;font-size:13px}.upload-row label{display:block;font-weight:600;margin-bottom:6px}input[type=file]{max-width:100%;font-size:13px}footer{font-size:12px;color:var(--muted);border-top:1px solid var(--line);padding:19px 0 25px}dialog{max-width:min(1350px,96vw);max-height:94vh;border:1px solid var(--line);border-radius:10px;padding:18px}dialog::backdrop{background:#132b4db3}dialog .dialog-head{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-bottom:15px}dialog img{display:block;max-width:100%;height:auto}.error-text{color:#a12b3b;font-size:13px;margin-top:10px}[hidden]{display:none!important}.print-button{margin-left:auto}.reference-table{min-width:550px}.print-note{display:none}
+@media(max-width:900px){.two-col{grid-template-columns:1fr}.kpis{grid-template-columns:repeat(2,1fr)}.point-grid{grid-template-columns:1fr}.definitions{grid-template-columns:1fr}}
+@media(max-width:520px){.wrap{padding-left:16px;padding-right:16px}.panel{padding:16px}.intro{align-items:flex-start;flex-direction:column;gap:12px}.filters .control{width:100%;min-width:0}.filters select{width:100%}.section-heading{gap:10px}h2{font-size:21px}.rq{padding:5px 7px;font-size:12px}.kpi{padding:14px}.kpi .value{font-size:28px}.metric-row{grid-template-columns:97px 1fr 47px;gap:7px}.scale{margin-left:104px;margin-right:54px}nav{gap:14px;font-size:14px}.chart-tabs{gap:6px}.chart-tabs button{padding:8px;font-size:13px}.print-button{margin-left:0}.response-nav button{padding:8px 10px}.response-nav select{width:100%;flex-basis:100%;order:-1}input,select{font-size:16px}.image-chart img{min-width:0}}
+@media print{body{background:white;font-size:11px}header{background:white;color:var(--ink);border-top:3px solid var(--blue)}header .wrap{padding:10px 0}.eyebrow,.subtitle,.header-meta{color:var(--muted)}nav,.filters,.chart-tabs,.print-button,.upload-row,.log-tools,.response-nav{display:none}.wrap{width:100%;padding:0}main{padding-top:15px}.panel{break-inside:avoid;padding:14px}.kpis{grid-template-columns:repeat(4,1fr)}.two-col{grid-template-columns:1fr 1fr}.notice{break-inside:avoid}section{margin-bottom:20px}.print-note{display:block}.answer{max-height:none;overflow:visible}.image-chart img{max-height:420px;width:auto;max-width:100%}#response-explorer{break-before:page}h1{font-size:28px}h2{font-size:20px}}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+<div class="eyebrow">SOTEU monitoring</div>
+<h1>State of European Union 2026</h1>
+<div class="header-meta" id="dataset-meta">Loading hosted evaluation data…</div>
+<nav aria-label="Research questions"><a href="#rq1"> Commission sources</a><a href="#rq2">Speech reflection</a><a href="#response-explorer">Individual responses</a></nav>
+</div></header>
+<main class="wrap">
+<div class="panel" style="margin-bottom:24px"><div class="control"><label>Models · applies to all visualizations</label><div id="model-filter" class="toolbar"></div></div></div>
+<section id="rq1" aria-labelledby="rq1-title">
+<div class="section-heading"><span class="rq"></span><div><h2 id="rq1-title">How often were Commission sources retrieved?</h2><p>Composition, domains and daily retrieval by question.</p></div></div>
+<div class="panel">
+<p class="caption">These figures are calculated from the hosted retrieval CSV for the selected models.</p>
+<div class="toolbar chart-tabs" aria-label="Source chart">
+<button type="button" data-figure="composition" aria-pressed="true">Source composition</button>
+<button type="button" data-figure="domains" aria-pressed="false">Top domains</button>
+<button type="button" data-figure="temporal" aria-pressed="false">Over time</button>
+<button type="button" id="enlarge-figure">Enlarge figure</button>
+<button type="button" class="print-button" id="print">Print dashboard</button>
+</div>
+<figure class="image-chart"><div id="rq1-chart" class="chart-wrap"></div><figcaption class="caption chart-caption" id="rq1-caption"></figcaption></figure><p id="image-error" class="error-text" role="alert"></p>
+<p class="caption">Model selections apply to all visualizations. Source counts include each URL once per response.</p>
+<details style="margin-top:14px"><summary>What counts as a source?</summary><p class="caption">A URL–response occurrence is a normalised URL counted once within each response. The same URL can count again in another response. Commission sources comprise commission.europa.eu, ec.europa.eu and their subdomains. European Parliament sources are counted separately. “Retrieved” means returned during web search; it does not establish citation in the final answer or causal influence on the answer.</p></details>
+</div>
+</section>
+<section id="rq2" aria-labelledby="rq2-title">
+<div class="section-heading"><span class="rq"></span><div><h2 id="rq2-title">How well do responses reflect the speech?</h2><p>Saved evaluation results, calculated directly from the hosted comparison CSV.</p></div></div>
+<div class="notice"><strong>Reference alignment</strong><p id="weight-audit">Waiting for the comparison data and reference checklist.</p><p>Ensure the question year, reference speech and checklist version match the evaluation run. The dashboard displays saved judge scores; matching weights alone cannot verify point labels or speech identity.</p></div>
+<div class="filters" aria-label="Filters for response quality">
+
+<div class="control filter-question"><label for="question-filter">Question</label><select id="question-filter"></select></div>
+<div class="control"><label for="date-filter">Date (Europe/Brussels)</label><select id="date-filter"></select></div>
+<button type="button" id="reset-filters">Reset filters</button>
+</div>
+<p class="filter-info" id="filter-info" aria-live="polite"></p>
+<div class="kpis" id="kpis"></div>
+<div class="two-col">
+<div class="panel"><h3>Comparison by model</h3><p class="caption">Mean response-level rates. Each bar uses a 0–100% scale.</p><div id="model-chart"></div><div class="scale"><span>0%</span><span>50%</span><span>100%</span></div></div>
+<div class="panel"><div class="subheading"><h3>Daily results</h3><div class="control"><label for="trend-metric">Metric</label><select id="trend-metric"></select></div></div><div id="trend-chart" class="chart-wrap"></div><p class="caption">Daily mean over selected responses. Labels include the number of responses; connecting lines do not imply a continuous trend.</p></div>
+</div>
+<div class="panel full-panel" id="response-explorer"><div class="subheading"><h3>Individual responses and judge evidence</h3><button type="button" id="export-csv">Export selected CSV</button></div>
+<div class="log-tools"><div class="control"><label for="log-metric">Metric</label><select id="log-metric"><option value="">All metrics</option></select></div><div class="control"><label for="log-min">Minimum (%)</label><input id="log-min" type="number" min="0" max="100" step="any" placeholder="0" style="width:100px"></div><div class="control"><label for="log-max">Maximum (%)</label><input id="log-max" type="number" min="0" max="100" step="any" placeholder="100" style="width:100px"></div><div class="control"><label for="log-date">Response date (Europe/Brussels)</label><select id="log-date"></select></div></div>
+<div class="log-tools"><div class="control log-search"><label for="log-search">Search question, answer, judge notes or sample ID</label><input id="log-search" type="search" placeholder="Search the selected responses"></div><div class="control"><label for="log-sort">Order</label><select id="log-sort"><option value="review">Review event flags first</option><option value="contradiction">Highest contradiction rate</option><option value="reflection">Highest reflection score</option><option value="latest">Most recent</option></select></div></div>
+<div class="response-nav"><button type="button" id="previous-response" aria-label="Previous response">Previous</button><select id="response-select" aria-label="Select a response"></select><button type="button" id="next-response" aria-label="Next response">Next</button></div>
+<div id="response-detail" aria-live="polite"></div>
+</div>
+<details class="panel full-panel"><summary>Metric definitions, reference checklist and data</summary>
+<dl class="definitions"><div><dt>Weighted coverage</dt><dd>Covered point weights divided by total checklist weight. The dashboard preserves the exported score and checks numerical consistency when a valid reference checklist is available.</dd></div><div><dt>Supported claims</dt><dd>Claims judged to be entailed by the reference, divided by all assessed claims in each response.</dd></div><div><dt>Contradicted claims</dt><dd>Claims judged to conflict with the reference, divided by assessed claims.</dd></div><div><dt>Claims absent from reference</dt><dd>Claims judged neither supported nor contradicted by the reference. Absence from the speech does not, by itself, mean the claim is false.</dd></div><div><dt>Reflection score</dt><dd>Harmonic mean of weighted coverage and claim support for each response: 2 × coverage × support ÷ (coverage + support), or zero if both are zero.</dd></div><div><dt>Aggregation and evaluation</dt><dd>Unweighted means of response-level scores, as in the supplied analysis script. These are automated judge results, not verified ground truth. Keep the judge model and reference version consistent across runs. This CSV format does not record them, so the dashboard cannot verify their identity.</dd></div></dl>
+<p class="caption">Model names and sample counts are derived from the CSV. Claude, Gemini, Grok, DeepSeek, GPT and other models appear when their rows are present. Unequal sample counts or question mixes can affect comparisons. No uncertainty estimates are calculated.</p>
+<details style="margin-top:18px"><summary>Supplied reference checklist (separate from logged IDs)</summary><div class="table-wrap"><table class="reference-table"><thead><tr><th>ID</th><th>Point in supplied checklist</th><th>Weight</th></tr></thead><tbody id="reference-table"></tbody></table></div></details>
+<details style="margin-top:16px"><summary>Read the supplied reference speech</summary><pre class="answer" id="reference-speech"></pre></details>
+<p class="caption" id="input-name"></p>
+<p class="caption">Hosting: place the comparison CSV in files/conversation_comparison.csv, the optional checklist in files/soteu_reference_main_points.csv, and the optional speech in files/soteu_reference.txt. Run the source-analysis script to write files/retrieval_sources.csv beside the script; serve that files/ directory beside this HTML. Paths are configurable in CONFIG near the top of the script. Replace the hosted files, then reload the page or select Refresh data. Publish related files together to avoid mixing evaluation versions.</p>
+</details>
+</section>
+<div class="panel" style="margin-bottom:24px"><div class="toolbar"><button type="button" id="refresh-data">Refresh data</button><span id="load-status" role="status">Loading…</span></div><p class="error-text" id="load-error" role="alert"></p></div>
+</main>
+<footer class="wrap">Loads evaluation data from the same hosted directory. No model calls are made. Host behind appropriate access controls if the CSV contains non-public responses.</footer>
+<dialog id="image-dialog" aria-label="Enlarged source figure"><div class="dialog-head"><h3 id="dialog-title">Source figure</h3><button type="button" id="close-dialog">Close</button></div><div id="dialog-chart" class="chart-wrap"></div></dialog>
+<script>
+'use strict';
+// Paths resolve relative to this HTML file, including when hosted in a subdirectory.
+const CONFIG={
+ comparison:'files/conversation_comparison.csv',
+ sources:'files/retrieval_sources.csv',
+ checklist:'files/soteu_reference_main_points.csv', // optional
+ reference:'files/soteu_reference.txt', // optional
+ figures:{
+  composition:{title:'Composition of retrieved sources',alt:'Composition of retrieved sources'},
+  domains:{title:'Most frequently retrieved domains',alt:'Most frequently retrieved domains'},
+  temporal:{title:'Commission retrieval over time by question',alt:'Commission retrieval over time by question'}
+ }
+};
+const BUNDLE={points:[],columns:[],figures:CONFIG.figures};
+let imageVersion=Date.now(),refreshNumber=0;
+const QLABELS={'0':'Key takeaways','1':'Main conclusions','2':'Key points','3':'Most important statements','4':'Summary'};
+const METRICS=[
+ {key:'weighted_coverage',label:'Saved weighted coverage',short:'Coverage',color:'#275bc0',hint:'Based on the saved checklist version'},
+ {key:'claim_support_rate',label:'Supported claims',short:'Supported',color:'#087e77',hint:'Mean share per response'},
+ {key:'contradiction_rate',label:'Contradicted claims',short:'Contradicted',color:'#bd4654',hint:'Mean share per response'},
+ {key:'not_in_speech_rate',label:'Claims absent from reference',short:'Absent',color:'#ad6b17',hint:'Absence does not establish falsity'},
+ {key:'reflection_score',label:'Saved reflection score',short:'Reflection',color:'#7b60b5',hint:'Harmonic mean per response'}
+];
+const $=id=>document.getElementById(id);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const pct=v=>Number.isFinite(v)?(v*100).toFixed(1)+'%':'—';
+const mean=(rows,key)=>{const v=rows.map(r=>r[key]).filter(Number.isFinite);return v.length?v.reduce((a,b)=>a+b,0)/v.length:null};
+const shortModel=m=>{
+ const raw=String(m),parts=raw.split('/'),id=parts.pop();
+ const label=id.replace(/[-_]/g,' ').replace(/\b(claude|sonnet|opus|haiku|gemini|flash|pro|grok|deepseek|gpt|mini|nano)\b/gi,w=>({deepseek:'DeepSeek',gpt:'GPT'}[w.toLowerCase()]||w[0].toUpperCase()+w.slice(1).toLowerCase()));
+ // Keep provider/routing prefixes: different endpoints must not collapse into one label.
+ return parts.length?`${label} (${parts.join('/')})`:label;
+};
+const unique=a=>[...new Set(a)];
+const shortDate=d=>{const a=d.split('-');return a.length===3?`${a[2]} ${['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'][Number(a[1])-1]}`:d};
+const empty=label=>`<div class="empty">${esc(label)}</div>`;
+let DATA=[],FILTERED=[],LOGS=[],SOURCES=[],selectedModels=null,selectedId='',activeFigure='composition';
+function normalize(input){
+ const required=['sample_id','model','question_id','question','date','answer',...METRICS.map(m=>m.key),'n_claims','wrong_event','covered_point_ids','coverage_detail','claim_judgements'];
+ if(!input.length)throw new Error('The CSV contains no response rows.');
+ for(const key of required)if(!(key in input[0]))throw new Error(`Missing required column: ${key}`);
+ const ids=new Set();
+ return input.map((original,i)=>{
+  const r={...original};
+  if(!String(r.sample_id).trim())throw new Error(`Row ${i+2}: missing sample ID.`);
+  if(ids.has(r.sample_id))throw new Error(`Repeated sample ID: ${r.sample_id}. Use one row per response.`);ids.add(r.sample_id);
+  for(const m of METRICS){if(r[m.key]===''||r[m.key]===null||r[m.key]===undefined)r[m.key]=null;else{r[m.key]=Number(r[m.key]);if(!Number.isFinite(r[m.key])||r[m.key]<0||r[m.key]>1)throw new Error(`Row ${i+2}: ${m.key} must be between 0 and 1.`)}}
+  r.n_claims=Number(r.n_claims);if(!Number.isInteger(r.n_claims)||r.n_claims<0)throw new Error(`Row ${i+2}: invalid n_claims.`);
+  for(const key of ['covered_point_ids','coverage_detail','claim_judgements']){try{r[key]=typeof r[key]==='string'?JSON.parse(r[key]||'[]'):r[key]}catch{throw new Error(`Row ${i+2}: invalid JSON in ${key}.`)}if(!Array.isArray(r[key]))throw new Error(`Row ${i+2}: ${key} must be a JSON list.`)}
+  const flag=String(r.wrong_event).toLowerCase();if(!['true','false','1','0'].includes(flag))throw new Error(`Row ${i+2}: wrong_event must be true or false.`);r.wrong_event=['true','1'].includes(flag);
+  r.question_id=String(r.question_id).replace(/\.0$/,'');r.date=String(r.date).slice(0,10);if(!/^\d{4}-\d{2}-\d{2}$/.test(r.date))throw new Error(`Row ${i+2}: use YYYY-MM-DD dates.`);
+  return r;
+ });
+}
+function options(id,values,allLabel,labelFn=x=>x){$(id).innerHTML=`<option value="">${esc(allLabel)}</option>`+values.map(v=>`<option value="${esc(v)}">${esc(labelFn(v))}</option>`).join('')}
+function initialize(rows,name){
+ const clean=normalize(rows);DATA=clean;selectedId='';
+ renderModelFilters();
+ options('log-date',unique(DATA.map(r=>r.date)).sort(),'All dates',shortDate);
+ options('question-filter',unique(DATA.map(r=>r.question_id)).sort(),'All questions',q=>QLABELS[q]||q);
+ options('date-filter',unique(DATA.map(r=>r.date)).sort(),'All dates',shortDate);
+ const dates=unique(DATA.map(r=>r.date)).sort();
+ $('dataset-meta').textContent=`${dates[0]} to ${dates.at(-1)} · ${DATA.length} responses · ${unique(DATA.map(r=>r.model)).length} models · ${unique(DATA.map(r=>r.question_id)).length} questions`;
+ if(name)$('input-name').textContent=`Comparison: ${name}. Checklist: ${CONFIG.checklist}. Reference: ${CONFIG.reference}. Data load time is not the evaluation time.`;
+ const weights=Object.fromEntries(BUNDLE.points.map(p=>[p.point_id,Number(p.weight)]));const total=Object.values(weights).reduce((a,b)=>a+b,0);
+ const mismatches=total>0?DATA.filter(r=>r.weighted_coverage!==null&&Math.abs(unique(r.covered_point_ids).reduce((a,p)=>a+(weights[p]||0),0)/total-r.weighted_coverage)>1e-8).length:0;
+ $('weight-audit').textContent=total>0?`Checklist total weight: ${total}. ${mismatches} of ${DATA.length} saved coverage scores differ from scores recalculated using this checklist. Saved values are preserved.`:'Reference checklist unavailable; saved scores are shown without checking checklist consistency.';
+ applyFilters();
+}
+function applyFilters(){
+ FILTERED=DATA.filter(r=>modelSelected(r.model)&&(!$('question-filter').value||r.question_id===$('question-filter').value)&&(!$('date-filter').value||r.date===$('date-filter').value));
+ const flagged=FILTERED.filter(r=>r.wrong_event).length;
+ $('filter-info').textContent=`${FILTERED.length} of ${DATA.length} responses selected · ${FILTERED.reduce((a,r)=>a+r.n_claims,0)} assessed claims · ${flagged} responses flagged by the judge as describing the wrong event. Filters apply to all results below.`;
+ $('kpis').innerHTML=[METRICS[1],METRICS[3],METRICS[2],METRICS[0]].map(m=>`<div class="kpi"><div class="label">${esc(m.label)}</div><div class="value">${pct(mean(FILTERED,m.key))}</div><div class="meta">${esc(m.hint)}</div></div>`).join('');
+ drawModels();drawTrend();drawLogs();showFigure(activeFigure);
+}
+function drawModels(){
+ if(!FILTERED.length){$('model-chart').innerHTML=empty('No responses match these filters.');return}
+ $('model-chart').innerHTML=unique(FILTERED.map(r=>r.model)).sort().map(model=>{const rows=FILTERED.filter(r=>r.model===model);return `<div class="model-block"><div class="model-title" title="${esc(model)}">${esc(shortModel(model))} <small>n = ${rows.length}</small></div>`+METRICS.slice(0,4).map(m=>{const v=mean(rows,m.key);return `<div class="metric-row"><span>${esc(m.short)}</span><div class="track"><div class="bar" style="width:${(v??0)*100}%;background:${m.color}"></div></div><span class="val">${pct(v)}</span></div>`}).join('')+'</div>'}).join('');
+}
+function drawTrend(){
+ const metric=METRICS.find(m=>m.key===$('trend-metric').value)||METRICS[1];
+ const series=unique(FILTERED.map(r=>r.model)).sort().map(model=>({name:shortModel(model),values:unique(FILTERED.filter(r=>r.model===model).map(r=>r.date)).sort().map(date=>{const rows=FILTERED.filter(r=>r.model===model&&r.date===date);return {date,value:mean(rows,metric.key),n:rows.length}})}));
+ $('trend-chart').innerHTML=lineChart(series,metric.label,true);
+}
+function drawLogs(){
+ const term=$('log-search').value.trim().toLowerCase();const metric=$('log-metric').value, date=$('log-date').value;
+ const min=$('log-min').value===''?0:Number($('log-min').value)/100,max=$('log-max').value===''?1:Number($('log-max').value)/100;
+ LOGS=FILTERED.filter(r=>(!date||r.date===date)&&(!metric||(Number.isFinite(r[metric])&&r[metric]>=min&&r[metric]<=max))&&(!term||[r.sample_id,r.question,r.answer,r.judge_notes].some(v=>String(v??'').toLowerCase().includes(term))));
+ const order=$('log-sort').value;
+ LOGS.sort((a,b)=>order==='review'?Number(b.wrong_event)-Number(a.wrong_event)||(b.contradiction_rate??-1)-(a.contradiction_rate??-1):order==='contradiction'?(b.contradiction_rate??-1)-(a.contradiction_rate??-1):order==='reflection'?(b.reflection_score??-1)-(a.reflection_score??-1):String(b.created||b.date).localeCompare(String(a.created||a.date)));
+ if(!LOGS.some(r=>r.sample_id===selectedId))selectedId=LOGS[0]?.sample_id||'';
+ $('response-select').innerHTML=LOGS.length?LOGS.map((r,i)=>`<option value="${esc(r.sample_id)}">${i+1}/${LOGS.length} · ${esc(shortDate(r.date))} · ${esc(shortModel(r.model))} · ${esc(QLABELS[r.question_id]||r.question_id)}</option>`).join(''):'<option>No matching responses</option>';
+ $('response-select').value=selectedId;drawDetail();
+}
+function drawDetail(){
+ const i=LOGS.findIndex(r=>r.sample_id===selectedId),r=LOGS[i];$('previous-response').disabled=i<=0;$('next-response').disabled=i<0||i>=LOGS.length-1;
+ if(!r){$('response-detail').innerHTML=empty('No responses match the current filters and search.');return}
+ const claims=r.claim_judgements;
+ $('response-detail').innerHTML=`<p class="question-text">${esc(r.question)}</p><div class="response-summary"><span>${esc(shortModel(r.model))}</span><span>${esc(r.created||r.date)}</span><span class="badge ${r.wrong_event?'review':''}">${r.wrong_event?'Judge flag: wrong event':'No wrong-event flag'}</span></div><p class="id-text">Sample: ${esc(r.sample_id)} · Evaluation: ${esc(r.eval_id||'not recorded')}</p><div class="legend">${METRICS.map(m=>`<span><i class="swatch" style="background:${m.color}"></i>${esc(m.short)}: ${pct(r[m.key])}</span>`).join('')}</div><div class="judge-note"><strong>Judge notes</strong><p>${esc(r.judge_notes||'No notes saved.')}</p></div><h3>Model answer</h3><pre class="answer">${esc(r.answer)}</pre><details><summary>Claim judgements (${claims.length})</summary><div class="table-wrap"><table class="claim-table"><thead><tr><th>Claim</th><th>Saved verdict</th><th>Evidence in reference</th></tr></thead><tbody>${claims.map(c=>`<tr><td>${esc(c.claim)}</td><td class="${['supported','contradicted','not_in_speech'].includes(c.verdict)?c.verdict:''}">${esc(String(c.verdict).replaceAll('_',' '))}</td><td>${esc(c.speech_evidence||'No excerpt saved.')}</td></tr>`).join('')}</tbody></table></div></details>`;
+}
+function freshURL(path,version){const url=new URL(path,document.baseURI);url.searchParams.set('_dashboard_refresh',String(version));return url.href}
+const COLORS=['#275bc0','#087e77','#ad6b17','#bd4654','#7b60b5','#477984','#a35618','#555f79'];
+function modelSelected(model){return selectedModels===null||selectedModels.has(model)}
+function renderModelFilters(){
+ const models=unique([...DATA,...SOURCES].map(r=>r.model)).sort();
+ $('model-filter').innerHTML=models.map(model=>`<label style="display:flex;align-items:center;gap:6px"><input type="checkbox" value="${esc(model)}" ${modelSelected(model)?'checked':''}>${esc(shortModel(model))}</label>`).join('');
+}
+$('model-filter').addEventListener('change',()=>{selectedModels=new Set([...$('model-filter').querySelectorAll('input:checked')].map(el=>el.value));applyFilters()});
+function lineChart(series,title,percentage=false){
+ const dates=unique(series.flatMap(s=>s.values.map(v=>v.date))).sort();if(!dates.length)return empty('No data match these filters.');
+ const w=760,h=310,L=62,R=30,T=32,B=62,pw=w-L-R,ph=h-T-B;
+ const max=percentage?1:Math.max(1,...series.flatMap(s=>s.values.map(v=>v.value??0)));
+ const stamps=dates.map(d=>Date.parse(d+'T00:00:00Z')),first=stamps[0],last=stamps.at(-1);
+ const x=d=>first===last?L+pw/2:L+(Date.parse(d+'T00:00:00Z')-first)/(last-first)*pw,y=v=>T+(1-v/max)*ph;
+ let svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(title)}"><title>${esc(title)}</title>`;
+ for(let i=0;i<=4;i++){const v=max*i/4;svg+=`<line x1="${L}" x2="${w-R}" y1="${y(v)}" y2="${y(v)}" stroke="#e3e9f0"/><text x="${L-8}" y="${y(v)+4}" text-anchor="end">${percentage?Math.round(v*100)+'%':v.toFixed(1)}</text>`;}
+ series.forEach((s,i)=>{const color=COLORS[i%COLORS.length];let segment=[];const flush=()=>{if(segment.length>1)svg+=`<polyline points="${segment.join(' ')}" fill="none" stroke="${color}" stroke-width="2.5"/>`;segment=[];};dates.forEach(date=>{const v=s.values.find(v=>v.date===date);if(!v||v.value===null){flush();return}segment.push(`${x(date)},${y(v.value)}`);});flush();s.values.filter(v=>v.value!==null).forEach(v=>{svg+=`<circle cx="${x(v.date)}" cy="${y(v.value)}" r="5" fill="${color}" stroke="white"><title>${esc(s.name)} · ${esc(v.date)}: ${percentage?pct(v.value):v.value.toFixed(2)}; n=${v.n}</title></circle>`;});});
+ const step=Math.max(1,Math.ceil(dates.length/7));dates.forEach((d,i)=>{if(i%step===0||i===dates.length-1)svg+=`<text x="${x(d)}" y="${h-B+24}" text-anchor="${i===0?'start':i===dates.length-1?'end':'middle'}">${esc(shortDate(d))}</text>`;});
+ return svg+`<text x="${L+pw/2}" y="${h-5}" text-anchor="middle">Date (Europe/Brussels)</text></svg><div class="legend">`+series.map((s,i)=>`<span><i class="swatch" style="background:${COLORS[i%COLORS.length]}"></i>${esc(s.name)}</span>`).join('')+'</div>';
+}
+function showFigure(key){
+ activeFigure=key;const fig=BUNDLE.figures[key],rows=SOURCES.filter(r=>modelSelected(r.model)),urls=rows.filter(r=>r.url);
+ document.querySelectorAll('[data-figure]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.figure===key)));
+ $('rq1-caption').textContent=fig.title+' · '+unique(rows.map(r=>r.sample_id)).length+' responses · '+urls.length+' URL–response occurrences';
+ $('enlarge-figure').disabled=!rows.length;
+ if(!rows.length){$('rq1-chart').innerHTML=empty('No source data match the selected models.');return}
+ if(key==='temporal'){
+  const responses=[...new Map(rows.map(r=>[r.sample_id,r])).values()];
+  const series=unique(responses.map(r=>r.question_id)).sort().map(question=>({name:QLABELS[question]||question,values:unique(responses.filter(r=>r.question_id===question).map(r=>r.date)).sort().map(date=>{const group=responses.filter(r=>r.question_id===question&&r.date===date);return {date,value:mean(group,'commission_sources'),n:group.length}})}));
+  $('rq1-chart').innerHTML=lineChart(series,'Mean Commission URLs per response, by question');return;
+ }
+ const field=key==='composition'?'source_type':'domain',groups=new Map();urls.forEach(r=>{if(!groups.has(r[field]))groups.set(r[field],{label:r[field],count:0,type:r.source_type});groups.get(r[field]).count++});
+ let bars=[...groups.values()].sort((a,b)=>b.count-a.count);if(key==='domains')bars=bars.slice(0,15);
+ if(!bars.length){$('rq1-chart').innerHTML=empty('No URLs were retrieved for the selected responses.');return}
+ const w=1050,L=310,R=85,T=25,rowH=36,h=T+bars.length*rowH+45,max=Math.max(...bars.map(b=>b.count)),width=w-L-R;
+ let svg=`<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${h}" role="img" aria-label="${esc(fig.title)}"><title>${esc(fig.title)}</title>`;
+ bars.forEach((b,i)=>{const y=T+i*rowH,color=key==='composition'?'#275bc0':({'European Commission':'#275bc0','European Parliament':'#087e77','Other':'#ad6b17'}[b.type]||'#ad6b17');svg+=`<text x="${L-12}" y="${y+17}" text-anchor="end">${esc(b.label)}</text><rect x="${L}" y="${y}" width="${b.count/max*width}" height="24" fill="${color}"><title>${esc(b.label)}: ${b.count}</title></rect><text x="${L+b.count/max*width+9}" y="${y+17}">${b.count}</text>`;});
+ svg+=`<text x="${L+width/2}" y="${h-7}" text-anchor="middle">URL–response occurrences</text></svg>`;
+ $('rq1-chart').innerHTML=svg;
+}
+function parseCSV(text){
+ text=text.replace(/^\uFEFF/,'');const rows=[];let row=[],cell='',quoted=false;
+ for(let i=0;i<text.length;i++){const c=text[i];if(c==='"'){if(quoted&&text[i+1]==='"'){cell+='"';i++}else if(quoted)quoted=false;else if(cell==='')quoted=true;else cell+=c}else if(c===','&&!quoted){row.push(cell);cell=''}else if((c==='\n'||c==='\r')&&!quoted){if(c==='\r'&&text[i+1]==='\n')i++;row.push(cell);if(row.some(v=>v!==''))rows.push(row);row=[];cell=''}else cell+=c}
+ if(quoted)throw new Error('The CSV has an unclosed quoted field.');if(cell!==''||row.length){row.push(cell);rows.push(row)}if(!rows.length)throw new Error('The CSV is empty.');const header=rows.shift();if(new Set(header).size!==header.length)throw new Error('The CSV has repeated column names.');return rows.filter(r=>r.some(v=>v!=='')).map((r,i)=>{if(r.length!==header.length)throw new Error(`CSV row ${i+2}: expected ${header.length} fields, found ${r.length}.`);return Object.fromEntries(header.map((h,j)=>[h,r[j]]))});
+}
+function exportCSV(){
+ const columns=BUNDLE.columns;const quote=v=>'"'+String(typeof v==='object'&&v!==null?JSON.stringify(v):v??'').replaceAll('"','""')+'"';
+ const csv='\uFEFF'+columns.map(quote).join(',')+'\r\n'+FILTERED.map(r=>columns.map(k=>quote(r[k])).join(',')).join('\r\n');const url=URL.createObjectURL(new Blob([csv],{type:'text/csv;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='soteu_selected_responses.csv';document.body.appendChild(a);a.click();a.remove();setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+$('log-metric').innerHTML+=METRICS.map(m=>`<option value="${m.key}">${esc(m.label)}</option>`).join('');
+for(const id of ['log-metric','log-min','log-max','log-date'])$(id).addEventListener('input',drawLogs);
+$('trend-metric').innerHTML=METRICS.map(m=>`<option value="${m.key}">${esc(m.label)}</option>`).join('');$('trend-metric').value='claim_support_rate';
+for(const id of ['question-filter','date-filter'])$(id).addEventListener('change',applyFilters);
+$('reset-filters').addEventListener('click',()=>{for(const id of ['question-filter','date-filter'])$(id).value='';$('log-search').value='';selectedModels=null;renderModelFilters();for(const id of ['log-metric','log-min','log-max','log-date'])$(id).value='';applyFilters()});
+$('trend-metric').addEventListener('change',drawTrend);$('log-search').addEventListener('input',drawLogs);$('log-sort').addEventListener('change',()=>{selectedId='';drawLogs()});
+$('response-select').addEventListener('change',()=>{selectedId=$('response-select').value;drawDetail()});
+for(const [id,delta] of [['previous-response',-1],['next-response',1]])$(id).addEventListener('click',()=>{const n=LOGS.findIndex(r=>r.sample_id===selectedId)+delta;if(LOGS[n]){selectedId=LOGS[n].sample_id;$('response-select').value=selectedId;drawDetail()}});
+document.querySelectorAll('[data-figure]').forEach(b=>b.addEventListener('click',()=>showFigure(b.dataset.figure)));
+$('enlarge-figure').addEventListener('click',()=>{$('dialog-chart').innerHTML=$('rq1-chart').innerHTML;$('dialog-title').textContent=BUNDLE.figures[activeFigure].title;$('image-dialog').showModal()});
+$('close-dialog').addEventListener('click',()=>$('image-dialog').close());$('image-dialog').addEventListener('click',e=>{if(e.target===$('image-dialog'))$('image-dialog').close()});
+$('print').addEventListener('click',()=>window.print());$('export-csv').addEventListener('click',exportCSV);
+async function loadText(path,version){
+ const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),15000);
+ try{const response=await fetch(freshURL(path,version),{cache:'no-store',signal:controller.signal});if(!response.ok)throw new Error(`${path}: HTTP ${response.status}`);const text=await response.text();if(/^\s*<!doctype html|^\s*<html/i.test(text))throw new Error(`${path}: server returned HTML instead of data`);return text}finally{clearTimeout(timer)}
+}
+async function refreshData(){
+ const version=++refreshNumber;imageVersion=Date.now()+'-'+version;
+ $('refresh-data').disabled=true;$('load-status').textContent='Loading hosted files…';$('load-error').textContent='';
+ showFigure(activeFigure);
+ try{
+  if(new URL(document.baseURI).protocol==='file:')throw new Error('Serve this HTML over HTTP or HTTPS. Direct file opening cannot fetch the hosted CSV files.');
+  const [comparison,checklist,reference,sources]=await Promise.allSettled([loadText(CONFIG.comparison,imageVersion),loadText(CONFIG.checklist,imageVersion),loadText(CONFIG.reference,imageVersion),loadText(CONFIG.sources,imageVersion)]);
+  if(sources.status==='fulfilled'){
+   try{const rows=parseCSV(sources.value);for(const r of rows){for(const k of ['sample_id','model','date','question_id','commission_sources','url','domain','source_type'])if(!(k in r))throw new Error('Missing source column: '+k);r.commission_sources=Number(r.commission_sources);if(!Number.isFinite(r.commission_sources)||r.commission_sources<0)throw new Error('Invalid Commission source count');}SOURCES=rows;$('image-error').textContent='';}
+   catch(e){$('image-error').textContent=e.message;}
+  }else $('image-error').textContent='Could not load '+CONFIG.sources+'. Run the updated Python script and serve its files/ directory beside this HTML.';
+  renderModelFilters();showFigure(activeFigure);
+  if(comparison.status==='rejected')throw comparison.reason;
+  const rows=parseCSV(comparison.value);normalize(rows); // Validate before replacing the displayed data.
+  let points=[],warnings=[];
+  if(checklist.status==='fulfilled'){try{points=parseCSV(checklist.value);const ids=new Set();for(const p of points){if(!p.point_id||!p.point||!Number.isFinite(Number(p.weight))||Number(p.weight)<=0||ids.has(p.point_id))throw new Error('Invalid checklist IDs, points or weights');ids.add(p.point_id)}}catch{points=[];warnings.push('Checklist could not be validated.')}}else warnings.push('Optional checklist unavailable.');
+  if(reference.status==='rejected')warnings.push('Optional reference speech unavailable.');
+  const selected={question:$('question-filter').value,date:$('date-filter').value};
+  BUNDLE.points=points;BUNDLE.columns=Object.keys(rows[0]);initialize(rows,CONFIG.comparison);
+  for(const [key,field] of [['question','question_id'],['date','date']])if(DATA.some(r=>r[field]===selected[key]))$(key+'-filter').value=selected[key];
+  applyFilters();
+  $('reference-table').innerHTML=points.length?points.map(p=>`<tr><td>${esc(p.point_id)}</td><td>${esc(p.point)}</td><td>${esc(p.weight)}</td></tr>`).join(''):'<tr><td colspan="3">Reference checklist unavailable.</td></tr>';
+  $('reference-speech').textContent=reference.status==='fulfilled'?reference.value:'Reference speech unavailable.';
+  $('load-status').textContent=`CSV loaded at ${new Date().toLocaleString()} · ${DATA.length} responses. ${warnings.join(' ')}`;
+ }catch(error){$('load-status').textContent=DATA.length?'Refresh failed — previous CSV results remain displayed.':'No comparison data loaded.';$('load-error').textContent=error.message+' Check CONFIG and the hosted files. The source CSV loads independently.';if(!DATA.length){$('dataset-meta').textContent='Waiting for hosted evaluation data';$('filter-info').textContent='No response data available.'}}
+ finally{$('refresh-data').disabled=false}
+}
+$('refresh-data').addEventListener('click',refreshData);
+refreshData();
+
+</script>
+</body>
+</html>
